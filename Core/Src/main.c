@@ -88,14 +88,7 @@ int main(void) {
 		}
 
 		if (PB_pressed()) {				// Check if user pushbutton was pressed
-			DAC_active = !DAC_active;	// Toggle DAC on/off
-			if (DAC_active) {
-				DAC_init();
-				BSP_LED_On(LED4);
-			} else {
-				DAC_reset();
-				BSP_LED_Off(LED4);
-			}
+			BSP_LED_Toggle(LED4);
 		}
 
 		/* Comment next line if touchscreen interrupt is enabled */
@@ -104,35 +97,19 @@ int main(void) {
 		switch (MENU_get_transition()) {	// Handle user menu choice
 		case MENU_NONE:					// No transition => do nothing
 			break;
-		case MENU_ZERO:
-			ADC3_IN4_single_init();
-			ADC3_IN4_single_read();
+		case MENU_ZERO:					//HALL PC1 PF8
+			ADC3_IN11_IN6_scan_init();
+			ADC3_dual_scan_start();
 			break;
-		case MENU_ONE:
-			ADC3_IN4_timer_init();
-			ADC3_IN4_timer_start();
-			break;
-		case MENU_TWO:
-			ADC3_IN4_DMA_init();
-			ADC3_IN4_DMA_start();
-			break;
-		case MENU_THREE:
-			ADC1_IN13_ADC2_IN5_dual_init();
-			ADC1_IN13_ADC2_IN5_dual_start();
-			break;
-		case MENU_FOUR:
-			ADC2_IN13_IN5_scan_init();
-			ADC2_IN13_IN5_scan_start();
-			break;
-		case MENU_FIVE:
+		case MENU_ONE:					//WPC  PC3 PF6
 			ADC3_IN13_IN4_scan_init();
-			ADC3_IN13_IN4_scan_start();
+			ADC3_dual_scan_start();
 			break;
 		default:						// Should never occur
 			break;
 		}
 
-		HAL_Delay(200);					// Wait or sleep
+		HAL_Delay(50);					// Wait or sleep
 	}
 }
 
