@@ -22,8 +22,8 @@
 
 #include "main.h"
 #include "pushbutton.h"
-#include "menu.h"
 #include "measuring.h"
+#include "lcd_gui.h"
 
 
 /******************************************************************************
@@ -34,7 +34,7 @@
 /******************************************************************************
  * Variables
  *****************************************************************************/
-
+bool draw_lcd = false;
 
 /******************************************************************************
  * Functions
@@ -62,7 +62,7 @@ int main(void) {
 
 	BSP_TS_Init(BSP_LCD_GetXSize(), BSP_LCD_GetYSize());	// Touchscreen
 	/* Uncomment next line to enable touchscreen interrupt */
-	// BSP_TS_ITConfig();					// Enable Touchscreen interrupt
+	//BSP_TS_ITConfig();					// Enable Touchscreen interrupt
 
 	PB_init();							// Initialize the user pushbutton
 	PB_enableIRQ();						// Enable interrupt on user pushbutton
@@ -70,8 +70,10 @@ int main(void) {
 	BSP_LED_Init(LED3);					// Toggles in while loop
 	BSP_LED_Init(LED4);					// Is toggled by user button
 
-	MENU_draw();						// Draw the menu
-	MENU_hint();						// Show hint at startup
+	//init GUI
+	draw_lcd = true;
+
+
 
 	gyro_disable();						// Disable gyro, use those analog inputs
 
@@ -89,27 +91,17 @@ int main(void) {
 
 		if (PB_pressed()) {				// Check if user pushbutton was pressed
 			BSP_LED_Toggle(LED4);
+			GUI_cable_detected = !GUI_cable_detected;
+			if (GUI_angle == 45) {
+				GUI_angle = -45;
+			} else {
+				GUI_angle = GUI_angle + 5;
+			}
+			GUI_inputBtn = true;
+			GUI_inputMeasReady = true;
 		}
 
-		/* Comment next line if touchscreen interrupt is enabled */
-		MENU_check_transition();
-
-		switch (MENU_get_transition()) {	// Handle user menu choice
-		case MENU_NONE:					// No transition => do nothing
-			break;
-		case MENU_ZERO:					//HALL PC1 PF8
-			ADC3_IN11_IN6_scan_init();
-			ADC3_dual_scan_start();
-			break;
-		case MENU_ONE:					//WPC  PC3 PF6
-			ADC3_IN13_IN4_scan_init();
-			ADC3_dual_scan_start();
-			break;
-		default:						// Should never occur
-			break;
-		}
-
-		HAL_Delay(50);					// Wait or sleep
+		GUI_SiteHandler();
 	}
 }
 

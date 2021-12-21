@@ -56,34 +56,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := demo_code_Cable_monitor
+BUILD_ARTIFACT_NAME := cable_monitor
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-demo_code_Cable_monitor.elf \
+cable_monitor.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-demo_code_Cable_monitor.list \
+cable_monitor.list \
 
 OBJCOPY_BIN += \
-demo_code_Cable_monitor.bin \
+cable_monitor.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: demo_code_Cable_monitor.elf secondary-outputs
+main-build: cable_monitor.elf secondary-outputs
 
 # Tool invocations
-demo_code_Cable_monitor.elf: $(OBJS) $(USER_OBJS) C:\Users\Bollhalder\ Jonas\STM32CubeIDE\workspace_1.7.0\demo_code_Cable_monitor\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "demo_code_Cable_monitor.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Bollhalder Jonas\STM32CubeIDE\workspace_1.7.0\demo_code_Cable_monitor\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="demo_code_Cable_monitor.map" -Wl,--gc-sections -static -L../Drivers/CMSIS/Lib/GCC --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+cable_monitor.elf: $(OBJS) $(USER_OBJS) C:\Users\Bollhalder\ Jonas\STM32CubeIDE\workspace_1.7.0\cable_monitor\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "cable_monitor.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Bollhalder Jonas\STM32CubeIDE\workspace_1.7.0\cable_monitor\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cable_monitor.map" -Wl,--gc-sections -static -L../Drivers/CMSIS/Lib/GCC --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -92,19 +92,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-demo_code_Cable_monitor.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "demo_code_Cable_monitor.list"
+cable_monitor.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "cable_monitor.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-demo_code_Cable_monitor.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "demo_code_Cable_monitor.bin"
+cable_monitor.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "cable_monitor.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout demo_code_Cable_monitor.bin demo_code_Cable_monitor.elf demo_code_Cable_monitor.list
+	-$(RM) cable_monitor.bin cable_monitor.elf cable_monitor.list default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)

@@ -1,7 +1,7 @@
-menu.c:69:6:MENU_draw	40	static
-menu.c:95:6:MENU_hint	8	static
-menu.c:118:6:MENU_set_entry	24	static
-menu.c:131:14:MENU_get_entry	64	static
-menu.c:150:13:MENU_get_transition	16	static
-menu.c:168:6:MENU_check_transition	16	static
-menu.c:212:6:EXTI15_10_IRQHandler	8	static
+menu.c:63:6:MENU_draw	48	static
+menu.c:92:6:MENU_hint	8	static
+menu.c:115:6:MENU_set_entry	24	static
+menu.c:128:14:MENU_get_entry	64	static
+menu.c:147:13:MENU_get_transition	16	static
+menu.c:165:6:MENU_check_transition	16	static
+menu.c:209:6:EXTI15_10_IRQHandler	8	static

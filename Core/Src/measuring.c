@@ -362,7 +362,7 @@ void MEAS_analyse_data(void)
 		buffer_right_channel[i] = ADC_samples[((2*i)+1)];
 	}
 
-	//sort arrays
+	//sort arrays from low to high
 	uint32_t temp_left;
 	uint32_t temp_right;
 	for (int i = 0; i < ADC_NUMS; ++i) {
@@ -372,7 +372,7 @@ void MEAS_analyse_data(void)
 				buffer_left_channel[i]=buffer_left_channel[j];
 				buffer_left_channel[j]=temp_left;
 			}
-			if (buffer_right_channel[i]<buffer_right_channel[j]) {
+			if (buffer_right_channel[i]>buffer_right_channel[j]) {
 				temp_right = buffer_right_channel[i];
 				buffer_right_channel[i]=buffer_right_channel[j];
 				buffer_right_channel[j]=temp_right;
@@ -406,9 +406,15 @@ void MEAS_analyse_data(void)
 	check_sum_right = check_sum_right / 10;
 
 	//convert low values to high values
-	//for (int i = 0; i < 5; ++i) {
-	//	values_left[i] = ADC_MAX_VALUE - values_left[i];
-	//	values_right[i] = ADC_MAX_VALUE - values_right[i];
+	for (int i = 0; i < 5; ++i) {
+		values_left[i] = ADC_MAX_VALUE - values_left[i];
+		values_right[i] = ADC_MAX_VALUE - values_right[i];
+	}
+
+	//convert into amplitudes
+	//for (int i = 0; i < 10; ++i) {
+	//	values_left[i] = values_left[i]-(ADC_MAX_VALUE/2);
+	//	values_right[i] = values_right[i]-(ADC_MAX_VALUE/2);
 	//}
 
 	//calculate mean of all 10 values
@@ -421,8 +427,8 @@ void MEAS_analyse_data(void)
 	sum_left = sum_left / 10;
 	sum_right = sum_right / 10;
 
-	MEAS_amplitude_left = sum_left;
-	MEAS_amplitude_right = sum_right;
+	MEAS_amplitude_left = sum_left-(ADC_MAX_VALUE/2);
+	MEAS_amplitude_right = sum_right-(ADC_MAX_VALUE/2);
 }
 
 
