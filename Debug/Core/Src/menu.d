@@ -44,7 +44,7 @@ Core/Src/menu.o: ../Core/Src/menu.c \
  ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/stmpe811.h \
  ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/ts.h \
  ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/io.h \
- ../Core/Inc/main.h ../Core/Inc/menu.h
+ ../Core/Inc/menu.h
 
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 
@@ -135,7 +135,5 @@ Core/Src/menu.o: ../Core/Src/menu.c \
 ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/ts.h:
 
 ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/io.h:
-
-../Core/Inc/main.h:
 
 ../Core/Inc/menu.h:
