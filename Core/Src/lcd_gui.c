@@ -45,24 +45,24 @@ static MODE_entry_t MODE_entry[MODE_ENTRY_COUNT] = {
 };
 
 bool GUI_cable_detected = false;///< Input true if cable detected with last measurement
+bool GUI_cable_not_detected = false;
 GUI_mode_t GUI_mode = MODE_L;	///< Default measurement mode
 
 //General measurements
-uint32_t GUI_measAccuracy = 10;	///< Settings for measurement accuracy
-float GUI_distance = 5; 		///< Distance value to display
-float GUI_distanceDeviation = 35; ///< Standard deviation of distance
 float GUI_angle = 0;			///< Angle value to display
-float GUI_current = 4;			///< Current to display
+float GUI_distance = 0; 		///< Distance value to display
+float GUI_distanceDeviation = 0; ///< Standard deviation of distance
+float GUI_current = 0;			///< Current to display
 
 //Raw measurements
-uint32_t GUI_rawHallLeft = 5000;
-uint32_t GUI_rawHallRight = 5000;
-uint32_t GUI_rawWpcLeft = 5000;
-uint32_t GUI_rawWpcRight = 5000;
+uint32_t GUI_rawHallLeft = 0;
+uint32_t GUI_rawHallRight = 0;
+uint32_t GUI_rawWpcLeft = 0;
+uint32_t GUI_rawWpcRight = 0;
 
 OPTN_entry_t GUI_options[3] = {
 		{"Display Data","Analysed","Raw","",0,2,false},
-		{"Meas. Type","Single","Continous","",0,2,false},
+		{"Meas. Type","Single","Continuous","",0,2,false},
 		{"Accuracy","1x","5x","10x",0,3,false},
 };
 
@@ -76,6 +76,8 @@ bool GUI_inputMeasReady = false;
 TS_StateTypeDef GUI_previousTSstate;
 TS_StateTypeDef GUI_currentTSstate;
 GUI_touch_t GUI_TSinputType = TOUCH_NONE;
+
+bool GUI_outOptn = false;
 
 /******************************************************************************
  * Functions
@@ -241,6 +243,11 @@ void GUI_DrawTopMode(void){
 	if (GUI_cable_detected){
 		BSP_LCD_SetTextColor(LCD_COLOR_LIGHTGREEN);
 		BSP_LCD_SetBackColor(LCD_COLOR_LIGHTGREEN);
+		GUI_cable_detected = false;
+	} else if (GUI_cable_not_detected){
+		BSP_LCD_SetTextColor(LCD_COLOR_LIGHTRED);
+		BSP_LCD_SetBackColor(LCD_COLOR_LIGHTRED);
+		GUI_cable_not_detected = false;
 	} else {
 		BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
 		BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
@@ -331,7 +338,7 @@ void GUI_DrawMeasurement(void){
 	BSP_LCD_DrawLine(60, 110, 180, 110);
 	BSP_LCD_DrawLine(120, 50, 120, 110);
 	//display angle direction
-	if ((-46>GUI_angle)|(GUI_angle<46)) {
+	if ((-46>GUI_angle)&(GUI_angle<46)) {
 		BSP_LCD_SetTextColor(LCD_COLOR_RED);
 		uint16_t x,y;
 		float dx,dy;
@@ -359,9 +366,9 @@ void GUI_DrawMeasurement(void){
 	BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
 	y = y+30;
 	//Distance
-	snprintf(text,24,"Distance: %4dmm", (int)(GUI_distance));
+	snprintf(text,24,"Distance: %4.1fmm", (float)(GUI_distance));
 	BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
-	if (GUI_measAccuracy > 1) {
+	if (GUI_options[2].active > 0) {
 		//Standard deviation
 		y = y+20;
 		snprintf(text,24,"Std.Dev.: %4dmm", (int)(GUI_distanceDeviation));
@@ -369,7 +376,13 @@ void GUI_DrawMeasurement(void){
 		//Measurement count
 		y = y+20;
 		BSP_LCD_SetFont(&Font16);
-		snprintf(text,24,"Accuracy: %4dx", (int)(GUI_measAccuracy));
+		int t = 1;
+		if(GUI_options[2].active==1){
+			t = 5;
+		} else {
+			t = 10;
+		}
+		snprintf(text,24,"Accuracy: %4dx", t);
 		BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
 	}
 	//Current
@@ -549,8 +562,7 @@ void GUI_SiteHandler(void){
 					GUI_DrawTopOptions();
 				}
 
-			} else
-			if (GUI_inputMeasReady) {
+			} else if (GUI_inputMeasReady) {
 				//Display Measurement
 				if(GUI_options[0].active==0){
 					//analysed
@@ -674,6 +686,10 @@ void GUI_TSHandler(void){
 				}
 			}
 		}
+	}
+	//notify analytics
+	if ((GUI_TSinputType == TOUCH_OPTN_CHANGE)|(GUI_TSinputType == TOUCH_MODE)) {
+		GUI_outOptn = true;
 	}
 	//save current TS state as previous state
 	GUI_previousTSstate.TouchDetected = GUI_currentTSstate.TouchDetected;

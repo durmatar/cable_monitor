@@ -56,13 +56,14 @@ typedef enum {
  *****************************************************************************/
 //Mode and Cable deteced
 extern bool GUI_cable_detected;
+extern bool GUI_cable_not_detected;
 extern GUI_mode_t GUI_mode;
 
 //General measurements
 extern uint32_t GUI_measAccuracy;
+extern float GUI_angle;
 extern float GUI_distance;
 extern float GUI_distanceDeviation;
-extern float GUI_angle;
 extern float GUI_current;
 
 //Raw measurements
@@ -75,6 +76,7 @@ extern OPTN_entry_t GUI_options[3];
 
 extern bool GUI_inputBtn;
 extern bool GUI_inputMeasReady;
+extern bool GUI_outOptn;
 
 /******************************************************************************
  * Functions

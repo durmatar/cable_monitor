@@ -1,0 +1,5 @@
+analytics.c:124:7:CALC_Angle	48	static
+analytics.c:147:7:CALC_ElCurrent	24	static
+analytics.c:163:7:CALC_Distance	48	static
+analytics.c:202:7:CALC_DistanceMode	24	static
+analytics.c:222:6:ANA_Handler	88	dynamic
