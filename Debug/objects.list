@@ -1,3 +1,4 @@
+"./Core/Src/analytics.o"
 "./Core/Src/lcd_gui.o"
 "./Core/Src/main.o"
 "./Core/Src/measuring.o"

@@ -2,38 +2,43 @@
  * @file
  * @brief See measuring.c
  *
- * Prefixes MEAS, ADC, DAC
+ * Prefixes ANA, CALC,
  *
  *****************************************************************************/
-
-#ifndef MEAS_H_
-#define MEAS_H_
-
-
+#ifndef INC_ANALYTICS_H_
+#define INC_ANALYTICS_H_
 /******************************************************************************
  * Includes
  *****************************************************************************/
-#include <stdbool.h>
-
-
+#include "stdint.h"
+#include "stdbool.h"
 /******************************************************************************
  * Defines
  *****************************************************************************/
-extern bool MEAS_data_ready;
-extern uint32_t MEAS_amplitude_left;
-extern uint32_t MEAS_amplitude_right;
+
+/******************************************************************************
+ * Variables
+ *****************************************************************************/
+//inputs
+extern bool ANA_inMeasReady;
+extern bool ANA_inBtn;
+extern uint32_t ANA_inAmpLeft;
+extern uint32_t ANA_inAmpRight;
+extern uint16_t ANA_inOptn[4];
+
+//outputs
+extern bool ANA_outStartHALL;
+extern bool ANA_outStartWPC;
+extern bool ANA_outDataReady;
+extern float ANA_outResults[4];
+extern bool ANA_measBusy;
 
 
 /******************************************************************************
  * Functions
  *****************************************************************************/
-void MEAS_GPIO_analog_init(void);
-void MEAS_timer_init(void);
-void ADC_reset(void);
-void ADC3_IN13_IN4_scan_init(void);
-void ADC3_IN11_IN6_scan_init(void);
-void ADC3_dual_scan_start(void);
+void ANA_Handler(void);
 
-void MEAS_analyse_data(void);
 
-#endif
+
+#endif /* INC_ANALYTICS_H_ */
