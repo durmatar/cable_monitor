@@ -1,0 +1,55 @@
+/**
+@mainpage Code-Cabelmonitor
+
+This demo_code is a template for the <b>Electronics-Project Modules</b>
+<b>ET.PM3: Cable-Monitor</b>
+@n in the <b>second year of the electronics engineering curriculum</b>
+at the School of Engineering of the Zurich University of Applied Sciences.
+
+
+@n The file measuring.c shows how to configure ADC, Timer and DMA.
+@n file
+@n file
+@n file
+
+@image html discovery_blu2.jpg
+
+The template code is written for the evaluation board
+<b>32F429IDISCOVERY (Discovery kit with STM32F429ZI MCU)</b>.
+
+
+Firmware Documentation Overwiev
+===
+
+What were the requierments?
+---
+Analysing the surpassed date from the previous desingned sensor board.
+@n Calcuating the distance from the measuret device to the monitor.
+@n Calculatig the angel in wihich the monitor is holed against the cabel.
+@n Additionaly if possible the cabel monitor schould calculate the value of 
+the current which flows throu the cabel.
+
+
+What has been achieved?
+---
+Detecing a cable regardless of the cabble type.
+@n Measuring and proccesissg the distanc to the cabel using the measurments captuered by the cap's.
+@n Measuring the current in an singel conductor cabel in a distance up to 10mm.
+@n A fine and proffessional looking graphical user inmterface. With various setting options.
+
+Content of this documentation
+---
+Maine page overview
+@n Measurement declarations
+@n Testing sheet with
+test scenarios, conditions, expected results, pass/fail criteria,
+achieved results, verdict and remarks where appropriate.
+
+
+---
+@authors Tarik Durmaz Jonas Bollhalder
+@date 23.12.2021
+
+
+@bug No known bugs.
+*/

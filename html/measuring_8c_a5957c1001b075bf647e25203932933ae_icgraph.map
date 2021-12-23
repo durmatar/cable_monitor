@@ -1,0 +1,7 @@
+<map id="ADC_config_timer" name="ADC_config_timer">
+<area shape="rect" id="node2" href="$measuring_8c.html#a543ad26654e664508a714eef12e2898c" title="Initialize the ADC to be triggered by a timer. " alt="" coords="197,5,321,32"/>
+<area shape="rect" id="node4" href="$measuring_8c.html#a0144c58be5ded635dfb5d0dc07cf2f84" title="Initialize ADC, timer and DMA for data acquisition in the background. " alt="" coords="197,56,321,83"/>
+<area shape="rect" id="node5" href="$measuring_8c.html#ae854a850430b4342740efa197e356b96" title="Initialize ADCs, timer and DMA for simultaneous dual ADC acquisition. " alt="" coords="182,107,337,133"/>
+<area shape="rect" id="node6" href="$measuring_8c.html#a1e9e4f2607eba3a201ed49497389445c" title="Initialize ADC, timer and DMA for sequential acquisition = scan mode. " alt="" coords="180,157,339,184"/>
+<area shape="rect" id="node3" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function. " alt="" coords="387,81,437,108"/>
+</map>

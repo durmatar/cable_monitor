@@ -1,0 +1,9 @@
+<map id="ADC_config_GPIO_analog" name="ADC_config_GPIO_analog">
+<area shape="rect" id="node2" href="$measuring_8c.html#a2761a5fc92e2be5af15827198e542351" title="Demonstration of the ADC in single conversion mode. " alt="" coords="243,5,372,32"/>
+<area shape="rect" id="node4" href="$measuring_8c.html#a543ad26654e664508a714eef12e2898c" title="Initialize the ADC to be triggered by a timer. " alt="" coords="245,56,369,83"/>
+<area shape="rect" id="node5" href="$measuring_8c.html#a0144c58be5ded635dfb5d0dc07cf2f84" title="Initialize ADC, timer and DMA for data acquisition in the background. " alt="" coords="245,107,369,133"/>
+<area shape="rect" id="node6" href="$measuring_8c.html#ae854a850430b4342740efa197e356b96" title="Initialize ADCs, timer and DMA for simultaneous dual ADC acquisition. " alt="" coords="230,157,385,184"/>
+<area shape="rect" id="node7" href="$measuring_8c.html#a1e9e4f2607eba3a201ed49497389445c" title="Initialize ADC, timer and DMA for sequential acquisition = scan mode. " alt="" coords="228,208,387,235"/>
+<area shape="rect" id="node8" href="$measuring_8c.html#ad25630aada5070a3fd60a238518ffc2b" title="Demonstrates the DAC. " alt="" coords="263,259,351,285"/>
+<area shape="rect" id="node3" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function. " alt="" coords="435,132,485,159"/>
+</map>
