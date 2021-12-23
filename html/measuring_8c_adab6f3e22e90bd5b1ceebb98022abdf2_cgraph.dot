@@ -1,0 +1,12 @@
+digraph "DMA2_Stream1_IRQHandler"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="DMA2_Stream1_IRQHandler",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Interrupt handler for DMA2 Stream1."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ADC_reset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$measuring_8c.html#ad33d4cf42023ab7762e61cddb0d4113a",tooltip="Resets the ADCs and the timer."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MEAS_analyse_data",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$measuring_8c.html#aa97e477e23391d0168acea4bf8b7b571",tooltip="Analyse data to detect sine amplitude."];
+}

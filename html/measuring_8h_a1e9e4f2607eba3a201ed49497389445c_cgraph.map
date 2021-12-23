@@ -1,0 +1,4 @@
+<map id="ADC_DMA_scan_demo" name="ADC_DMA_scan_demo">
+<area shape="rect" id="node2" href="$measuring_8c.html#a512b44dc7f5e2913eeaa7aa1d094fea0" title="Configure GPIOs in analog mode. " alt="" coords="212,5,387,32"/>
+<area shape="rect" id="node3" href="$measuring_8c.html#a5957c1001b075bf647e25203932933ae" title="Configure the timer to trigger an ADC. " alt="" coords="236,56,363,83"/>
+</map>
