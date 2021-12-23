@@ -69,8 +69,7 @@
 #define CALC_AMPHALLSENS		(float)(90)
 #define CALC_PIDANDPERM			(float)(4998556.330)
 
-#define CALC_LUTSIZE			7
-#define CALC_SENSORDISTANCE		40 //[mm]
+#define CALC_LUTSIZE			11
 
 /******************************************************************************
  * Variables
@@ -96,19 +95,20 @@ float ANA_hallLeft[10];
 float ANA_hallRight[10];
 
 // Distance [cm]
-float CALC_distanceLUT[CALC_LUTSIZE] = { 0, 10, 30, 50, 70, 100, 200};
+float CALC_distanceLUT[CALC_LUTSIZE] = { 0, 10, 20, 30, 40, 50, 70, 100, 150, 200, 300};
 
 // Measurments with 1L
-float CALC_wpcLeftL[CALC_LUTSIZE] = {1409,1289,1018,898,838,788,688};
-float CALC_wpcRightL[CALC_LUTSIZE] = {1379,1289,988,868,778,748,627};
+float CALC_wpcRightL[CALC_LUTSIZE] = {810,690,620,565,530,510,490,450,395,380,330};
+float CALC_wpcLeftL[CALC_LUTSIZE] = {795,740,683,570,540,510,490,460,430,420,410};
 
 // Measurment with LN
-float CALC_wpcLeftLN[CALC_LUTSIZE] = {1018,958,838,808,748,688,657};
-float CALC_wpcRightLN[CALC_LUTSIZE] = {1259,1138,868,778,687,657,627};
+float CALC_wpcRightLN[CALC_LUTSIZE] = {570,510,430,375,340,330,290,265,245,195,165};
+float CALC_wpcLeftLN[CALC_LUTSIZE] = {365,350,350,325,320,305,275,265,262,215,210};
+
 
 // Measurment with LNPE
-float CALC_wpcLeftLNPE[CALC_LUTSIZE] = {958,838,748,718,688,657,627};
-float CALC_wpcRightLNPE[CALC_LUTSIZE] = {1018,837,717,657,627,627,567};
+float CALC_wpcRightLNPE[CALC_LUTSIZE] = {450,363,306,283,273,267,263,237,215,198,170};
+float CALC_wpcLeftLNPE[CALC_LUTSIZE] = {315,292,280,263,260,255,242,235,220,211,204};
 
 // Array to LUTs
 float* CALC_wpcLeft[3] = {CALC_wpcLeftL,CALC_wpcLeftLN,CALC_wpcLeftLNPE};
@@ -119,21 +119,26 @@ float* CALC_wpcRight[3] = {CALC_wpcRightL,CALC_wpcRightLN,CALC_wpcRightLNPE};
  *****************************************************************************/
 
 /** ***************************************************************************
- * @brief Calculate Angle with three sides input
+ * @brief Calculate Angle with three length inputs
  *****************************************************************************/
-float CALC_Angle(float a, float b, float c){
-	// Calculate angle alpha from sides
-	float alpha = acosf((b*b+c*c-a*a)/(2*b*c));
+float CALC_Angle(float left, float right, float middle){
+	left = left / middle;
+	right = right / middle;
+	middle = 1;
 
-	// Reduce triangle
-	c = c/2;
-	a = sqrtf(b*b+c*c-2*b*c*cosf(alpha));
+	float x;
 
-	// Calculate searched angle
-	float x = asinf((b*sin(alpha))/(a));
+	if (left < (middle-0.2)) {
+		x = -45;
+		//-45° to 0°
+	} else if (right < (middle-0.2)){
+		//0° - 45°
+		x = 45;
+	} else {
+		x = 0;
+	}
 
-	//translate to correct system
-	x = x-90;
+
 
 	return x;
 }
@@ -168,8 +173,10 @@ float CALC_Distance(float* lutDistance, float* lutStrenght, float measurement){
 	d=-10;
 
 	// Catch to high and to low values
-	if((lutStrenght[CALC_LUTSIZE-1]>measurement)|(measurement>lutStrenght[0])){
-		return 5000;
+	if(lutStrenght[CALC_LUTSIZE-1]>measurement){
+		measurement = lutStrenght[CALC_LUTSIZE-1];
+	} else if (measurement>lutStrenght[0]) {
+		measurement = lutStrenght[0];
 	}
 
 	for(int i=0; i < CALC_LUTSIZE ; i++ ){
@@ -185,7 +192,7 @@ float CALC_Distance(float* lutDistance, float* lutStrenght, float measurement){
 
 	if(t==d){
 		float a = (lutDistance[t+1]-lutDistance[t])/(lutStrenght[t+1]-lutStrenght[t]);
-		distance = a*(measurement-lutStrenght[t]) + lutStrenght[t];
+		distance = a*(measurement-lutStrenght[t]) + lutDistance[t];
 	}
 
 	if(t==s){
@@ -302,7 +309,7 @@ void ANA_Handler(void){
 			}
 
 			// Angle
-			angle = CALC_Angle(meanRight, meanLeft, CALC_SENSORDISTANCE);
+			angle = CALC_Angle(meanRight, meanLeft, mean);
 
 			// Current
 			if ((mean<10)&(mean>0)) {
@@ -325,24 +332,44 @@ void ANA_Handler(void){
 			ANA_outDataReady = true;
 
 		} else { //transfer raw data
+			// Calculate means of all 4 inputs
+			float meanWPCright, meanWPCleft, meanHALLright, meanHALLleft;
+			meanHALLleft = 0;
+			meanHALLright = 0;
+			meanWPCleft = 0;
+			meanWPCright = 0;
+
+			int accuracy = ANA_inOptn[3];
+
+			for (int i = 0; i < accuracy; ++i) {
+				meanHALLleft = meanHALLleft + ANA_hallLeft[i];
+				meanHALLright = meanHALLright + ANA_hallRight[i];
+				meanWPCleft = meanWPCleft + ANA_wpcLeft[i];
+				meanWPCright = meanWPCright + ANA_wpcRight[i];
+			}
+			meanHALLleft = meanHALLleft / accuracy;
+			meanHALLright = meanHALLright / accuracy;
+			meanWPCleft = meanWPCleft / accuracy;
+			meanWPCright = meanWPCright / accuracy;
+
 			// Transfer results
-			ANA_outResults[0]=ANA_hallRight[0]; // HallRight
-			ANA_outResults[1]=ANA_hallLeft[0]; // HallLeft
-			ANA_outResults[2]=ANA_wpcRight[0]; //WPCRight
-			ANA_outResults[3]=ANA_wpcLeft[0]; //WPCLeft
+			ANA_outResults[0]=meanHALLright; // HallRight
+			ANA_outResults[1]=meanHALLleft; // HallLeft
+			ANA_outResults[2]=meanWPCright; //WPCRight
+			ANA_outResults[3]=meanWPCleft; //WPCLeft
 			ANA_outDataReady = true;
 		}
 
 	}
 
-	if (ANA_inOptn[2]==1) {
-		ANA_cycle = 0;
-	}
-
 	//end measurement when cycles are finished
 	//or button is pressed when in streaming mode
-	if ((ANA_cycle == ANA_inOptn[3])|(ANA_inBtn & (ANA_inOptn[2]==1))){
+	if (((ANA_cycle == ANA_inOptn[3])&!(ANA_inOptn[2]==1))|(ANA_inBtn & (ANA_inOptn[2]==1))){
 		ANA_measBusy = false;
+	}
+
+	// Set cycles to zero if measurement finished
+	if (ANA_cycle == ANA_inOptn[3]) {
 		ANA_cycle = 0;
 	}
 

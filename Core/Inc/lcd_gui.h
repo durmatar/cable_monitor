@@ -67,10 +67,10 @@ extern float GUI_distanceDeviation;
 extern float GUI_current;
 
 //Raw measurements
-extern uint32_t GUI_rawHallLeft;
-extern uint32_t GUI_rawHallRight;
-extern uint32_t GUI_rawWpcLeft;
-extern uint32_t GUI_rawWpcRight;
+extern float GUI_rawHallLeft;
+extern float GUI_rawHallRight;
+extern float GUI_rawWpcLeft;
+extern float GUI_rawWpcRight;
 
 extern OPTN_entry_t GUI_options[3];
 

@@ -55,10 +55,10 @@ float GUI_distanceDeviation = 0; ///< Standard deviation of distance
 float GUI_current = 0;			///< Current to display
 
 //Raw measurements
-uint32_t GUI_rawHallLeft = 0;
-uint32_t GUI_rawHallRight = 0;
-uint32_t GUI_rawWpcLeft = 0;
-uint32_t GUI_rawWpcRight = 0;
+float GUI_rawHallLeft = 0;
+float GUI_rawHallRight = 0;
+float GUI_rawWpcLeft = 0;
+float GUI_rawWpcRight = 0;
 
 OPTN_entry_t GUI_options[3] = {
 		{"Display Data","Analysed","Raw","",0,2,false},
@@ -362,34 +362,39 @@ void GUI_DrawMeasurement(void){
 	uint32_t x = 30;
 	uint32_t y = 125;
 	//Angle
-	snprintf(text,24,"Angle:    %4ddeg", (int)(GUI_angle));
-	BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
-	y = y+30;
-	//Distance
-	snprintf(text,24,"Distance: %4.1fmm", (float)(GUI_distance));
-	BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
-	if (GUI_options[2].active > 0) {
-		//Standard deviation
-		y = y+20;
-		snprintf(text,24,"Std.Dev.: %4dmm", (int)(GUI_distanceDeviation));
-		BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
-		//Measurement count
-		y = y+20;
-		BSP_LCD_SetFont(&Font16);
-		int t = 1;
-		if(GUI_options[2].active==1){
-			t = 5;
-		} else {
-			t = 10;
-		}
-		snprintf(text,24,"Accuracy: %4dx", t);
+	if ((-46>GUI_angle)&(GUI_angle<46)) {
+		snprintf(text,24,"Angle:    %4ddeg", (int)(GUI_angle));
 		BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
 	}
+	y = y+30;
+	//Distance
+	if (GUI_distance > -1) {
+		snprintf(text,24,"Distance: %4.1fmm", (float)(GUI_distance));
+		BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
+
+		if (GUI_options[2].active > 0) {
+			//Standard deviation
+			y = y+20;
+			snprintf(text,24,"Std.Dev.: %4.1fmm", (float)(GUI_distanceDeviation));
+			BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
+			//Measurement count
+			y = y+20;
+			BSP_LCD_SetFont(&Font16);
+			int t = 1;
+			if(GUI_options[2].active==1){
+				t = 5;
+			} else {
+				t = 10;
+			}
+			snprintf(text,24,"Accuracy: %4dx", t);
+			BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
+		}
+	}
 	//Current
-	if (GUI_distance <= 10) {
+	if ((GUI_distance <= 10)&(GUI_distance > -1)) {
 		y = y+30;
 		BSP_LCD_SetFont(&Font16);
-		snprintf(text,24,"Current:  %4dA", (int)(GUI_current));
+		snprintf(text,24,"Current:  %4.1fA",(float)(GUI_current));
 		BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
 	}
 	//Display measuring type
@@ -482,10 +487,10 @@ void GUI_DrawRaw(void){
 	BSP_LCD_DisplayStringAt(x, y, (uint8_t *)"Hall Sensors:", LEFT_MODE);
 	y = y+20;
 	BSP_LCD_SetFont(&Font16);
-	snprintf(text,24,"Right:    %5d", (int)(GUI_rawHallRight));
+	snprintf(text,24,"Right:    %5.2f",(GUI_rawHallRight));
 	BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
 	y = y+20;
-	snprintf(text,24,"Left:     %5d", (int)(GUI_rawHallLeft));
+	snprintf(text,24,"Left:     %5.2f",(GUI_rawHallLeft));
 	BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
 	y = y+35;
 	//WPC Sensors
@@ -493,10 +498,10 @@ void GUI_DrawRaw(void){
 	BSP_LCD_DisplayStringAt(x, y, (uint8_t *)"WPC Sensors:", LEFT_MODE);
 	y = y+20;
 	BSP_LCD_SetFont(&Font16);
-	snprintf(text,24,"Right:    %5d", (int)(GUI_rawWpcRight));
+	snprintf(text,24,"Right:    %5.2f",(GUI_rawWpcRight));
 	BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
 	y = y+20;
-	snprintf(text,24,"Left:     %5d", (int)(GUI_rawWpcLeft));
+	snprintf(text,24,"Left:     %5.2f",(GUI_rawWpcLeft));
 	BSP_LCD_DisplayStringAt(x, y, (uint8_t *)text, LEFT_MODE);
 }
 
@@ -656,10 +661,10 @@ void GUI_TSHandler(void){
 					GUI_TSinputType = TOUCH_OPTN_CHANGE;
 				} else if ((X>120)&(GUI_options[0].active!=1)) {
 					GUI_options[0].active=1;
-					GUI_options[1].disabled = true;
-					GUI_options[1].active = 0;
-					GUI_options[2].disabled = true;
-					GUI_options[2].active = 0;
+					//GUI_options[1].disabled = true;
+					//GUI_options[1].active = 0;
+					//GUI_options[2].disabled = true;
+					//GUI_options[2].active = 0;
 					GUI_TSinputType = TOUCH_OPTN_CHANGE;
 				}
 			} else if ((160<Y)&(Y<200)&!(GUI_options[1].disabled)){
@@ -669,8 +674,8 @@ void GUI_TSHandler(void){
 					GUI_TSinputType = TOUCH_OPTN_CHANGE;
 				} else if ((X>120)&(GUI_options[1].active!=1)) {
 					GUI_options[1].active = 1;
-					GUI_options[2].disabled = true;
-					GUI_options[2].active = 0;
+					//GUI_options[2].disabled = true;
+					//GUI_options[2].active = 0;
 					GUI_TSinputType = TOUCH_OPTN_CHANGE;
 				}
 			} else if ((240<Y)&(Y<280)&!(GUI_options[2].disabled)){
