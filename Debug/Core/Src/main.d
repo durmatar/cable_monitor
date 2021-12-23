@@ -44,8 +44,8 @@ Core/Src/main.o: ../Core/Src/main.c \
  ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/stmpe811.h \
  ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/ts.h \
  ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/io.h \
- ../Core/Inc/main.h ../Core/Inc/pushbutton.h ../Core/Inc/menu.h \
- ../Core/Inc/measuring.h
+ ../Core/Inc/main.h ../Core/Inc/pushbutton.h ../Core/Inc/measuring.h \
+ ../Core/Inc/lcd_gui.h ../Core/Inc/analytics.h
 
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 
@@ -141,6 +141,8 @@ Core/Src/main.o: ../Core/Src/main.c \
 
 ../Core/Inc/pushbutton.h:
 
-../Core/Inc/menu.h:
-
 ../Core/Inc/measuring.h:
+
+../Core/Inc/lcd_gui.h:
+
+../Core/Inc/analytics.h:

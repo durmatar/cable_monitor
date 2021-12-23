@@ -45,6 +45,6 @@ stm32f429i_discovery_lcd.c:1198:6:BSP_LCD_DisplayOn	8	static
 stm32f429i_discovery_lcd.c:1209:6:BSP_LCD_DisplayOff	8	static
 stm32f429i_discovery_lcd.c:1224:13:BSP_LCD_MspInit	64	static
 stm32f429i_discovery_lcd.c:1308:6:BSP_LCD_DrawPixel	24	static
-stm32f429i_discovery_lcd.c:1320:13:DrawChar	40	static
-stm32f429i_discovery_lcd.c:1377:13:FillBuffer	32	static
-stm32f429i_discovery_lcd.c:1408:13:ConvertLineToARGB8888	32	static
+stm32f429i_discovery_lcd.c:1322:13:DrawChar	40	static
+stm32f429i_discovery_lcd.c:1379:13:FillBuffer	32	static
+stm32f429i_discovery_lcd.c:1410:13:ConvertLineToARGB8888	32	static

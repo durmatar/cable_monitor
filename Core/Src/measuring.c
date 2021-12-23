@@ -92,7 +92,6 @@ static uint32_t ADC_samples[2*ADC_NUMS];///< ADC values of max. 2 input channels
  * Functions
  *****************************************************************************/
 
-
 /** ***************************************************************************
  * @brief Configure GPIOs in analog mode.
  *
@@ -145,7 +144,7 @@ void MEAS_timer_init(void)
 
 
 /** ***************************************************************************
- * @brief Initialize ADC, timer and DMA for sequential acquisition = scan mode
+ * @brief Initialize ADC, timer and DMA for WPC measurement
  *
  * Uses ADC2 and DMA2_Stream1 channel2
  * @n The ADC2 trigger is set to TIM2 TRGO event
@@ -183,7 +182,7 @@ void ADC3_IN13_IN4_scan_init(void)
 
 
 /** ***************************************************************************
- * @brief Initialize ADC, timer and DMA for sequential acquisition = scan mode
+ * @brief Initialize ADC, timer and DMA for HALL measurement
  *
  * Uses ADC2 and DMA2_Stream1 channel2
  * @n The ADC2 trigger is set to TIM2 TRGO event
@@ -290,66 +289,6 @@ void DMA2_Stream1_IRQHandler(void)
 	}
 }
 
-
-/** ***************************************************************************
- * @brief Draw buffer data as curves
- *
- * and write the first two samples as numbers.
- * @n After drawing, the buffer is cleared to get ready for the next run.
- * @note Drawing outside of the display crashes the system!
- * @todo Create new .h and .c files for calculating and displaying
- * of signals and results.
- * The code of this function was put into the same file for debugging purposes
- * and should be moved to a separate file in the final version
- * because displaying is not related to measuring.
- *****************************************************************************/
-void MEAS_show_data(void)
-{
-	const uint32_t Y_OFFSET = 260;
-	const uint32_t X_SIZE = 240;
-	const uint32_t f = (1 << ADC_DAC_RES) / Y_OFFSET + 1;	// Scaling factor
-	uint32_t data;
-	uint32_t data_last;
-	/* Clear the display */
-	BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
-	BSP_LCD_FillRect(0, 0, X_SIZE, Y_OFFSET+1);
-	/* Write first 2 samples as numbers */
-	BSP_LCD_SetFont(&Font24);
-	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
-	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-	char text[16];
-	snprintf(text, 15, "Amp left  %4d", (int)(MEAS_amplitude_left));
-	BSP_LCD_DisplayStringAt(0, 50, (uint8_t *)text, LEFT_MODE);
-	snprintf(text, 15, "Amp right %4d", (int)(MEAS_amplitude_right));
-	BSP_LCD_DisplayStringAt(0, 80, (uint8_t *)text, LEFT_MODE);
-	/* Draw the  values of input channel 1 as a curve */
-	BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
-	data = ADC_samples[MEAS_INPUT_COUNT*0] / f;
-	for (uint32_t i = 1; i < ADC_NUMS; i++){
-		data_last = data;
-		data = (ADC_samples[MEAS_INPUT_COUNT*i]) / f;
-		if (data > Y_OFFSET) { data = Y_OFFSET; }// Limit value, prevent crash
-		BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
-	}
-	/* Draw the  values of input channel 2 (if present) as a curve */
-	if (MEAS_INPUT_COUNT == 2) {
-		BSP_LCD_SetTextColor(LCD_COLOR_RED);
-		data = ADC_samples[MEAS_INPUT_COUNT*0+1] / f;
-		for (uint32_t i = 1; i < ADC_NUMS; i++){
-			data_last = data;
-			data = (ADC_samples[MEAS_INPUT_COUNT*i+1]) / f;
-			if (data > Y_OFFSET) { data = Y_OFFSET; }// Limit value, prevent crash
-			BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
-		}
-	}
-	/* Clear buffer and flag */
-	for (uint32_t i = 0; i < ADC_NUMS; i++){
-		ADC_samples[2*i] = 0;
-		ADC_samples[2*i+1] = 0;
-	}
-	ADC_sample_count = 0;
-}
-
 /** ***************************************************************************
  * @brief Analyse data to detect sine amplitude
  *****************************************************************************/
@@ -362,7 +301,7 @@ void MEAS_analyse_data(void)
 		buffer_right_channel[i] = ADC_samples[((2*i)+1)];
 	}
 
-	//sort arrays
+	//sort arrays from low to high
 	uint32_t temp_left;
 	uint32_t temp_right;
 	for (int i = 0; i < ADC_NUMS; ++i) {
@@ -372,7 +311,7 @@ void MEAS_analyse_data(void)
 				buffer_left_channel[i]=buffer_left_channel[j];
 				buffer_left_channel[j]=temp_left;
 			}
-			if (buffer_right_channel[i]<buffer_right_channel[j]) {
+			if (buffer_right_channel[i]>buffer_right_channel[j]) {
 				temp_right = buffer_right_channel[i];
 				buffer_right_channel[i]=buffer_right_channel[j];
 				buffer_right_channel[j]=temp_right;
@@ -406,10 +345,10 @@ void MEAS_analyse_data(void)
 	check_sum_right = check_sum_right / 10;
 
 	//convert low values to high values
-	//for (int i = 0; i < 5; ++i) {
-	//	values_left[i] = ADC_MAX_VALUE - values_left[i];
-	//	values_right[i] = ADC_MAX_VALUE - values_right[i];
-	//}
+	for (int i = 0; i < 5; ++i) {
+		values_left[i] = ADC_MAX_VALUE - values_left[i];
+		values_right[i] = ADC_MAX_VALUE - values_right[i];
+	}
 
 	//calculate mean of all 10 values
 	uint32_t sum_left = 0;
@@ -421,8 +360,8 @@ void MEAS_analyse_data(void)
 	sum_left = sum_left / 10;
 	sum_right = sum_right / 10;
 
-	MEAS_amplitude_left = sum_left;
-	MEAS_amplitude_right = sum_right;
+	MEAS_amplitude_left = sum_left-(ADC_MAX_VALUE/2);
+	MEAS_amplitude_right = sum_right-(ADC_MAX_VALUE/2);
 }
 
 

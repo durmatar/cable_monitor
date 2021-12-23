@@ -5,6 +5,8 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/analytics.c \
+../Core/Src/lcd_gui.c \
 ../Core/Src/main.c \
 ../Core/Src/measuring.c \
 ../Core/Src/menu.c \
@@ -13,6 +15,8 @@ C_SRCS += \
 ../Core/Src/system_stm32f4xx.c 
 
 OBJS += \
+./Core/Src/analytics.o \
+./Core/Src/lcd_gui.o \
 ./Core/Src/main.o \
 ./Core/Src/measuring.o \
 ./Core/Src/menu.o \
@@ -21,6 +25,8 @@ OBJS += \
 ./Core/Src/system_stm32f4xx.o 
 
 C_DEPS += \
+./Core/Src/analytics.d \
+./Core/Src/lcd_gui.d \
 ./Core/Src/main.d \
 ./Core/Src/measuring.d \
 ./Core/Src/menu.d \

@@ -25,15 +25,13 @@
 #include "stm32f429i_discovery_lcd.h"
 #include "stm32f429i_discovery_ts.h"
 
-#include "main.h"
-
 #include "menu.h"
 
 
 /******************************************************************************
  * Defines
  *****************************************************************************/
-#define MENU_FONT				&Font12	///< Possible font sizes: 8 12 16 20 24
+#define MENU_FONT				&Font20	///< Possible font sizes: 8 12 16 20 24
 #define MENU_HEIGHT				40		///< Height of menu bar
 #define MENU_MARGIN				2		///< Margin around a menu entry
 /** Position of menu bar: 0 = top, (BSP_LCD_GetYSize()-MENU_HEIGHT) = bottom */
@@ -65,21 +63,24 @@ static MENU_entry_t MENU_entry[MENU_ENTRY_COUNT] = {
 void MENU_draw(void)
 {
 	BSP_LCD_SetFont(MENU_FONT);
-	uint32_t x, y, m, w, h;
-	y = MENU_Y;
+	uint32_t x, xr, y, m, w, h;
+	y = 0;
 	m = MENU_MARGIN;
 	w = BSP_LCD_GetXSize()/MENU_ENTRY_COUNT;
 	h = MENU_HEIGHT;
 	for (uint32_t i = 0; i < MENU_ENTRY_COUNT; i++) {
 		x = i*w;
+		if (i) {
+			xr = 0;
+		} else {
+			xr = w;
+		}
 		BSP_LCD_SetTextColor(MENU_entry[i].back_color);
-		BSP_LCD_FillRect(x+m, y+m, w-2*m, h-2*m);
+		BSP_LCD_FillRect(xr+m, y+m, w-2*m, h-2*m);
 		BSP_LCD_SetBackColor(MENU_entry[i].back_color);
 		BSP_LCD_SetTextColor(MENU_entry[i].text_color);
-		BSP_LCD_DisplayStringAt(x+3*m, y+3*m,
-				(uint8_t *)MENU_entry[i].line1, LEFT_MODE);
-		BSP_LCD_DisplayStringAt(x+3*m, y+h/2,
-				(uint8_t *)MENU_entry[i].line2, LEFT_MODE);
+		BSP_LCD_DisplayStringAt(x+3*m, BSP_LCD_GetYSize()-h+3*m,(uint8_t *)MENU_entry[i].line1, LEFT_MODE);
+		//BSP_LCD_DisplayStringAt(x+3*m, y+h/2,(uint8_t *)MENU_entry[i].line2, LEFT_MODE);
 	}
 }
 

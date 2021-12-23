@@ -22,8 +22,9 @@
 
 #include "main.h"
 #include "pushbutton.h"
-#include "menu.h"
 #include "measuring.h"
+#include "lcd_gui.h"
+#include "analytics.h"
 
 
 /******************************************************************************
@@ -34,7 +35,7 @@
 /******************************************************************************
  * Variables
  *****************************************************************************/
-
+bool draw_lcd = false;
 
 /******************************************************************************
  * Functions
@@ -61,17 +62,12 @@ int main(void) {
 	BSP_LCD_Clear(LCD_COLOR_WHITE);
 
 	BSP_TS_Init(BSP_LCD_GetXSize(), BSP_LCD_GetYSize());	// Touchscreen
-	/* Uncomment next line to enable touchscreen interrupt */
-	// BSP_TS_ITConfig();					// Enable Touchscreen interrupt
 
 	PB_init();							// Initialize the user pushbutton
 	PB_enableIRQ();						// Enable interrupt on user pushbutton
 
 	BSP_LED_Init(LED3);					// Toggles in while loop
 	BSP_LED_Init(LED4);					// Is toggled by user button
-
-	MENU_draw();						// Draw the menu
-	MENU_hint();						// Show hint at startup
 
 	gyro_disable();						// Disable gyro, use those analog inputs
 
@@ -82,34 +78,91 @@ int main(void) {
 	while (1) {							// Infinitely loop in main function
 		BSP_LED_Toggle(LED3);			// Visual feedback when running
 
-		if (MEAS_data_ready) {			// Show data if new data available
-			MEAS_data_ready = false;
-			MEAS_show_data();
-		}
-
 		if (PB_pressed()) {				// Check if user pushbutton was pressed
-			BSP_LED_Toggle(LED4);
+			ANA_inBtn = true;			// Send to analytics handler
+			GUI_inputBtn = true;		// Send to site handler
 		}
 
-		/* Comment next line if touchscreen interrupt is enabled */
-		MENU_check_transition();
+		if (MEAS_data_ready) {			// Show data if new data available
+			ANA_inAmpLeft = MEAS_amplitude_left;
+			ANA_inAmpRight = MEAS_amplitude_right;
+			ANA_inMeasReady = true;		// Send to analytics handler
+			MEAS_data_ready = false;	// Reset meas data ready bit
+		}
 
-		switch (MENU_get_transition()) {	// Handle user menu choice
-		case MENU_NONE:					// No transition => do nothing
-			break;
-		case MENU_ZERO:					//HALL PC1 PF8
+		if (ANA_outStartHALL) {
 			ADC3_IN11_IN6_scan_init();
 			ADC3_dual_scan_start();
-			break;
-		case MENU_ONE:					//WPC  PC3 PF6
-			ADC3_IN13_IN4_scan_init();
-			ADC3_dual_scan_start();
-			break;
-		default:						// Should never occur
-			break;
+			ANA_outStartHALL = false;
 		}
 
-		HAL_Delay(50);					// Wait or sleep
+		if (ANA_outStartWPC) {
+			ADC3_IN13_IN4_scan_init();
+			ADC3_dual_scan_start();
+			ANA_outStartWPC = false;
+		}
+
+		if (ANA_outDataReady) {
+			//Transfer Data
+			if (ANA_inOptn[1]==0) {
+				//Analysed
+				if (ANA_outResults[1]<5000) {
+					GUI_angle = ANA_outResults[0];
+					GUI_distance = ANA_outResults[1];
+					GUI_distanceDeviation = ANA_outResults[2];
+					GUI_current = ANA_outResults[3];
+					GUI_cable_detected = true;
+				} else {
+					GUI_angle = 90;
+					GUI_distance = -1;
+					GUI_distanceDeviation = -1;
+					GUI_current = -1;
+					GUI_cable_not_detected = true;
+				}
+
+
+			} else {
+				//Raw
+				GUI_rawHallRight = ANA_outResults[0];
+				GUI_rawHallLeft = ANA_outResults[1];
+				GUI_rawWpcRight = ANA_outResults[2];
+				GUI_rawWpcLeft = ANA_outResults[3];
+			}
+			GUI_inputMeasReady = true;
+			ANA_outDataReady = false;
+		}
+
+		if (ANA_measBusy) {
+			BSP_LED_On(LED4);
+		} else {
+			BSP_LED_Off(LED4);
+		}
+
+		if (GUI_outOptn) {						// Check if Options were changed
+			ANA_inOptn[0]=GUI_mode;				// Transfer mode
+			ANA_inOptn[1]=GUI_options[0].active;// Transfer data type
+			ANA_inOptn[2]=GUI_options[1].active;// Transfer measuring type
+			switch (GUI_options[2].active) {	// Transfer accuracy
+				case 0:
+					ANA_inOptn[3]=1;
+					break;
+				case 1:
+					ANA_inOptn[3]=5;
+					break;
+				case 2:
+					ANA_inOptn[3]=10;
+					break;
+				default:
+					break;
+			}
+			GUI_outOptn = false;				// Reset option bit
+		}
+
+		//Analytics handler
+		ANA_Handler();
+
+		//Site handler
+		GUI_SiteHandler();
 	}
 }
 
