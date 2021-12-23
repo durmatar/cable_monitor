@@ -11,7 +11,7 @@ lcd_gui.c:233:6:GUI_DrawTopMode	40	static
 lcd_gui.c:283:6:GUI_DrawTopOptions	40	static
 lcd_gui.c:314:6:GUI_ClearSite	8	static
 lcd_gui.c:327:6:GUI_DrawMeasurement	72	static
-lcd_gui.c:414:6:GUI_DrawOptions	48	static
-lcd_gui.c:472:6:GUI_DrawRaw	48	static
-lcd_gui.c:510:6:GUI_SiteHandler	8	static
-lcd_gui.c:617:6:GUI_TSHandler	16	static
+lcd_gui.c:418:6:GUI_DrawOptions	48	static
+lcd_gui.c:476:6:GUI_DrawRaw	56	static
+lcd_gui.c:514:6:GUI_SiteHandler	8	static
+lcd_gui.c:621:6:GUI_TSHandler	16	static

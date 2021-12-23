@@ -106,14 +106,14 @@ int main(void) {
 			//Transfer Data
 			if (ANA_inOptn[1]==0) {
 				//Analysed
-				if (ANA_outResults[1]<5000) {
+				if (ANA_outResults[1]<300) {
 					GUI_angle = ANA_outResults[0];
 					GUI_distance = ANA_outResults[1];
 					GUI_distanceDeviation = ANA_outResults[2];
 					GUI_current = ANA_outResults[3];
 					GUI_cable_detected = true;
 				} else {
-					GUI_angle = 90;
+					GUI_angle = 100;
 					GUI_distance = -1;
 					GUI_distanceDeviation = -1;
 					GUI_current = -1;
