@@ -8,10 +8,10 @@ at the School of Engineering of the Zurich University of Applied Sciences.
 
 
 @n The file measuring.c shows how to configure ADC, Timer and DMA.
-@n file
-@n file
-@n file
-
+@n The file analytics.c shows drifferent configurations for voltage measuring with ADC's
+@n The file lcd_gui.c shows the implementation of the graphical user Interface
+@n The file menu.c initializes and displays the menu
+ 
 @image html discovery_blu2.jpg
 
 The template code is written for the evaluation board

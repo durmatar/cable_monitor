@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['coding_5fguidelines_2edox_0',['coding_guidelines.dox',['../coding__guidelines_8dox.html',1,'']]]
+  ['analytics_2ec_0',['analytics.c',['../analytics_8c.html',1,'']]],
+  ['analytics_2eh_1',['analytics.h',['../analytics_8h.html',1,'']]]
 ];

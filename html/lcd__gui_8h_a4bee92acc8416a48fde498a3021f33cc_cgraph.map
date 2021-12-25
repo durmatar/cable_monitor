@@ -1,0 +1,5 @@
+<map id="GUI_DrawMeasurement" name="GUI_DrawMeasurement">
+<area shape="rect" id="node1" title="Display measurements." alt="" coords="5,31,164,57"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Draw options field to top bar." alt="" coords="212,5,316,32"/>
+<area shape="rect" id="node3" href="$lcd__gui_8c.html#a875798f9e1bbe7faad1f82ec69ef4e89" title="Wrapper to draw filled rectangle." alt="" coords="364,31,491,57"/>
+</map>

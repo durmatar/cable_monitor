@@ -20,15 +20,7 @@
  * @image html demo_screenshot_board.jpg
  *
  *
- * HW used for the demonstrations
- * ==============================
- * A simple HW was used for testing the code.
- * It is connected to the pins marked in red in the above image.
- *
- * @image html demo_board_schematic.png
- *
- * Of course the code runs also without this HW.
- * Simply connect a signal or waveform generator to the input(s).
+
  *
  *
  * @anchor HowTo

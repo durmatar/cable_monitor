@@ -1,0 +1,9 @@
+<map id="GUI_LCD_DrawRect" name="GUI_LCD_DrawRect">
+<area shape="rect" id="node1" title="Wrapper to draw rectangle." alt="" coords="465,81,604,108"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#a9884930bdc0255871dba817e790d4db1" title="Draw Mode Selection." alt="" coords="279,5,409,32"/>
+<area shape="rect" id="node5" href="$lcd__gui_8c.html#a5d8cdb6f40844180604c20481e833767" title="Draw options site." alt="" coords="281,56,407,83"/>
+<area shape="rect" id="node6" href="$lcd__gui_8c.html#ab24cb45a33cc955c0514173058103c0a" title="Draw Mode field to Top Bar." alt="" coords="277,107,411,133"/>
+<area shape="rect" id="node7" href="$lcd__gui_8c.html#af6116af3777e82071d35aad6bc676ff1" title="Draw options field to top bar." alt="" coords="271,157,417,184"/>
+<area shape="rect" id="node3" href="$lcd__gui_8c.html#aabf059fd8f36ce87100ad080b424abb5" title="Manage LCD." alt="" coords="104,81,223,108"/>
+<area shape="rect" id="node4" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,81,56,108"/>
+</map>

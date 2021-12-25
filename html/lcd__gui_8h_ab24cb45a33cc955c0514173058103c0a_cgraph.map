@@ -1,0 +1,5 @@
+<map id="GUI_DrawTopMode" name="GUI_DrawTopMode">
+<area shape="rect" id="node1" title="Draw Mode field to Top Bar." alt="" coords="5,31,139,57"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#a6b80bd4451ee6ffe53bb01169f63f96f" title="Wrapper to draw rectangle." alt="" coords="187,5,325,32"/>
+<area shape="rect" id="node3" href="$lcd__gui_8c.html#a875798f9e1bbe7faad1f82ec69ef4e89" title="Wrapper to draw filled rectangle." alt="" coords="193,56,319,83"/>
+</map>

@@ -1,15 +1,21 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
-  ['meas_5fanalyse_5famplitude_1',['MEAS_analyse_amplitude',['../measuring_8h.html#adb3c4a7e0ee5c32fa186ad0d8fa50443',1,'measuring.h']]],
-  ['meas_5fanalyse_5fdata_2',['MEAS_analyse_data',['../measuring_8h.html#aa97e477e23391d0168acea4bf8b7b571',1,'MEAS_analyse_data(void):&#160;measuring.c'],['../measuring_8c.html#aa97e477e23391d0168acea4bf8b7b571',1,'MEAS_analyse_data(void):&#160;measuring.c']]],
-  ['meas_5fgpio_5fanalog_5finit_3',['MEAS_GPIO_analog_init',['../measuring_8h.html#a645930ff74ceaacb90aca99fae865f8f',1,'MEAS_GPIO_analog_init(void):&#160;measuring.c'],['../measuring_8c.html#a645930ff74ceaacb90aca99fae865f8f',1,'MEAS_GPIO_analog_init(void):&#160;measuring.c']]],
-  ['meas_5fshow_5fdata_4',['MEAS_show_data',['../measuring_8h.html#af3778dd3469657b95ea6a05c1fe4de0a',1,'MEAS_show_data(void):&#160;measuring.c'],['../measuring_8c.html#af3778dd3469657b95ea6a05c1fe4de0a',1,'MEAS_show_data(void):&#160;measuring.c']]],
-  ['meas_5ftimer_5finit_5',['MEAS_timer_init',['../measuring_8h.html#a2ace7017c3957ead5cd587fc6fae0290',1,'MEAS_timer_init(void):&#160;measuring.c'],['../measuring_8c.html#a2ace7017c3957ead5cd587fc6fae0290',1,'MEAS_timer_init(void):&#160;measuring.c']]],
-  ['menu_5fcheck_5ftransition_6',['MENU_check_transition',['../menu_8h.html#a88e016ed6bb3eb9cfe66a3009bc6fbcf',1,'MENU_check_transition(void):&#160;menu.c'],['../menu_8c.html#a88e016ed6bb3eb9cfe66a3009bc6fbcf',1,'MENU_check_transition(void):&#160;menu.c']]],
-  ['menu_5fdraw_7',['MENU_draw',['../menu_8h.html#a2cbb4c209c599e91da57c0d6cf8f710e',1,'MENU_draw(void):&#160;menu.c'],['../menu_8c.html#a2cbb4c209c599e91da57c0d6cf8f710e',1,'MENU_draw(void):&#160;menu.c']]],
-  ['menu_5fget_5fentry_8',['MENU_get_entry',['../menu_8h.html#a80845669eec34f1bd0841bfcf3a98c12',1,'MENU_get_entry(const MENU_item_t item):&#160;menu.c'],['../menu_8c.html#a80845669eec34f1bd0841bfcf3a98c12',1,'MENU_get_entry(const MENU_item_t item):&#160;menu.c']]],
-  ['menu_5fget_5ftransition_9',['MENU_get_transition',['../menu_8h.html#a3de77014a7c52cdf6ff1f973eee6f3f6',1,'MENU_get_transition(void):&#160;menu.c'],['../menu_8c.html#a3de77014a7c52cdf6ff1f973eee6f3f6',1,'MENU_get_transition(void):&#160;menu.c']]],
-  ['menu_5fhint_10',['MENU_hint',['../menu_8h.html#a62e02a141652e1f34b11f73547ce6bc2',1,'MENU_hint(void):&#160;menu.c'],['../menu_8c.html#a62e02a141652e1f34b11f73547ce6bc2',1,'MENU_hint(void):&#160;menu.c']]],
-  ['menu_5fset_5fentry_11',['MENU_set_entry',['../menu_8h.html#a0c30c43e33dc428490cdf655dce86e3a',1,'MENU_set_entry(const MENU_item_t item, const MENU_entry_t entry):&#160;menu.c'],['../menu_8c.html#a0c30c43e33dc428490cdf655dce86e3a',1,'MENU_set_entry(const MENU_item_t item, const MENU_entry_t entry):&#160;menu.c']]]
+  ['gui_5fclearsite_0',['GUI_ClearSite',['../lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07',1,'lcd_gui.c']]],
+  ['gui_5fdrawhint_1',['GUI_DrawHint',['../lcd__gui_8h.html#a2aad073fe21f04b3de56ec7b2bba1d4e',1,'GUI_DrawHint(void):&#160;lcd_gui.c'],['../lcd__gui_8c.html#a2aad073fe21f04b3de56ec7b2bba1d4e',1,'GUI_DrawHint(void):&#160;lcd_gui.c']]],
+  ['gui_5fdrawmeasurement_2',['GUI_DrawMeasurement',['../lcd__gui_8h.html#a4bee92acc8416a48fde498a3021f33cc',1,'GUI_DrawMeasurement(void):&#160;lcd_gui.c'],['../lcd__gui_8c.html#a4bee92acc8416a48fde498a3021f33cc',1,'GUI_DrawMeasurement(void):&#160;lcd_gui.c']]],
+  ['gui_5fdrawmodesel_3',['GUI_DrawModeSel',['../lcd__gui_8h.html#a9884930bdc0255871dba817e790d4db1',1,'GUI_DrawModeSel(void):&#160;lcd_gui.c'],['../lcd__gui_8c.html#a9884930bdc0255871dba817e790d4db1',1,'GUI_DrawModeSel(void):&#160;lcd_gui.c']]],
+  ['gui_5fdrawoptions_4',['GUI_DrawOptions',['../lcd__gui_8h.html#a5d8cdb6f40844180604c20481e833767',1,'GUI_DrawOptions(void):&#160;lcd_gui.c'],['../lcd__gui_8c.html#a5d8cdb6f40844180604c20481e833767',1,'GUI_DrawOptions(void):&#160;lcd_gui.c']]],
+  ['gui_5fdrawraw_5',['GUI_DrawRaw',['../lcd__gui_8h.html#a95632210faa571570af20377684f1bfe',1,'GUI_DrawRaw(void):&#160;lcd_gui.c'],['../lcd__gui_8c.html#a95632210faa571570af20377684f1bfe',1,'GUI_DrawRaw(void):&#160;lcd_gui.c']]],
+  ['gui_5fdrawtopmode_6',['GUI_DrawTopMode',['../lcd__gui_8h.html#ab24cb45a33cc955c0514173058103c0a',1,'GUI_DrawTopMode(void):&#160;lcd_gui.c'],['../lcd__gui_8c.html#ab24cb45a33cc955c0514173058103c0a',1,'GUI_DrawTopMode(void):&#160;lcd_gui.c']]],
+  ['gui_5fdrawtopoptions_7',['GUI_DrawTopOptions',['../lcd__gui_8h.html#af6116af3777e82071d35aad6bc676ff1',1,'GUI_DrawTopOptions(void):&#160;lcd_gui.c'],['../lcd__gui_8c.html#af6116af3777e82071d35aad6bc676ff1',1,'GUI_DrawTopOptions(void):&#160;lcd_gui.c']]],
+  ['gui_5flcd_5fdrawcircle_8',['GUI_LCD_DrawCircle',['../lcd__gui_8c.html#afd74d6d95fc7c4036ceba5fd02bcfdd8',1,'lcd_gui.c']]],
+  ['gui_5flcd_5fdrawhline_9',['GUI_LCD_DrawHLine',['../lcd__gui_8c.html#a97b1d8942ce7af92f8350c619965357a',1,'lcd_gui.c']]],
+  ['gui_5flcd_5fdrawrect_10',['GUI_LCD_DrawRect',['../lcd__gui_8c.html#a6b80bd4451ee6ffe53bb01169f63f96f',1,'lcd_gui.c']]],
+  ['gui_5flcd_5fdrawvline_11',['GUI_LCD_DrawVLine',['../lcd__gui_8c.html#a66f108b6b6c56c3c8b695fc24cd71636',1,'lcd_gui.c']]],
+  ['gui_5flcd_5ffillcircle_12',['GUI_LCD_FillCircle',['../lcd__gui_8c.html#ada32599940a722b776fc7f559ba1efb7',1,'lcd_gui.c']]],
+  ['gui_5flcd_5ffillrect_13',['GUI_LCD_FillRect',['../lcd__gui_8c.html#a875798f9e1bbe7faad1f82ec69ef4e89',1,'lcd_gui.c']]],
+  ['gui_5fsitehandler_14',['GUI_SiteHandler',['../lcd__gui_8h.html#aabf059fd8f36ce87100ad080b424abb5',1,'GUI_SiteHandler(void):&#160;lcd_gui.c'],['../lcd__gui_8c.html#aabf059fd8f36ce87100ad080b424abb5',1,'GUI_SiteHandler(void):&#160;lcd_gui.c']]],
+  ['gui_5fts_5fgetstate_15',['GUI_TS_GetState',['../lcd__gui_8c.html#a152c3b48a9f1055c7a53fb7d0fc53010',1,'lcd_gui.c']]],
+  ['gui_5ftshandler_16',['GUI_TSHandler',['../lcd__gui_8h.html#a76a25585ca83ce1b4d93655638e5380a',1,'GUI_TSHandler(void):&#160;lcd_gui.c'],['../lcd__gui_8c.html#a76a25585ca83ce1b4d93655638e5380a',1,'GUI_TSHandler(void):&#160;lcd_gui.c']]],
+  ['gyro_5fdisable_17',['gyro_disable',['../main_8c.html#a9506db1724e530dd11bccbdd8968998f',1,'main.c']]]
 ];

@@ -1,0 +1,5 @@
+<map id="GUI_DrawTopOptions" name="GUI_DrawTopOptions">
+<area shape="rect" id="node1" title="Draw options field to top bar." alt="" coords="5,31,152,57"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#a6b80bd4451ee6ffe53bb01169f63f96f" title="Wrapper to draw rectangle." alt="" coords="200,5,339,32"/>
+<area shape="rect" id="node3" href="$lcd__gui_8c.html#a875798f9e1bbe7faad1f82ec69ef4e89" title="Wrapper to draw filled rectangle." alt="" coords="206,56,333,83"/>
+</map>

@@ -2,7 +2,23 @@
  * @file
  * @brief The LCD GUI
  *
- * Description
+ *
+ *Generates user Interface with various options
+ *==============================================
+ *
+ * - Cordination-systems are modified
+ * - LCD output is turned upside down
+ * - Positioning of buttons
+ *
+ *
+ *
+ *
+ *Result shown in picture below
+ *@image html gui_measure.jpg
+ *@n
+ *@n
+ *Option surface
+ *@image html gui_optn.jpg
  *
  * @author  Jonas Bollhalder, bollhjon@students.zhaw.ch
  * @date	20.12.2021

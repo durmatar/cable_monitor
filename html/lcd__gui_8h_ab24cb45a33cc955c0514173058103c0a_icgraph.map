@@ -1,0 +1,5 @@
+<map id="GUI_DrawTopMode" name="GUI_DrawTopMode">
+<area shape="rect" id="node1" title="Draw Mode field to Top Bar." alt="" coords="271,5,404,32"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#aabf059fd8f36ce87100ad080b424abb5" title="Manage LCD." alt="" coords="104,5,223,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,5,56,32"/>
+</map>

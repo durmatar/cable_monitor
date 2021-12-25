@@ -1,0 +1,15 @@
+<map id="GUI_SiteHandler" name="GUI_SiteHandler">
+<area shape="rect" id="node1" title="Manage LCD." alt="" coords="5,191,124,218"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Draw options field to top bar." alt="" coords="396,39,500,66"/>
+<area shape="rect" id="node4" href="$lcd__gui_8c.html#a2aad073fe21f04b3de56ec7b2bba1d4e" title="Draw hint." alt="" coords="200,343,303,370"/>
+<area shape="rect" id="node5" href="$lcd__gui_8c.html#a4bee92acc8416a48fde498a3021f33cc" title="Display measurements." alt="" coords="172,90,331,116"/>
+<area shape="rect" id="node6" href="$lcd__gui_8c.html#a9884930bdc0255871dba817e790d4db1" title="Draw Mode Selection." alt="" coords="186,242,317,268"/>
+<area shape="rect" id="node8" href="$lcd__gui_8c.html#a5d8cdb6f40844180604c20481e833767" title="Draw options site." alt="" coords="189,292,314,319"/>
+<area shape="rect" id="node9" href="$lcd__gui_8c.html#a95632210faa571570af20377684f1bfe" title="Display raw measurements." alt="" coords="199,39,304,66"/>
+<area shape="rect" id="node10" href="$lcd__gui_8c.html#ab24cb45a33cc955c0514173058103c0a" title="Draw Mode field to Top Bar." alt="" coords="185,140,318,167"/>
+<area shape="rect" id="node11" href="$lcd__gui_8c.html#af6116af3777e82071d35aad6bc676ff1" title="Draw options field to top bar." alt="" coords="178,191,325,218"/>
+<area shape="rect" id="node12" href="$lcd__gui_8c.html#a76a25585ca83ce1b4d93655638e5380a" title="Handle touch screen inputs." alt="" coords="196,394,307,420"/>
+<area shape="rect" id="node3" href="$lcd__gui_8c.html#a875798f9e1bbe7faad1f82ec69ef4e89" title="Wrapper to draw filled rectangle." alt="" coords="565,166,692,192"/>
+<area shape="rect" id="node7" href="$lcd__gui_8c.html#a6b80bd4451ee6ffe53bb01169f63f96f" title="Wrapper to draw rectangle." alt="" coords="379,242,517,268"/>
+<area shape="rect" id="node13" href="$lcd__gui_8c.html#a152c3b48a9f1055c7a53fb7d0fc53010" title="Wrapper for touch screen sate." alt="" coords="385,394,511,420"/>
+</map>

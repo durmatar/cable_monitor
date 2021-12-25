@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pb_5fpressed_5fflag_0',['PB_pressed_flag',['../pushbutton_8c.html#a6eeac83af2c4bba5bf298ac3c0938eaa',1,'pushbutton.c']]]
+  ['frame_5fcolor_0',['frame_color',['../struct_m_o_d_e__entry__t.html#af2f4baf1d57456c4312d0b0a3421ac97',1,'MODE_entry_t']]]
 ];

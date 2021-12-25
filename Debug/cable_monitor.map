@@ -9570,60 +9570,59 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_line    0x0000000000015c35     0x1ea3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
  .debug_line    0x0000000000017ad8      0xee2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.o
 
-.debug_str      0x0000000000000000    0xdf65b
- .debug_str     0x0000000000000000    0xd6244 ./Core/Src/analytics.o
-                                      0xd65c9 (size before relaxing)
- .debug_str     0x00000000000d6244     0x3292 ./Core/Src/lcd_gui.o
-                                      0xd8d93 (size before relaxing)
- .debug_str     0x00000000000d94d6      0x3f6 ./Core/Src/main.o
-                                      0xd4e3e (size before relaxing)
- .debug_str     0x00000000000d98cc      0x7e0 ./Core/Src/measuring.o
-                                      0xd9353 (size before relaxing)
- .debug_str     0x00000000000da0ac      0x1a6 ./Core/Src/menu.o
-                                      0xd49e0 (size before relaxing)
- .debug_str     0x00000000000da252       0x7d ./Core/Src/pushbutton.o
-                                      0xd3040 (size before relaxing)
- .debug_str     0x00000000000da2cf       0xbd ./Core/Src/stm32f4xx_it.o
-                                      0xd1926 (size before relaxing)
- .debug_str     0x00000000000da38c       0xc4 ./Core/Src/system_stm32f4xx.o
-                                      0xd1a3c (size before relaxing)
- .debug_str     0x00000000000da450       0x36 ./Core/Startup/startup_stm32f429zitx.o
-                                         0x81 (size before relaxing)
- .debug_str     0x00000000000da486       0xee ./Drivers/BSP/Components/ili9341/ili9341.o
+.debug_str      0x0000000000000000    0xdf69b
+ .debug_str     0x0000000000000000    0xd6239 ./Core/Src/analytics.o
+                                      0xd65be (size before relaxing)
+ .debug_str     0x00000000000d6239     0x3292 ./Core/Src/lcd_gui.o
+                                      0xd8d88 (size before relaxing)
+ .debug_str     0x00000000000d94cb      0x3f6 ./Core/Src/main.o
+                                      0xd4e33 (size before relaxing)
+ .debug_str     0x00000000000d98c1      0x7e0 ./Core/Src/measuring.o
+                                      0xd9348 (size before relaxing)
+ .debug_str     0x00000000000da0a1      0x1a6 ./Core/Src/menu.o
+                                      0xd49d5 (size before relaxing)
+ .debug_str     0x00000000000da247       0x7d ./Core/Src/pushbutton.o
+                                      0xd3035 (size before relaxing)
+ .debug_str     0x00000000000da2c4       0xbd ./Core/Src/stm32f4xx_it.o
+                                      0xd191b (size before relaxing)
+ .debug_str     0x00000000000da381       0xc4 ./Core/Src/system_stm32f4xx.o
+                                      0xd1a31 (size before relaxing)
+ .debug_str     0x00000000000da445       0x81 ./Core/Startup/startup_stm32f429zitx.o
+ .debug_str     0x00000000000da4c6       0xee ./Drivers/BSP/Components/ili9341/ili9341.o
                                        0x4583 (size before relaxing)
- .debug_str     0x00000000000da574      0x363 ./Drivers/BSP/Components/stmpe811/stmpe811.o
+ .debug_str     0x00000000000da5b4      0x363 ./Drivers/BSP/Components/stmpe811/stmpe811.o
                                        0x4d7f (size before relaxing)
- .debug_str     0x00000000000da8d7      0xb2c ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.o
+ .debug_str     0x00000000000da917      0xb2c ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.o
                                       0xd3b4b (size before relaxing)
- .debug_str     0x00000000000db403      0xb4f ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.o
-                                      0xd4a11 (size before relaxing)
- .debug_str     0x00000000000dbf52      0x3df ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.o
+ .debug_str     0x00000000000db443      0xb4f ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.o
+                                      0xd4a06 (size before relaxing)
+ .debug_str     0x00000000000dbf92      0x3df ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.o
                                       0xd3a22 (size before relaxing)
- .debug_str     0x00000000000dc331      0x175 ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.o
+ .debug_str     0x00000000000dc371      0x175 ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.o
                                       0xd3710 (size before relaxing)
- .debug_str     0x00000000000dc4a6      0x5c2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_str     0x00000000000dc4e6      0x5c2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
                                       0xd25a8 (size before relaxing)
- .debug_str     0x00000000000dca68      0x34b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_str     0x00000000000dcaa8      0x34b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
                                       0xd2349 (size before relaxing)
- .debug_str     0x00000000000dcdb3      0x318 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
+ .debug_str     0x00000000000dcdf3      0x318 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
                                       0xd1e3e (size before relaxing)
- .debug_str     0x00000000000dd0cb      0x3d3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.o
+ .debug_str     0x00000000000dd10b      0x3d3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.o
                                       0xd2023 (size before relaxing)
- .debug_str     0x00000000000dd49e      0x1cc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_str     0x00000000000dd4de      0x1cc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
                                       0xd1c7b (size before relaxing)
- .debug_str     0x00000000000dd66a      0xa8e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_str     0x00000000000dd6aa      0xa8e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
                                       0xd2977 (size before relaxing)
- .debug_str     0x00000000000de0f8      0x430 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.o
+ .debug_str     0x00000000000de138      0x430 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.o
                                       0xd207d (size before relaxing)
- .debug_str     0x00000000000de528      0x24e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_str     0x00000000000de568      0x24e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
                                       0xd1e29 (size before relaxing)
- .debug_str     0x00000000000de776      0x14d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
+ .debug_str     0x00000000000de7b6      0x14d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
                                       0xd1c1a (size before relaxing)
- .debug_str     0x00000000000de8c3      0x285 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.o
+ .debug_str     0x00000000000de903      0x285 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.o
                                       0xd201d (size before relaxing)
- .debug_str     0x00000000000deb48      0x5bd ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_str     0x00000000000deb88      0x5bd ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
                                       0xd22ed (size before relaxing)
- .debug_str     0x00000000000df105      0x556 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.o
+ .debug_str     0x00000000000df145      0x556 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.o
                                       0xd207e (size before relaxing)
 
 .comment        0x0000000000000000       0x53

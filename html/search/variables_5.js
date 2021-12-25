@@ -1,4 +1,25 @@
 var searchData=
 [
-  ['text_5fcolor_0',['text_color',['../struct_m_e_n_u__entry__t.html#aecbba4786b2fa7dd9667472c1b260132',1,'MENU_entry_t']]]
+  ['gui_5fangle_0',['GUI_angle',['../lcd__gui_8h.html#ae9a9b6478e0f05970153a1b509f353ff',1,'GUI_angle():&#160;lcd_gui.c'],['../lcd__gui_8c.html#ae9a9b6478e0f05970153a1b509f353ff',1,'GUI_angle():&#160;lcd_gui.c']]],
+  ['gui_5fcable_5fdetected_1',['GUI_cable_detected',['../lcd__gui_8h.html#aee9f902c5054d95f664465fa8fe95ae9',1,'GUI_cable_detected():&#160;lcd_gui.c'],['../lcd__gui_8c.html#aee9f902c5054d95f664465fa8fe95ae9',1,'GUI_cable_detected():&#160;lcd_gui.c']]],
+  ['gui_5fcable_5fnot_5fdetected_2',['GUI_cable_not_detected',['../lcd__gui_8h.html#a301e95b1c648dad0c261ae1f63c46633',1,'GUI_cable_not_detected():&#160;lcd_gui.c'],['../lcd__gui_8c.html#a301e95b1c648dad0c261ae1f63c46633',1,'GUI_cable_not_detected():&#160;lcd_gui.c']]],
+  ['gui_5fcurrent_3',['GUI_current',['../lcd__gui_8h.html#a57cbbe375a0132cce74d88f39a022daf',1,'GUI_current():&#160;lcd_gui.c'],['../lcd__gui_8c.html#a57cbbe375a0132cce74d88f39a022daf',1,'GUI_current():&#160;lcd_gui.c']]],
+  ['gui_5fcurrentsite_4',['GUI_currentSite',['../lcd__gui_8c.html#a9cfaaad0b075b64b256f3bac8bfb42d3',1,'lcd_gui.c']]],
+  ['gui_5fcurrenttsstate_5',['GUI_currentTSstate',['../lcd__gui_8c.html#a66f6fc557df358659e7144aabdb96077',1,'lcd_gui.c']]],
+  ['gui_5fdistance_6',['GUI_distance',['../lcd__gui_8h.html#ac1c1c93fe8ae9c5df1c63abeba04435f',1,'GUI_distance():&#160;lcd_gui.c'],['../lcd__gui_8c.html#ac1c1c93fe8ae9c5df1c63abeba04435f',1,'GUI_distance():&#160;lcd_gui.c']]],
+  ['gui_5fdistancedeviation_7',['GUI_distanceDeviation',['../lcd__gui_8h.html#ad0112f1d486709773afcc460960aec10',1,'GUI_distanceDeviation():&#160;lcd_gui.c'],['../lcd__gui_8c.html#ad0112f1d486709773afcc460960aec10',1,'GUI_distanceDeviation():&#160;lcd_gui.c']]],
+  ['gui_5finputbtn_8',['GUI_inputBtn',['../lcd__gui_8h.html#a12231cb6aa077b7adb74388ad7bf364d',1,'GUI_inputBtn():&#160;lcd_gui.c'],['../lcd__gui_8c.html#a12231cb6aa077b7adb74388ad7bf364d',1,'GUI_inputBtn():&#160;lcd_gui.c']]],
+  ['gui_5finputmeasready_9',['GUI_inputMeasReady',['../lcd__gui_8h.html#a709f031cd6a2d36b6e7fbf76101d6164',1,'GUI_inputMeasReady():&#160;lcd_gui.c'],['../lcd__gui_8c.html#a709f031cd6a2d36b6e7fbf76101d6164',1,'GUI_inputMeasReady():&#160;lcd_gui.c']]],
+  ['gui_5finputts_10',['GUI_inputTS',['../lcd__gui_8c.html#a99d4481d4bec60a66c4886afd6da9cf0',1,'lcd_gui.c']]],
+  ['gui_5fmeasaccuracy_11',['GUI_measAccuracy',['../lcd__gui_8h.html#aef1dc94cd8d4412fdc88038f96c91425',1,'lcd_gui.h']]],
+  ['gui_5fmode_12',['GUI_mode',['../lcd__gui_8h.html#a0f85e209f3cdcbcbffab250530df529d',1,'GUI_mode():&#160;lcd_gui.c'],['../lcd__gui_8c.html#a0f85e209f3cdcbcbffab250530df529d',1,'GUI_mode():&#160;lcd_gui.c']]],
+  ['gui_5foptions_13',['GUI_options',['../lcd__gui_8h.html#a4bde79f5c5ee8251d1717c72cd705439',1,'GUI_options():&#160;lcd_gui.c'],['../lcd__gui_8c.html#a4bde79f5c5ee8251d1717c72cd705439',1,'GUI_options():&#160;lcd_gui.c']]],
+  ['gui_5foutoptn_14',['GUI_outOptn',['../lcd__gui_8h.html#a598aace13670b5a3b452fe433d83ca73',1,'GUI_outOptn():&#160;lcd_gui.c'],['../lcd__gui_8c.html#a598aace13670b5a3b452fe433d83ca73',1,'GUI_outOptn():&#160;lcd_gui.c']]],
+  ['gui_5fprevioussite_15',['GUI_previousSite',['../lcd__gui_8c.html#a6a48b2a775a3b4e5102b68958ed3e08e',1,'lcd_gui.c']]],
+  ['gui_5fprevioustsstate_16',['GUI_previousTSstate',['../lcd__gui_8c.html#a7b260dc438880fd959afc1253948af45',1,'lcd_gui.c']]],
+  ['gui_5frawhallleft_17',['GUI_rawHallLeft',['../lcd__gui_8h.html#ad76d24e0e7d7351e5f05c0eab06f9c45',1,'GUI_rawHallLeft():&#160;lcd_gui.c'],['../lcd__gui_8c.html#ad76d24e0e7d7351e5f05c0eab06f9c45',1,'GUI_rawHallLeft():&#160;lcd_gui.c']]],
+  ['gui_5frawhallright_18',['GUI_rawHallRight',['../lcd__gui_8h.html#aa41f815dcdb50b837053b0ce363a0c9b',1,'GUI_rawHallRight():&#160;lcd_gui.c'],['../lcd__gui_8c.html#aa41f815dcdb50b837053b0ce363a0c9b',1,'GUI_rawHallRight():&#160;lcd_gui.c']]],
+  ['gui_5frawwpcleft_19',['GUI_rawWpcLeft',['../lcd__gui_8h.html#aec056210223f31abd9587e1efe936ca8',1,'GUI_rawWpcLeft():&#160;lcd_gui.c'],['../lcd__gui_8c.html#aec056210223f31abd9587e1efe936ca8',1,'GUI_rawWpcLeft():&#160;lcd_gui.c']]],
+  ['gui_5frawwpcright_20',['GUI_rawWpcRight',['../lcd__gui_8h.html#ab83db88483db114905e7e4008e4ccbc4',1,'GUI_rawWpcRight():&#160;lcd_gui.c'],['../lcd__gui_8c.html#ab83db88483db114905e7e4008e4ccbc4',1,'GUI_rawWpcRight():&#160;lcd_gui.c']]],
+  ['gui_5ftsinputtype_21',['GUI_TSinputType',['../lcd__gui_8c.html#af5d1333df208869ca0cea392e831a779',1,'lcd_gui.c']]]
 ];

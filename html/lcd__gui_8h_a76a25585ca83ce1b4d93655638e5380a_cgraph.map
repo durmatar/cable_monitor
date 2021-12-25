@@ -1,0 +1,4 @@
+<map id="GUI_TSHandler" name="GUI_TSHandler">
+<area shape="rect" id="node1" title="Handle touch screen inputs." alt="" coords="5,5,116,32"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#a152c3b48a9f1055c7a53fb7d0fc53010" title="Wrapper for touch screen sate." alt="" coords="164,5,291,32"/>
+</map>

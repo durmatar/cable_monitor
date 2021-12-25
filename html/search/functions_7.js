@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tim2_5firqhandler_0',['TIM2_IRQHandler',['../measuring_8c.html#a38ad4725462bdc5e86c4ead4f04b9fc2',1,'measuring.c']]]
+  ['systemclock_5fconfig_0',['SystemClock_Config',['../main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64',1,'main.c']]]
 ];
