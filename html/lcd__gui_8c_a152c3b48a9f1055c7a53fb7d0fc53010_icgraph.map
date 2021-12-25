@@ -1,0 +1,6 @@
+<map id="GUI_TS_GetState" name="GUI_TS_GetState">
+<area shape="rect" id="node1" title="Wrapper for touch screen sate." alt="" coords="429,5,556,32"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#a76a25585ca83ce1b4d93655638e5380a" title="Handle touch screen inputs." alt="" coords="271,5,381,32"/>
+<area shape="rect" id="node3" href="$lcd__gui_8c.html#aabf059fd8f36ce87100ad080b424abb5" title="Manage LCD." alt="" coords="104,5,223,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,5,56,32"/>
+</map>

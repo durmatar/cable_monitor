@@ -1,0 +1,5 @@
+<map id="GUI_DrawOptions" name="GUI_DrawOptions">
+<area shape="rect" id="node1" title="Draw options site." alt="" coords="5,31,131,57"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#a6b80bd4451ee6ffe53bb01169f63f96f" title="Wrapper to draw rectangle." alt="" coords="179,5,317,32"/>
+<area shape="rect" id="node3" href="$lcd__gui_8c.html#a875798f9e1bbe7faad1f82ec69ef4e89" title="Wrapper to draw filled rectangle." alt="" coords="185,56,311,83"/>
+</map>

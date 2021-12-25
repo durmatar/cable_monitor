@@ -1,0 +1,7 @@
+<map id="GUI_ClearSite" name="GUI_ClearSite">
+<area shape="rect" id="node1" title="Draw options field to top bar." alt="" coords="477,56,581,83"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#a4bee92acc8416a48fde498a3021f33cc" title="Display measurements." alt="" coords="271,5,429,32"/>
+<area shape="rect" id="node3" href="$lcd__gui_8c.html#aabf059fd8f36ce87100ad080b424abb5" title="Manage LCD." alt="" coords="104,56,223,83"/>
+<area shape="rect" id="node5" href="$lcd__gui_8c.html#a95632210faa571570af20377684f1bfe" title="Display raw measurements." alt="" coords="297,107,403,133"/>
+<area shape="rect" id="node4" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,56,56,83"/>
+</map>

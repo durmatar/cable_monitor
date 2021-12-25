@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['documenting_2edox_0',['documenting.dox',['../documenting_8dox.html',1,'']]]
+  ['coding_5fguidelines_2edox_0',['coding_guidelines.dox',['../coding__guidelines_8dox.html',1,'']]]
 ];

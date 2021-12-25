@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>demo_code: Src/main.c Source File</title>
+<title>CableMonitor: Src/main.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,9 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="zhaw.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">demo_code
+   <div id="projectname">CableMonitor
    </div>
-   <div id="projectbrief">ZHAW ET.PM3</div>
+   <div id="projectbrief">ZHAW ET.PM3 Durmaz, Bollhalder</div>
   </td>
  </tr>
  </tbody>
@@ -95,190 +95,267 @@ $(function() {
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="pushbutton_8h.html">pushbutton.h</a>&quot;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="menu_8h.html">menu.h</a>&quot;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="measuring_8h.html">measuring.h</a>&quot;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="measuring_8h.html">measuring.h</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="lcd__gui_8h.html">lcd_gui.h</a>&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="analytics_8h.html">analytics.h</a>&quot;</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/******************************************************************************</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> * Defines</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> *****************************************************************************/</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/******************************************************************************</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> * Defines</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> *****************************************************************************/</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/******************************************************************************</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * Variables</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> *****************************************************************************/</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/******************************************************************************</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * Functions</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> *****************************************************************************/</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64">SystemClock_Config</a>(<span class="keywordtype">void</span>);   <span class="comment">///&lt; System Clock Configuration</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="main_8c.html#a9506db1724e530dd11bccbdd8968998f">gyro_disable</a>(<span class="keywordtype">void</span>);         <span class="comment">///&lt; Disable the onboard gyroscope</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"></span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/** ***************************************************************************</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> * @brief  Main function</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> * @return not used because main ends in an infinite loop</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> * Initialization and infinite while loop</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> *****************************************************************************/</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">   52</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    HAL_Init();                         <span class="comment">// Initialize the system</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_function" href="main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64">SystemClock_Config</a>();               <span class="comment">// Configure system clocks</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    BSP_LCD_Init();                     <span class="comment">// Initialize the LCD display</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    BSP_LCD_LayerDefaultInit(LCD_FOREGROUND_LAYER, LCD_FRAME_BUFFER);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    BSP_LCD_SelectLayer(LCD_FOREGROUND_LAYER);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    BSP_LCD_DisplayOn();</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    BSP_LCD_Clear(LCD_COLOR_WHITE);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    BSP_TS_Init(BSP_LCD_GetXSize(), BSP_LCD_GetYSize());    <span class="comment">// Touchscreen</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment">/* Uncomment next line to enable touchscreen interrupt */</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// BSP_TS_ITConfig();                   // Enable Touchscreen interrupt</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_function" href="pushbutton_8h.html#a6efe94714ab265a5e515c7266d234917">PB_init</a>();                          <span class="comment">// Initialize the user pushbutton</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_function" href="pushbutton_8h.html#a1d6696a09e34d517e04ff82f792baf57">PB_enableIRQ</a>();                     <span class="comment">// Enable interrupt on user pushbutton</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    BSP_LED_Init(LED3);                 <span class="comment">// Toggles in while loop</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    BSP_LED_Init(LED4);                 <span class="comment">// Is toggled by user button</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_function" href="menu_8h.html#a2cbb4c209c599e91da57c0d6cf8f710e">MENU_draw</a>();                        <span class="comment">// Draw the menu</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="menu_8h.html#a62e02a141652e1f34b11f73547ce6bc2">MENU_hint</a>();                        <span class="comment">// Show hint at startup</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_function" href="main_8c.html#a9506db1724e530dd11bccbdd8968998f">gyro_disable</a>();                     <span class="comment">// Disable gyro, use those analog inputs</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_function" href="measuring_8h.html#a645930ff74ceaacb90aca99fae865f8f">MEAS_GPIO_analog_init</a>();            <span class="comment">// Configure GPIOs in analog mode</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_function" href="measuring_8h.html#a2ace7017c3957ead5cd587fc6fae0290">MEAS_timer_init</a>();                  <span class="comment">// Configure the timer</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/******************************************************************************</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> * Variables</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> *****************************************************************************/</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="main_8c.html#adecb5a74782120e7189890a144290663">   38</a></span><span class="keywordtype">bool</span> <a class="code hl_variable" href="main_8c.html#adecb5a74782120e7189890a144290663">draw_lcd</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">/******************************************************************************</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> * Functions</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> *****************************************************************************/</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64">SystemClock_Config</a>(<span class="keywordtype">void</span>);   <span class="comment">///&lt; System Clock Configuration</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="main_8c.html#a9506db1724e530dd11bccbdd8968998f">gyro_disable</a>(<span class="keywordtype">void</span>);         <span class="comment">///&lt; Disable the onboard gyroscope</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"></span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">/** ***************************************************************************</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> * @brief  Main function</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"> * @return not used because main ends in an infinite loop</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> * Initialization and infinite while loop</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> *****************************************************************************/</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">   53</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    HAL_Init();                         <span class="comment">// Initialize the system</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_function" href="main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64">SystemClock_Config</a>();               <span class="comment">// Configure system clocks</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    BSP_LCD_Init();                     <span class="comment">// Initialize the LCD display</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    BSP_LCD_LayerDefaultInit(LCD_FOREGROUND_LAYER, LCD_FRAME_BUFFER);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    BSP_LCD_SelectLayer(LCD_FOREGROUND_LAYER);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    BSP_LCD_DisplayOn();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    BSP_LCD_Clear(LCD_COLOR_WHITE);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    BSP_TS_Init(BSP_LCD_GetXSize(), BSP_LCD_GetYSize());    <span class="comment">// Touchscreen</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_function" href="pushbutton_8h.html#a6efe94714ab265a5e515c7266d234917">PB_init</a>();                          <span class="comment">// Initialize the user pushbutton</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_function" href="pushbutton_8h.html#a1d6696a09e34d517e04ff82f792baf57">PB_enableIRQ</a>();                     <span class="comment">// Enable interrupt on user pushbutton</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    BSP_LED_Init(LED3);                 <span class="comment">// Toggles in while loop</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    BSP_LED_Init(LED4);                 <span class="comment">// Is toggled by user button</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_function" href="main_8c.html#a9506db1724e530dd11bccbdd8968998f">gyro_disable</a>();                     <span class="comment">// Disable gyro, use those analog inputs</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="measuring_8h.html#a645930ff74ceaacb90aca99fae865f8f">MEAS_GPIO_analog_init</a>();            <span class="comment">// Configure GPIOs in analog mode</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_function" href="measuring_8h.html#a2ace7017c3957ead5cd587fc6fae0290">MEAS_timer_init</a>();                  <span class="comment">// Configure the timer</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="comment">/* Infinite while loop */</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">while</span> (1) {                         <span class="comment">// Infinitely loop in main function</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        BSP_LED_Toggle(LED3);           <span class="comment">// Visual feedback when running</span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">/* Infinite while loop */</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">while</span> (1) {                         <span class="comment">// Infinitely loop in main function</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        BSP_LED_Toggle(LED3);           <span class="comment">// Visual feedback when running</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="measuring_8h.html#a8307c93a35eebeec45eac55648b0f606">MEAS_data_ready</a>) {          <span class="comment">// Show data if new data available</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <a class="code hl_variable" href="measuring_8h.html#a8307c93a35eebeec45eac55648b0f606">MEAS_data_ready</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <a class="code hl_function" href="measuring_8h.html#af3778dd3469657b95ea6a05c1fe4de0a">MEAS_show_data</a>();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="pushbutton_8h.html#ab920dbc364e7b33bb9186ac45ae1a332">PB_pressed</a>()) {             <span class="comment">// Check if user pushbutton was pressed</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            BSP_LED_Toggle(LED4);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="comment">/* Comment next line if touchscreen interrupt is enabled */</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_function" href="menu_8h.html#a88e016ed6bb3eb9cfe66a3009bc6fbcf">MENU_check_transition</a>();</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">switch</span> (<a class="code hl_function" href="menu_8h.html#a3de77014a7c52cdf6ff1f973eee6f3f6">MENU_get_transition</a>()) {    <span class="comment">// Handle user menu choice</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8h.html#a6b4f567d35261ed627e450b767b24b56ae7c93f3587cf592f4c4e1f527642c460">MENU_NONE</a>:                 <span class="comment">// No transition =&gt; do nothing</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8h.html#a6b4f567d35261ed627e450b767b24b56a3c0380d63389060a3df5bf217fd2fac8">MENU_ZERO</a>:                 <span class="comment">//HALL PC1 PF8</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <a class="code hl_function" href="measuring_8h.html#af3a24973e259e999e4ebdfd1e6383c12">ADC3_IN11_IN6_scan_init</a>();</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <a class="code hl_function" href="measuring_8h.html#a816ecd0c653237b918a5e862143b081c">ADC3_dual_scan_start</a>();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8h.html#a6b4f567d35261ed627e450b767b24b56a2554792d0950f1fb19f7c141abd38382">MENU_ONE</a>:                  <span class="comment">//WPC  PC3 PF6</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <a class="code hl_function" href="measuring_8h.html#af6c236e0b391beae12f714f7dd89a25e">ADC3_IN13_IN4_scan_init</a>();</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <a class="code hl_function" href="measuring_8h.html#a816ecd0c653237b918a5e862143b081c">ADC3_dual_scan_start</a>();</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">default</span>:                        <span class="comment">// Should never occur</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        HAL_Delay(50);                  <span class="comment">// Wait or sleep</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment"></span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">/** ***************************************************************************</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment"> * @brief System Clock Configuration</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment"> *****************************************************************************/</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64">  121</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64">SystemClock_Config</a>(<span class="keywordtype">void</span>){</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    RCC_OscInitTypeDef RCC_OscInitStruct = {0};</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="comment">/* Configure the main internal regulator output voltage */</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    __HAL_RCC_PWR_CLK_ENABLE();</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="comment">/* Initialize High Speed External Oscillator and PLL circuits */</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    RCC_OscInitStruct.HSEState = RCC_HSE_ON;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    RCC_OscInitStruct.PLL.PLLM = 8;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    RCC_OscInitStruct.PLL.PLLN = 336;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    RCC_OscInitStruct.PLL.PLLQ = 7;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    HAL_RCC_OscConfig(&amp;RCC_OscInitStruct);</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">/* Initialize gates and clock dividers for CPU, AHB and APB busses */</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    HAL_RCC_ClockConfig(&amp;RCC_ClkInitStruct, FLASH_LATENCY_5);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="comment">/* Initialize PLL and clock divider for the LCD */</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_LTDC;</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    PeriphClkInitStruct.PLLSAI.PLLSAIN = 192;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    PeriphClkInitStruct.PLLSAI.PLLSAIR = 4;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    PeriphClkInitStruct.PLLSAIDivR = RCC_PLLSAIDIVR_8;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    HAL_RCCEx_PeriphCLKConfig(&amp;PeriphClkInitStruct);</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="comment">/* Set clock prescaler for ADCs */</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    ADC-&gt;CCR |= ADC_CCR_ADCPRE_0;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>}</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment"></span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment">/** ***************************************************************************</span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment"> * @brief Disable the GYRO on the microcontroller board.</span></div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment"> * @note MISO of the GYRO is connected to PF8 and CS to PC1.</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment"> * @n Some times the GYRO goes into an undefined mode at startup</span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment"> * and pulls the MISO low or high thus blocking the analog input on PF8.</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment"> * @n The simplest solution is to pull the CS of the GYRO low for a short while</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment"> * which is done with the code below.</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment"> * @n PF8 is also reconfigured.</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="comment"> * @n An other solution would be to remove the GYRO</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="comment"> * from the microcontroller board by unsoldering it.</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="comment"> *****************************************************************************/</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="main_8c.html#a9506db1724e530dd11bccbdd8968998f">  169</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="main_8c.html#a9506db1724e530dd11bccbdd8968998f">gyro_disable</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>{</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    __HAL_RCC_GPIOC_CLK_ENABLE();       <span class="comment">// Enable Clock for GPIO port C</span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="comment">/* Disable PC1 and PF8 first */</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    GPIOC-&gt;MODER &amp;= ~GPIO_MODER_MODER1; <span class="comment">// Reset mode for PC1</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    GPIOC-&gt;MODER |= GPIO_MODER_MODER1_0;    <span class="comment">// Set PC1 as output</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    GPIOC-&gt;BSRR |= GPIO_BSRR_BR1;       <span class="comment">// Set GYRO (CS) to 0 for a short time</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    HAL_Delay(10);                      <span class="comment">// Wait some time</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    GPIOC-&gt;MODER |= GPIO_MODER_MODER1_Msk; <span class="comment">// Analog mode PC1 = ADC123_IN11</span></div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    __HAL_RCC_GPIOF_CLK_ENABLE();       <span class="comment">// Enable Clock for GPIO port F</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    GPIOF-&gt;OSPEEDR &amp;= ~GPIO_OSPEEDR_OSPEED8;    <span class="comment">// Reset speed of PF8</span></div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    GPIOF-&gt;AFR[1] &amp;= ~GPIO_AFRH_AFSEL8;         <span class="comment">// Reset alternate func. of PF8</span></div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    GPIOF-&gt;PUPDR &amp;= ~GPIO_PUPDR_PUPD8;          <span class="comment">// Reset pulup/down of PF8</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    HAL_Delay(10);                      <span class="comment">// Wait some time</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    GPIOF-&gt;MODER |= GPIO_MODER_MODER8_Msk; <span class="comment">// Analog mode for PF6 = ADC3_IN4</span></div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>}</div>
-<div class="ttc" id="amain_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdoc">Main function.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00052">main.c:52</a></div></div>
-<div class="ttc" id="amain_8c_html_a9506db1724e530dd11bccbdd8968998f"><div class="ttname"><a href="main_8c.html#a9506db1724e530dd11bccbdd8968998f">gyro_disable</a></div><div class="ttdeci">static void gyro_disable(void)</div><div class="ttdoc">Disable the onboard gyroscope.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00169">main.c:169</a></div></div>
-<div class="ttc" id="amain_8c_html_ad554cbf06ce0fa6f92a0c4152b8a4c64"><div class="ttname"><a href="main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64">SystemClock_Config</a></div><div class="ttdeci">static void SystemClock_Config(void)</div><div class="ttdoc">System Clock Configuration.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00121">main.c:121</a></div></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="pushbutton_8h.html#ab920dbc364e7b33bb9186ac45ae1a332">PB_pressed</a>()) {             <span class="comment">// Check if user pushbutton was pressed</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <a class="code hl_variable" href="analytics_8h.html#a8598dac3509886273dfeb95a0d92a27a">ANA_inBtn</a> = <span class="keyword">true</span>;           <span class="comment">// Send to analytics handler</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <a class="code hl_variable" href="lcd__gui_8h.html#a12231cb6aa077b7adb74388ad7bf364d">GUI_inputBtn</a> = <span class="keyword">true</span>;        <span class="comment">// Send to site handler</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="measuring_8h.html#a8307c93a35eebeec45eac55648b0f606">MEAS_data_ready</a>) {          <span class="comment">// Show data if new data available</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <a class="code hl_variable" href="analytics_8h.html#af7902dc06c2dd6b1812fb52530ff2c75">ANA_inAmpLeft</a> = <a class="code hl_variable" href="measuring_8h.html#a3ebff14909fa0d942ca9ea64ef5d1b48">MEAS_amplitude_left</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <a class="code hl_variable" href="analytics_8h.html#ac5859c107260b441112acb6839c11672">ANA_inAmpRight</a> = <a class="code hl_variable" href="measuring_8h.html#a5bcb0a009b9e52aedb544df6c278f932">MEAS_amplitude_right</a>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <a class="code hl_variable" href="analytics_8h.html#a16662d40ecd294957b5e0e9e43d19286">ANA_inMeasReady</a> = <span class="keyword">true</span>;     <span class="comment">// Send to analytics handler</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <a class="code hl_variable" href="measuring_8h.html#a8307c93a35eebeec45eac55648b0f606">MEAS_data_ready</a> = <span class="keyword">false</span>;    <span class="comment">// Reset meas data ready bit</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="analytics_8h.html#a2ed0c3b98eec4b9d226521e364074fc3">ANA_outStartHALL</a>) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <a class="code hl_function" href="measuring_8h.html#af3a24973e259e999e4ebdfd1e6383c12">ADC3_IN11_IN6_scan_init</a>();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <a class="code hl_function" href="measuring_8h.html#a816ecd0c653237b918a5e862143b081c">ADC3_dual_scan_start</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <a class="code hl_variable" href="analytics_8h.html#a2ed0c3b98eec4b9d226521e364074fc3">ANA_outStartHALL</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="analytics_8h.html#a41891de1ce941afef356caa3d45ab842">ANA_outStartWPC</a>) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <a class="code hl_function" href="measuring_8h.html#af6c236e0b391beae12f714f7dd89a25e">ADC3_IN13_IN4_scan_init</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <a class="code hl_function" href="measuring_8h.html#a816ecd0c653237b918a5e862143b081c">ADC3_dual_scan_start</a>();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <a class="code hl_variable" href="analytics_8h.html#a41891de1ce941afef356caa3d45ab842">ANA_outStartWPC</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="analytics_8h.html#a33bf76db306cd89013df61caecfc45ad">ANA_outDataReady</a>) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="comment">//Transfer Data</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="analytics_8h.html#a0b7cf85db8dbb27d3880e1b2d9792090">ANA_inOptn</a>[1]==0) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                <span class="comment">//Analysed</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">ANA_outResults</a>[1]&lt;300) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                    <a class="code hl_variable" href="lcd__gui_8h.html#ae9a9b6478e0f05970153a1b509f353ff">GUI_angle</a> = <a class="code hl_variable" href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">ANA_outResults</a>[0];</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                    <a class="code hl_variable" href="lcd__gui_8h.html#ac1c1c93fe8ae9c5df1c63abeba04435f">GUI_distance</a> = <a class="code hl_variable" href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">ANA_outResults</a>[1];</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                    <a class="code hl_variable" href="lcd__gui_8h.html#ad0112f1d486709773afcc460960aec10">GUI_distanceDeviation</a> = <a class="code hl_variable" href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">ANA_outResults</a>[2];</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    <a class="code hl_variable" href="lcd__gui_8h.html#a57cbbe375a0132cce74d88f39a022daf">GUI_current</a> = <a class="code hl_variable" href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">ANA_outResults</a>[3];</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                    <a class="code hl_variable" href="lcd__gui_8h.html#aee9f902c5054d95f664465fa8fe95ae9">GUI_cable_detected</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                    <a class="code hl_variable" href="lcd__gui_8h.html#ae9a9b6478e0f05970153a1b509f353ff">GUI_angle</a> = 100;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                    <a class="code hl_variable" href="lcd__gui_8h.html#ac1c1c93fe8ae9c5df1c63abeba04435f">GUI_distance</a> = -1;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                    <a class="code hl_variable" href="lcd__gui_8h.html#ad0112f1d486709773afcc460960aec10">GUI_distanceDeviation</a> = -1;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                    <a class="code hl_variable" href="lcd__gui_8h.html#a57cbbe375a0132cce74d88f39a022daf">GUI_current</a> = -1;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                    <a class="code hl_variable" href="lcd__gui_8h.html#a301e95b1c648dad0c261ae1f63c46633">GUI_cable_not_detected</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                <span class="comment">//Raw</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                <a class="code hl_variable" href="lcd__gui_8h.html#aa41f815dcdb50b837053b0ce363a0c9b">GUI_rawHallRight</a> = <a class="code hl_variable" href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">ANA_outResults</a>[0];</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                <a class="code hl_variable" href="lcd__gui_8h.html#ad76d24e0e7d7351e5f05c0eab06f9c45">GUI_rawHallLeft</a> = <a class="code hl_variable" href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">ANA_outResults</a>[1];</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                <a class="code hl_variable" href="lcd__gui_8h.html#ab83db88483db114905e7e4008e4ccbc4">GUI_rawWpcRight</a> = <a class="code hl_variable" href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">ANA_outResults</a>[2];</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                <a class="code hl_variable" href="lcd__gui_8h.html#aec056210223f31abd9587e1efe936ca8">GUI_rawWpcLeft</a> = <a class="code hl_variable" href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">ANA_outResults</a>[3];</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <a class="code hl_variable" href="lcd__gui_8h.html#a709f031cd6a2d36b6e7fbf76101d6164">GUI_inputMeasReady</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <a class="code hl_variable" href="analytics_8h.html#a33bf76db306cd89013df61caecfc45ad">ANA_outDataReady</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="analytics_8h.html#a3f49b8ee1a2e28be07d6b04c35347e17">ANA_measBusy</a>) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            BSP_LED_On(LED4);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            BSP_LED_Off(LED4);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="lcd__gui_8h.html#a598aace13670b5a3b452fe433d83ca73">GUI_outOptn</a>) {                      <span class="comment">// Check if Options were changed</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <a class="code hl_variable" href="analytics_8h.html#a0b7cf85db8dbb27d3880e1b2d9792090">ANA_inOptn</a>[0]=<a class="code hl_variable" href="lcd__gui_8h.html#a0f85e209f3cdcbcbffab250530df529d">GUI_mode</a>;             <span class="comment">// Transfer mode</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <a class="code hl_variable" href="analytics_8h.html#a0b7cf85db8dbb27d3880e1b2d9792090">ANA_inOptn</a>[1]=<a class="code hl_variable" href="lcd__gui_8h.html#a4bde79f5c5ee8251d1717c72cd705439">GUI_options</a>[0].<a class="code hl_variable" href="struct_o_p_t_n__entry__t.html#a76453fcfb0e5fd6eacf66eaddb4dcb87">active</a>;<span class="comment">// Transfer data type</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            <a class="code hl_variable" href="analytics_8h.html#a0b7cf85db8dbb27d3880e1b2d9792090">ANA_inOptn</a>[2]=<a class="code hl_variable" href="lcd__gui_8h.html#a4bde79f5c5ee8251d1717c72cd705439">GUI_options</a>[1].<a class="code hl_variable" href="struct_o_p_t_n__entry__t.html#a76453fcfb0e5fd6eacf66eaddb4dcb87">active</a>;<span class="comment">// Transfer measuring type</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">switch</span> (<a class="code hl_variable" href="lcd__gui_8h.html#a4bde79f5c5ee8251d1717c72cd705439">GUI_options</a>[2].active) {    <span class="comment">// Transfer accuracy</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                    <a class="code hl_variable" href="analytics_8h.html#a0b7cf85db8dbb27d3880e1b2d9792090">ANA_inOptn</a>[3]=1;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                    <a class="code hl_variable" href="analytics_8h.html#a0b7cf85db8dbb27d3880e1b2d9792090">ANA_inOptn</a>[3]=5;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                    <a class="code hl_variable" href="analytics_8h.html#a0b7cf85db8dbb27d3880e1b2d9792090">ANA_inOptn</a>[3]=10;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <a class="code hl_variable" href="lcd__gui_8h.html#a598aace13670b5a3b452fe433d83ca73">GUI_outOptn</a> = <span class="keyword">false</span>;                <span class="comment">// Reset option bit</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="comment">//Analytics handler</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <a class="code hl_function" href="analytics_8h.html#abae2b53b167a22cb67db31c36e81750c">ANA_Handler</a>();</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="comment">//Site handler</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <a class="code hl_function" href="lcd__gui_8h.html#aabf059fd8f36ce87100ad080b424abb5">GUI_SiteHandler</a>();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>}</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="comment"></span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="comment">/** ***************************************************************************</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="comment"> * @brief System Clock Configuration</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="comment"> *****************************************************************************/</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64">  174</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64">SystemClock_Config</a>(<span class="keywordtype">void</span>){</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    RCC_OscInitTypeDef RCC_OscInitStruct = {0};</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="comment">/* Configure the main internal regulator output voltage */</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    __HAL_RCC_PWR_CLK_ENABLE();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="comment">/* Initialize High Speed External Oscillator and PLL circuits */</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    RCC_OscInitStruct.HSEState = RCC_HSE_ON;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    RCC_OscInitStruct.PLL.PLLM = 8;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    RCC_OscInitStruct.PLL.PLLN = 336;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    RCC_OscInitStruct.PLL.PLLQ = 7;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    HAL_RCC_OscConfig(&amp;RCC_OscInitStruct);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="comment">/* Initialize gates and clock dividers for CPU, AHB and APB busses */</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    HAL_RCC_ClockConfig(&amp;RCC_ClkInitStruct, FLASH_LATENCY_5);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="comment">/* Initialize PLL and clock divider for the LCD */</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_LTDC;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    PeriphClkInitStruct.PLLSAI.PLLSAIN = 192;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    PeriphClkInitStruct.PLLSAI.PLLSAIR = 4;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    PeriphClkInitStruct.PLLSAIDivR = RCC_PLLSAIDIVR_8;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    HAL_RCCEx_PeriphCLKConfig(&amp;PeriphClkInitStruct);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="comment">/* Set clock prescaler for ADCs */</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    ADC-&gt;CCR |= ADC_CCR_ADCPRE_0;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="comment"></span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment">/** ***************************************************************************</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="comment"> * @brief Disable the GYRO on the microcontroller board.</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment"> * @note MISO of the GYRO is connected to PF8 and CS to PC1.</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment"> * @n Some times the GYRO goes into an undefined mode at startup</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment"> * and pulls the MISO low or high thus blocking the analog input on PF8.</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment"> * @n The simplest solution is to pull the CS of the GYRO low for a short while</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment"> * which is done with the code below.</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment"> * @n PF8 is also reconfigured.</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment"> * @n An other solution would be to remove the GYRO</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment"> * from the microcontroller board by unsoldering it.</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment"> *****************************************************************************/</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="main_8c.html#a9506db1724e530dd11bccbdd8968998f">  222</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="main_8c.html#a9506db1724e530dd11bccbdd8968998f">gyro_disable</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>{</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    __HAL_RCC_GPIOC_CLK_ENABLE();       <span class="comment">// Enable Clock for GPIO port C</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="comment">/* Disable PC1 and PF8 first */</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    GPIOC-&gt;MODER &amp;= ~GPIO_MODER_MODER1; <span class="comment">// Reset mode for PC1</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    GPIOC-&gt;MODER |= GPIO_MODER_MODER1_0;    <span class="comment">// Set PC1 as output</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    GPIOC-&gt;BSRR |= GPIO_BSRR_BR1;       <span class="comment">// Set GYRO (CS) to 0 for a short time</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    HAL_Delay(10);                      <span class="comment">// Wait some time</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    GPIOC-&gt;MODER |= GPIO_MODER_MODER1_Msk; <span class="comment">// Analog mode PC1 = ADC123_IN11</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    __HAL_RCC_GPIOF_CLK_ENABLE();       <span class="comment">// Enable Clock for GPIO port F</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    GPIOF-&gt;OSPEEDR &amp;= ~GPIO_OSPEEDR_OSPEED8;    <span class="comment">// Reset speed of PF8</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    GPIOF-&gt;AFR[1] &amp;= ~GPIO_AFRH_AFSEL8;         <span class="comment">// Reset alternate func. of PF8</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    GPIOF-&gt;PUPDR &amp;= ~GPIO_PUPDR_PUPD8;          <span class="comment">// Reset pulup/down of PF8</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    HAL_Delay(10);                      <span class="comment">// Wait some time</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    GPIOF-&gt;MODER |= GPIO_MODER_MODER8_Msk; <span class="comment">// Analog mode for PF6 = ADC3_IN4</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>}</div>
+<div class="ttc" id="aanalytics_8h_html"><div class="ttname"><a href="analytics_8h.html">analytics.h</a></div><div class="ttdoc">See measuring.c.</div></div>
+<div class="ttc" id="aanalytics_8h_html_a0aa19081306084305112283bd46aa3e2"><div class="ttname"><a href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">ANA_outResults</a></div><div class="ttdeci">float ANA_outResults[4]</div><div class="ttdoc">Angle,Distance,Std.Dev.,Current.</div><div class="ttdef"><b>Definition:</b> <a href="analytics_8c_source.html#l00076">analytics.c:76</a></div></div>
+<div class="ttc" id="aanalytics_8h_html_a0b7cf85db8dbb27d3880e1b2d9792090"><div class="ttname"><a href="analytics_8h.html#a0b7cf85db8dbb27d3880e1b2d9792090">ANA_inOptn</a></div><div class="ttdeci">uint16_t ANA_inOptn[4]</div><div class="ttdoc">Mode,DataType,MeasuringType,Accuracy.</div><div class="ttdef"><b>Definition:</b> <a href="analytics_8c_source.html#l00073">analytics.c:73</a></div></div>
+<div class="ttc" id="aanalytics_8h_html_a16662d40ecd294957b5e0e9e43d19286"><div class="ttname"><a href="analytics_8h.html#a16662d40ecd294957b5e0e9e43d19286">ANA_inMeasReady</a></div><div class="ttdeci">bool ANA_inMeasReady</div><div class="ttdef"><b>Definition:</b> <a href="analytics_8c_source.html#l00070">analytics.c:70</a></div></div>
+<div class="ttc" id="aanalytics_8h_html_a2ed0c3b98eec4b9d226521e364074fc3"><div class="ttname"><a href="analytics_8h.html#a2ed0c3b98eec4b9d226521e364074fc3">ANA_outStartHALL</a></div><div class="ttdeci">bool ANA_outStartHALL</div><div class="ttdef"><b>Definition:</b> <a href="analytics_8c_source.html#l00074">analytics.c:74</a></div></div>
+<div class="ttc" id="aanalytics_8h_html_a33bf76db306cd89013df61caecfc45ad"><div class="ttname"><a href="analytics_8h.html#a33bf76db306cd89013df61caecfc45ad">ANA_outDataReady</a></div><div class="ttdeci">bool ANA_outDataReady</div><div class="ttdef"><b>Definition:</b> <a href="analytics_8c_source.html#l00077">analytics.c:77</a></div></div>
+<div class="ttc" id="aanalytics_8h_html_a3f49b8ee1a2e28be07d6b04c35347e17"><div class="ttname"><a href="analytics_8h.html#a3f49b8ee1a2e28be07d6b04c35347e17">ANA_measBusy</a></div><div class="ttdeci">bool ANA_measBusy</div><div class="ttdef"><b>Definition:</b> <a href="analytics_8c_source.html#l00079">analytics.c:79</a></div></div>
+<div class="ttc" id="aanalytics_8h_html_a41891de1ce941afef356caa3d45ab842"><div class="ttname"><a href="analytics_8h.html#a41891de1ce941afef356caa3d45ab842">ANA_outStartWPC</a></div><div class="ttdeci">bool ANA_outStartWPC</div><div class="ttdef"><b>Definition:</b> <a href="analytics_8c_source.html#l00075">analytics.c:75</a></div></div>
+<div class="ttc" id="aanalytics_8h_html_a8598dac3509886273dfeb95a0d92a27a"><div class="ttname"><a href="analytics_8h.html#a8598dac3509886273dfeb95a0d92a27a">ANA_inBtn</a></div><div class="ttdeci">bool ANA_inBtn</div><div class="ttdef"><b>Definition:</b> <a href="analytics_8c_source.html#l00069">analytics.c:69</a></div></div>
+<div class="ttc" id="aanalytics_8h_html_abae2b53b167a22cb67db31c36e81750c"><div class="ttname"><a href="analytics_8h.html#abae2b53b167a22cb67db31c36e81750c">ANA_Handler</a></div><div class="ttdeci">void ANA_Handler(void)</div><div class="ttdoc">Analytics handler.</div><div class="ttdef"><b>Definition:</b> <a href="analytics_8c_source.html#l00221">analytics.c:221</a></div></div>
+<div class="ttc" id="aanalytics_8h_html_ac5859c107260b441112acb6839c11672"><div class="ttname"><a href="analytics_8h.html#ac5859c107260b441112acb6839c11672">ANA_inAmpRight</a></div><div class="ttdeci">uint32_t ANA_inAmpRight</div><div class="ttdef"><b>Definition:</b> <a href="analytics_8c_source.html#l00072">analytics.c:72</a></div></div>
+<div class="ttc" id="aanalytics_8h_html_af7902dc06c2dd6b1812fb52530ff2c75"><div class="ttname"><a href="analytics_8h.html#af7902dc06c2dd6b1812fb52530ff2c75">ANA_inAmpLeft</a></div><div class="ttdeci">uint32_t ANA_inAmpLeft</div><div class="ttdef"><b>Definition:</b> <a href="analytics_8c_source.html#l00071">analytics.c:71</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html"><div class="ttname"><a href="lcd__gui_8h.html">lcd_gui.h</a></div><div class="ttdoc">See lcd_gui.c.</div></div>
+<div class="ttc" id="alcd__gui_8h_html_a0f85e209f3cdcbcbffab250530df529d"><div class="ttname"><a href="lcd__gui_8h.html#a0f85e209f3cdcbcbffab250530df529d">GUI_mode</a></div><div class="ttdeci">GUI_mode_t GUI_mode</div><div class="ttdoc">Default measurement mode.</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00065">lcd_gui.c:65</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_a12231cb6aa077b7adb74388ad7bf364d"><div class="ttname"><a href="lcd__gui_8h.html#a12231cb6aa077b7adb74388ad7bf364d">GUI_inputBtn</a></div><div class="ttdeci">bool GUI_inputBtn</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00088">lcd_gui.c:88</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_a301e95b1c648dad0c261ae1f63c46633"><div class="ttname"><a href="lcd__gui_8h.html#a301e95b1c648dad0c261ae1f63c46633">GUI_cable_not_detected</a></div><div class="ttdeci">bool GUI_cable_not_detected</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00064">lcd_gui.c:64</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_a4bde79f5c5ee8251d1717c72cd705439"><div class="ttname"><a href="lcd__gui_8h.html#a4bde79f5c5ee8251d1717c72cd705439">GUI_options</a></div><div class="ttdeci">OPTN_entry_t GUI_options[3]</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00079">lcd_gui.c:79</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_a57cbbe375a0132cce74d88f39a022daf"><div class="ttname"><a href="lcd__gui_8h.html#a57cbbe375a0132cce74d88f39a022daf">GUI_current</a></div><div class="ttdeci">float GUI_current</div><div class="ttdoc">Current to display.</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00071">lcd_gui.c:71</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_a598aace13670b5a3b452fe433d83ca73"><div class="ttname"><a href="lcd__gui_8h.html#a598aace13670b5a3b452fe433d83ca73">GUI_outOptn</a></div><div class="ttdeci">bool GUI_outOptn</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00096">lcd_gui.c:96</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_a709f031cd6a2d36b6e7fbf76101d6164"><div class="ttname"><a href="lcd__gui_8h.html#a709f031cd6a2d36b6e7fbf76101d6164">GUI_inputMeasReady</a></div><div class="ttdeci">bool GUI_inputMeasReady</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00090">lcd_gui.c:90</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_aa41f815dcdb50b837053b0ce363a0c9b"><div class="ttname"><a href="lcd__gui_8h.html#aa41f815dcdb50b837053b0ce363a0c9b">GUI_rawHallRight</a></div><div class="ttdeci">float GUI_rawHallRight</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00075">lcd_gui.c:75</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_aabf059fd8f36ce87100ad080b424abb5"><div class="ttname"><a href="lcd__gui_8h.html#aabf059fd8f36ce87100ad080b424abb5">GUI_SiteHandler</a></div><div class="ttdeci">void GUI_SiteHandler(void)</div><div class="ttdoc">Manage LCD.</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00531">lcd_gui.c:531</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_ab83db88483db114905e7e4008e4ccbc4"><div class="ttname"><a href="lcd__gui_8h.html#ab83db88483db114905e7e4008e4ccbc4">GUI_rawWpcRight</a></div><div class="ttdeci">float GUI_rawWpcRight</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00077">lcd_gui.c:77</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_ac1c1c93fe8ae9c5df1c63abeba04435f"><div class="ttname"><a href="lcd__gui_8h.html#ac1c1c93fe8ae9c5df1c63abeba04435f">GUI_distance</a></div><div class="ttdeci">float GUI_distance</div><div class="ttdoc">Distance value to display.</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00069">lcd_gui.c:69</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_ad0112f1d486709773afcc460960aec10"><div class="ttname"><a href="lcd__gui_8h.html#ad0112f1d486709773afcc460960aec10">GUI_distanceDeviation</a></div><div class="ttdeci">float GUI_distanceDeviation</div><div class="ttdoc">Standard deviation of distance.</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00070">lcd_gui.c:70</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_ad76d24e0e7d7351e5f05c0eab06f9c45"><div class="ttname"><a href="lcd__gui_8h.html#ad76d24e0e7d7351e5f05c0eab06f9c45">GUI_rawHallLeft</a></div><div class="ttdeci">float GUI_rawHallLeft</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00074">lcd_gui.c:74</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_ae9a9b6478e0f05970153a1b509f353ff"><div class="ttname"><a href="lcd__gui_8h.html#ae9a9b6478e0f05970153a1b509f353ff">GUI_angle</a></div><div class="ttdeci">float GUI_angle</div><div class="ttdoc">Angle value to display.</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00068">lcd_gui.c:68</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_aec056210223f31abd9587e1efe936ca8"><div class="ttname"><a href="lcd__gui_8h.html#aec056210223f31abd9587e1efe936ca8">GUI_rawWpcLeft</a></div><div class="ttdeci">float GUI_rawWpcLeft</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00076">lcd_gui.c:76</a></div></div>
+<div class="ttc" id="alcd__gui_8h_html_aee9f902c5054d95f664465fa8fe95ae9"><div class="ttname"><a href="lcd__gui_8h.html#aee9f902c5054d95f664465fa8fe95ae9">GUI_cable_detected</a></div><div class="ttdeci">bool GUI_cable_detected</div><div class="ttdoc">Input true if cable detected with last measurement.</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8c_source.html#l00063">lcd_gui.c:63</a></div></div>
+<div class="ttc" id="amain_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdoc">Main function.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00053">main.c:53</a></div></div>
+<div class="ttc" id="amain_8c_html_a9506db1724e530dd11bccbdd8968998f"><div class="ttname"><a href="main_8c.html#a9506db1724e530dd11bccbdd8968998f">gyro_disable</a></div><div class="ttdeci">static void gyro_disable(void)</div><div class="ttdoc">Disable the onboard gyroscope.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00222">main.c:222</a></div></div>
+<div class="ttc" id="amain_8c_html_ad554cbf06ce0fa6f92a0c4152b8a4c64"><div class="ttname"><a href="main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64">SystemClock_Config</a></div><div class="ttdeci">static void SystemClock_Config(void)</div><div class="ttdoc">System Clock Configuration.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00174">main.c:174</a></div></div>
+<div class="ttc" id="amain_8c_html_adecb5a74782120e7189890a144290663"><div class="ttname"><a href="main_8c.html#adecb5a74782120e7189890a144290663">draw_lcd</a></div><div class="ttdeci">bool draw_lcd</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00038">main.c:38</a></div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">See main.c.</div></div>
 <div class="ttc" id="ameasuring_8h_html"><div class="ttname"><a href="measuring_8h.html">measuring.h</a></div><div class="ttdoc">See measuring.c.</div></div>
-<div class="ttc" id="ameasuring_8h_html_a2ace7017c3957ead5cd587fc6fae0290"><div class="ttname"><a href="measuring_8h.html#a2ace7017c3957ead5cd587fc6fae0290">MEAS_timer_init</a></div><div class="ttdeci">void MEAS_timer_init(void)</div><div class="ttdoc">Configure the timer to trigger the ADC(s)</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00134">measuring.c:134</a></div></div>
-<div class="ttc" id="ameasuring_8h_html_a645930ff74ceaacb90aca99fae865f8f"><div class="ttname"><a href="measuring_8h.html#a645930ff74ceaacb90aca99fae865f8f">MEAS_GPIO_analog_init</a></div><div class="ttdeci">void MEAS_GPIO_analog_init(void)</div><div class="ttdoc">Configure GPIOs in analog mode.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00105">measuring.c:105</a></div></div>
-<div class="ttc" id="ameasuring_8h_html_a816ecd0c653237b918a5e862143b081c"><div class="ttname"><a href="measuring_8h.html#a816ecd0c653237b918a5e862143b081c">ADC3_dual_scan_start</a></div><div class="ttdeci">void ADC3_dual_scan_start(void)</div><div class="ttdoc">Start DMA, ADC and timer.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00227">measuring.c:227</a></div></div>
-<div class="ttc" id="ameasuring_8h_html_a8307c93a35eebeec45eac55648b0f606"><div class="ttname"><a href="measuring_8h.html#a8307c93a35eebeec45eac55648b0f606">MEAS_data_ready</a></div><div class="ttdeci">bool MEAS_data_ready</div><div class="ttdoc">New data is ready.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00083">measuring.c:83</a></div></div>
-<div class="ttc" id="ameasuring_8h_html_af3778dd3469657b95ea6a05c1fe4de0a"><div class="ttname"><a href="measuring_8h.html#af3778dd3469657b95ea6a05c1fe4de0a">MEAS_show_data</a></div><div class="ttdeci">void MEAS_show_data(void)</div><div class="ttdoc">Draw buffer data as curves.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00306">measuring.c:306</a></div></div>
-<div class="ttc" id="ameasuring_8h_html_af3a24973e259e999e4ebdfd1e6383c12"><div class="ttname"><a href="measuring_8h.html#af3a24973e259e999e4ebdfd1e6383c12">ADC3_IN11_IN6_scan_init</a></div><div class="ttdeci">void ADC3_IN11_IN6_scan_init(void)</div><div class="ttdoc">Initialize ADC, timer and DMA for sequential acquisition = scan mode.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00196">measuring.c:196</a></div></div>
-<div class="ttc" id="ameasuring_8h_html_af6c236e0b391beae12f714f7dd89a25e"><div class="ttname"><a href="measuring_8h.html#af6c236e0b391beae12f714f7dd89a25e">ADC3_IN13_IN4_scan_init</a></div><div class="ttdeci">void ADC3_IN13_IN4_scan_init(void)</div><div class="ttdoc">Initialize ADC, timer and DMA for sequential acquisition = scan mode.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00158">measuring.c:158</a></div></div>
-<div class="ttc" id="amenu_8h_html"><div class="ttname"><a href="menu_8h.html">menu.h</a></div><div class="ttdoc">See menu.c.</div></div>
-<div class="ttc" id="amenu_8h_html_a2cbb4c209c599e91da57c0d6cf8f710e"><div class="ttname"><a href="menu_8h.html#a2cbb4c209c599e91da57c0d6cf8f710e">MENU_draw</a></div><div class="ttdeci">void MENU_draw(void)</div><div class="ttdoc">Draw the menu onto the display.</div><div class="ttdef"><b>Definition:</b> <a href="menu_8c_source.html#l00065">menu.c:65</a></div></div>
-<div class="ttc" id="amenu_8h_html_a3de77014a7c52cdf6ff1f973eee6f3f6"><div class="ttname"><a href="menu_8h.html#a3de77014a7c52cdf6ff1f973eee6f3f6">MENU_get_transition</a></div><div class="ttdeci">MENU_item_t MENU_get_transition(void)</div><div class="ttdoc">Get menu selection/transition.</div><div class="ttdef"><b>Definition:</b> <a href="menu_8c_source.html#l00146">menu.c:146</a></div></div>
-<div class="ttc" id="amenu_8h_html_a62e02a141652e1f34b11f73547ce6bc2"><div class="ttname"><a href="menu_8h.html#a62e02a141652e1f34b11f73547ce6bc2">MENU_hint</a></div><div class="ttdeci">void MENU_hint(void)</div><div class="ttdoc">Shows a hint at startup.</div><div class="ttdef"><b>Definition:</b> <a href="menu_8c_source.html#l00091">menu.c:91</a></div></div>
-<div class="ttc" id="amenu_8h_html_a6b4f567d35261ed627e450b767b24b56a2554792d0950f1fb19f7c141abd38382"><div class="ttname"><a href="menu_8h.html#a6b4f567d35261ed627e450b767b24b56a2554792d0950f1fb19f7c141abd38382">MENU_ONE</a></div><div class="ttdeci">@ MENU_ONE</div><div class="ttdef"><b>Definition:</b> <a href="menu_8h_source.html#l00030">menu.h:30</a></div></div>
-<div class="ttc" id="amenu_8h_html_a6b4f567d35261ed627e450b767b24b56a3c0380d63389060a3df5bf217fd2fac8"><div class="ttname"><a href="menu_8h.html#a6b4f567d35261ed627e450b767b24b56a3c0380d63389060a3df5bf217fd2fac8">MENU_ZERO</a></div><div class="ttdeci">@ MENU_ZERO</div><div class="ttdef"><b>Definition:</b> <a href="menu_8h_source.html#l00030">menu.h:30</a></div></div>
-<div class="ttc" id="amenu_8h_html_a6b4f567d35261ed627e450b767b24b56ae7c93f3587cf592f4c4e1f527642c460"><div class="ttname"><a href="menu_8h.html#a6b4f567d35261ed627e450b767b24b56ae7c93f3587cf592f4c4e1f527642c460">MENU_NONE</a></div><div class="ttdeci">@ MENU_NONE</div><div class="ttdef"><b>Definition:</b> <a href="menu_8h_source.html#l00031">menu.h:30</a></div></div>
-<div class="ttc" id="amenu_8h_html_a88e016ed6bb3eb9cfe66a3009bc6fbcf"><div class="ttname"><a href="menu_8h.html#a88e016ed6bb3eb9cfe66a3009bc6fbcf">MENU_check_transition</a></div><div class="ttdeci">void MENU_check_transition(void)</div><div class="ttdoc">Check for selection/transition.</div><div class="ttdef"><b>Definition:</b> <a href="menu_8c_source.html#l00164">menu.c:164</a></div></div>
+<div class="ttc" id="ameasuring_8h_html_a2ace7017c3957ead5cd587fc6fae0290"><div class="ttname"><a href="measuring_8h.html#a2ace7017c3957ead5cd587fc6fae0290">MEAS_timer_init</a></div><div class="ttdeci">void MEAS_timer_init(void)</div><div class="ttdoc">Configure the timer to trigger the ADC(s)</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00123">measuring.c:123</a></div></div>
+<div class="ttc" id="ameasuring_8h_html_a3ebff14909fa0d942ca9ea64ef5d1b48"><div class="ttname"><a href="measuring_8h.html#a3ebff14909fa0d942ca9ea64ef5d1b48">MEAS_amplitude_left</a></div><div class="ttdeci">uint32_t MEAS_amplitude_left</div><div class="ttdoc">Amplitude of the left channel.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00074">measuring.c:74</a></div></div>
+<div class="ttc" id="ameasuring_8h_html_a5bcb0a009b9e52aedb544df6c278f932"><div class="ttname"><a href="measuring_8h.html#a5bcb0a009b9e52aedb544df6c278f932">MEAS_amplitude_right</a></div><div class="ttdeci">uint32_t MEAS_amplitude_right</div><div class="ttdoc">Amplitude of the right channel.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00075">measuring.c:75</a></div></div>
+<div class="ttc" id="ameasuring_8h_html_a645930ff74ceaacb90aca99fae865f8f"><div class="ttname"><a href="measuring_8h.html#a645930ff74ceaacb90aca99fae865f8f">MEAS_GPIO_analog_init</a></div><div class="ttdeci">void MEAS_GPIO_analog_init(void)</div><div class="ttdoc">Configure GPIOs in analog mode.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00094">measuring.c:94</a></div></div>
+<div class="ttc" id="ameasuring_8h_html_a816ecd0c653237b918a5e862143b081c"><div class="ttname"><a href="measuring_8h.html#a816ecd0c653237b918a5e862143b081c">ADC3_dual_scan_start</a></div><div class="ttdeci">void ADC3_dual_scan_start(void)</div><div class="ttdoc">Start DMA, ADC and timer.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00216">measuring.c:216</a></div></div>
+<div class="ttc" id="ameasuring_8h_html_a8307c93a35eebeec45eac55648b0f606"><div class="ttname"><a href="measuring_8h.html#a8307c93a35eebeec45eac55648b0f606">MEAS_data_ready</a></div><div class="ttdeci">bool MEAS_data_ready</div><div class="ttdoc">New data is ready.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00073">measuring.c:73</a></div></div>
+<div class="ttc" id="ameasuring_8h_html_af3a24973e259e999e4ebdfd1e6383c12"><div class="ttname"><a href="measuring_8h.html#af3a24973e259e999e4ebdfd1e6383c12">ADC3_IN11_IN6_scan_init</a></div><div class="ttdeci">void ADC3_IN11_IN6_scan_init(void)</div><div class="ttdoc">Initialize ADC, timer and DMA for HALL measurement.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00185">measuring.c:185</a></div></div>
+<div class="ttc" id="ameasuring_8h_html_af6c236e0b391beae12f714f7dd89a25e"><div class="ttname"><a href="measuring_8h.html#af6c236e0b391beae12f714f7dd89a25e">ADC3_IN13_IN4_scan_init</a></div><div class="ttdeci">void ADC3_IN13_IN4_scan_init(void)</div><div class="ttdoc">Initialize ADC, timer and DMA for WPC measurement.</div><div class="ttdef"><b>Definition:</b> <a href="measuring_8c_source.html#l00147">measuring.c:147</a></div></div>
 <div class="ttc" id="apushbutton_8h_html"><div class="ttname"><a href="pushbutton_8h.html">pushbutton.h</a></div><div class="ttdoc">See pushbutton.c.</div></div>
 <div class="ttc" id="apushbutton_8h_html_a1d6696a09e34d517e04ff82f792baf57"><div class="ttname"><a href="pushbutton_8h.html#a1d6696a09e34d517e04ff82f792baf57">PB_enableIRQ</a></div><div class="ttdeci">void PB_enableIRQ(void)</div><div class="ttdoc">Configure interrupt on rising edge for the USER pushbutton.</div><div class="ttdef"><b>Definition:</b> <a href="pushbutton_8c_source.html#l00056">pushbutton.c:56</a></div></div>
 <div class="ttc" id="apushbutton_8h_html_a6efe94714ab265a5e515c7266d234917"><div class="ttname"><a href="pushbutton_8h.html#a6efe94714ab265a5e515c7266d234917">PB_init</a></div><div class="ttdeci">void PB_init(void)</div><div class="ttdoc">Configure the GPIO for the USER pushbutton.</div><div class="ttdef"><b>Definition:</b> <a href="pushbutton_8c_source.html#l00044">pushbutton.c:44</a></div></div>
 <div class="ttc" id="apushbutton_8h_html_ab920dbc364e7b33bb9186ac45ae1a332"><div class="ttname"><a href="pushbutton_8h.html#ab920dbc364e7b33bb9186ac45ae1a332">PB_pressed</a></div><div class="ttdeci">bool PB_pressed(void)</div><div class="ttdoc">Was the pushbutton pressed?</div><div class="ttdef"><b>Definition:</b> <a href="pushbutton_8c_source.html#l00072">pushbutton.c:72</a></div></div>
+<div class="ttc" id="astruct_o_p_t_n__entry__t_html_a76453fcfb0e5fd6eacf66eaddb4dcb87"><div class="ttname"><a href="struct_o_p_t_n__entry__t.html#a76453fcfb0e5fd6eacf66eaddb4dcb87">OPTN_entry_t::active</a></div><div class="ttdeci">uint16_t active</div><div class="ttdoc">Active option.</div><div class="ttdef"><b>Definition:</b> <a href="lcd__gui_8h_source.html#l00039">lcd_gui.h:39</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,0 +1,7 @@
+<map id="ANA_Handler" name="ANA_Handler">
+<area shape="rect" id="node1" title="Analytics handler." alt="" coords="5,56,105,83"/>
+<area shape="rect" id="node2" href="$analytics_8c.html#acdd164761e612bbacc39c548b4f66c84" title="Calculate Angle with three length inputs." alt="" coords="179,5,275,32"/>
+<area shape="rect" id="node3" href="$analytics_8c.html#a946965402409f57bdeb46500c5e226b4" title="Calculate distance from measurement input and mode setting." alt="" coords="153,56,300,83"/>
+<area shape="rect" id="node5" href="$analytics_8c.html#a50c6a3e6221cd89519553d4521b7855c" title="Calculate electrical current from magnetic field distance[m] amplitude[1] return current[A]." alt="" coords="168,107,285,133"/>
+<area shape="rect" id="node4" href="$analytics_8c.html#af040e1c8b355944897eb657e23e4e572" title="Calculate distance." alt="" coords="348,56,463,83"/>
+</map>

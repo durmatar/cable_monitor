@@ -1,5 +1,23 @@
 var searchData=
 [
-  ['adc_5fsample_5fcount_0',['ADC_sample_count',['../measuring_8c.html#a70e7c139b5911548b5eacdd74e471d5b',1,'measuring.c']]],
-  ['adc_5fsamples_1',['ADC_samples',['../measuring_8c.html#ab7f88c24d5816d6d48d932fdb53caaf2',1,'measuring.c']]]
+  ['active_0',['active',['../struct_o_p_t_n__entry__t.html#a76453fcfb0e5fd6eacf66eaddb4dcb87',1,'OPTN_entry_t']]],
+  ['adc_5fsample_5fcount_1',['ADC_sample_count',['../measuring_8c.html#a70e7c139b5911548b5eacdd74e471d5b',1,'measuring.c']]],
+  ['adc_5fsamples_2',['ADC_samples',['../measuring_8c.html#ab7f88c24d5816d6d48d932fdb53caaf2',1,'measuring.c']]],
+  ['ana_5fcycle_3',['ANA_cycle',['../analytics_8c.html#a049d237c35c0803293922cf360205dcd',1,'analytics.c']]],
+  ['ana_5fhallbusy_4',['ANA_hallBusy',['../analytics_8c.html#af394addf492e6195dad36876819eeb38',1,'analytics.c']]],
+  ['ana_5fhallleft_5',['ANA_hallLeft',['../analytics_8c.html#a54a02bd706b547ca8c6d7f0919c6ad37',1,'analytics.c']]],
+  ['ana_5fhallright_6',['ANA_hallRight',['../analytics_8c.html#abd935ccb88cefc73ece68bc56f25eed2',1,'analytics.c']]],
+  ['ana_5finampleft_7',['ANA_inAmpLeft',['../analytics_8h.html#af7902dc06c2dd6b1812fb52530ff2c75',1,'ANA_inAmpLeft():&#160;analytics.c'],['../analytics_8c.html#af7902dc06c2dd6b1812fb52530ff2c75',1,'ANA_inAmpLeft():&#160;analytics.c']]],
+  ['ana_5finampright_8',['ANA_inAmpRight',['../analytics_8h.html#ac5859c107260b441112acb6839c11672',1,'ANA_inAmpRight():&#160;analytics.c'],['../analytics_8c.html#ac5859c107260b441112acb6839c11672',1,'ANA_inAmpRight():&#160;analytics.c']]],
+  ['ana_5finbtn_9',['ANA_inBtn',['../analytics_8h.html#a8598dac3509886273dfeb95a0d92a27a',1,'ANA_inBtn():&#160;analytics.c'],['../analytics_8c.html#a8598dac3509886273dfeb95a0d92a27a',1,'ANA_inBtn():&#160;analytics.c']]],
+  ['ana_5finmeasready_10',['ANA_inMeasReady',['../analytics_8h.html#a16662d40ecd294957b5e0e9e43d19286',1,'ANA_inMeasReady():&#160;analytics.c'],['../analytics_8c.html#a16662d40ecd294957b5e0e9e43d19286',1,'ANA_inMeasReady():&#160;analytics.c']]],
+  ['ana_5finoptn_11',['ANA_inOptn',['../analytics_8h.html#a0b7cf85db8dbb27d3880e1b2d9792090',1,'ANA_inOptn():&#160;analytics.c'],['../analytics_8c.html#a0b7cf85db8dbb27d3880e1b2d9792090',1,'ANA_inOptn():&#160;analytics.c']]],
+  ['ana_5fmeasbusy_12',['ANA_measBusy',['../analytics_8h.html#a3f49b8ee1a2e28be07d6b04c35347e17',1,'ANA_measBusy():&#160;analytics.c'],['../analytics_8c.html#a3f49b8ee1a2e28be07d6b04c35347e17',1,'ANA_measBusy():&#160;analytics.c']]],
+  ['ana_5foutdataready_13',['ANA_outDataReady',['../analytics_8h.html#a33bf76db306cd89013df61caecfc45ad',1,'ANA_outDataReady():&#160;analytics.c'],['../analytics_8c.html#a33bf76db306cd89013df61caecfc45ad',1,'ANA_outDataReady():&#160;analytics.c']]],
+  ['ana_5foutresults_14',['ANA_outResults',['../analytics_8h.html#a0aa19081306084305112283bd46aa3e2',1,'ANA_outResults():&#160;analytics.c'],['../analytics_8c.html#a0aa19081306084305112283bd46aa3e2',1,'ANA_outResults():&#160;analytics.c']]],
+  ['ana_5foutstarthall_15',['ANA_outStartHALL',['../analytics_8h.html#a2ed0c3b98eec4b9d226521e364074fc3',1,'ANA_outStartHALL():&#160;analytics.c'],['../analytics_8c.html#a2ed0c3b98eec4b9d226521e364074fc3',1,'ANA_outStartHALL():&#160;analytics.c']]],
+  ['ana_5foutstartwpc_16',['ANA_outStartWPC',['../analytics_8h.html#a41891de1ce941afef356caa3d45ab842',1,'ANA_outStartWPC():&#160;analytics.c'],['../analytics_8c.html#a41891de1ce941afef356caa3d45ab842',1,'ANA_outStartWPC():&#160;analytics.c']]],
+  ['ana_5fwpcbusy_17',['ANA_wpcBusy',['../analytics_8c.html#a1038556928d99793417ed24f25e725fd',1,'analytics.c']]],
+  ['ana_5fwpcleft_18',['ANA_wpcLeft',['../analytics_8c.html#af661f4d9fab0437f578ebc64e92a47ec',1,'analytics.c']]],
+  ['ana_5fwpcright_19',['ANA_wpcRight',['../analytics_8c.html#abca488f96b5dfd57e4ce0218e5e8d2ff',1,'analytics.c']]]
 ];
