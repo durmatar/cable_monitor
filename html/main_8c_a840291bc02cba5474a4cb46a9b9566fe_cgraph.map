@@ -12,11 +12,11 @@
 <area shape="rect" id="node27" href="$pushbutton_8c.html#a6efe94714ab265a5e515c7266d234917" title="Configure the GPIO for the USER pushbutton." alt="" coords="159,537,223,564"/>
 <area shape="rect" id="node28" href="$pushbutton_8c.html#ab920dbc364e7b33bb9186ac45ae1a332" title="Was the pushbutton pressed?" alt="" coords="145,588,238,615"/>
 <area shape="rect" id="node29" href="$main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64" title="System Clock Configuration." alt="" coords="120,639,263,665"/>
-<area shape="rect" id="node6" href="$analytics_8c.html#acdd164761e612bbacc39c548b4f66c84" title="Calculate Angle with three length inputs." alt="" coords="358,5,454,32"/>
+<area shape="rect" id="node6" href="$analytics_8c.html#acdd164761e612bbacc39c548b4f66c84" title="Aproximate Angle with three length inputs." alt="" coords="358,5,454,32"/>
 <area shape="rect" id="node7" href="$analytics_8c.html#a946965402409f57bdeb46500c5e226b4" title="Calculate distance from measurement input and mode setting." alt="" coords="333,56,479,83"/>
-<area shape="rect" id="node9" href="$analytics_8c.html#a50c6a3e6221cd89519553d4521b7855c" title="Calculate electrical current from magnetic field distance[m] amplitude[1] return current[A]." alt="" coords="347,107,465,133"/>
-<area shape="rect" id="node8" href="$analytics_8c.html#af040e1c8b355944897eb657e23e4e572" title="Calculate distance." alt="" coords="545,56,660,83"/>
-<area shape="rect" id="node11" href="$lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Draw options field to top bar." alt="" coords="551,461,655,488"/>
+<area shape="rect" id="node9" href="$analytics_8c.html#a50c6a3e6221cd89519553d4521b7855c" title="Calculate electrical current from magnetic field." alt="" coords="347,107,465,133"/>
+<area shape="rect" id="node8" href="$analytics_8c.html#af040e1c8b355944897eb657e23e4e572" title="Convert amplitude strength to distance." alt="" coords="545,56,660,83"/>
+<area shape="rect" id="node11" href="$lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Clear centre of the screen." alt="" coords="551,461,655,488"/>
 <area shape="rect" id="node13" href="$lcd__gui_8c.html#a2aad073fe21f04b3de56ec7b2bba1d4e" title="Draw hint." alt="" coords="355,512,457,539"/>
 <area shape="rect" id="node14" href="$lcd__gui_8c.html#a4bee92acc8416a48fde498a3021f33cc" title="Display measurements." alt="" coords="327,563,485,589"/>
 <area shape="rect" id="node15" href="$lcd__gui_8c.html#a9884930bdc0255871dba817e790d4db1" title="Draw Mode Selection." alt="" coords="341,309,471,336"/>

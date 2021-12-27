@@ -1,5 +1,5 @@
 <map id="DMA2_Stream1_IRQHandler" name="DMA2_Stream1_IRQHandler">
 <area shape="rect" id="node1" title="Interrupt handler for DMA2 Stream1." alt="" coords="5,31,192,57"/>
 <area shape="rect" id="node2" href="$measuring_8c.html#ad33d4cf42023ab7762e61cddb0d4113a" title="Resets the ADCs and the timer." alt="" coords="269,5,355,32"/>
-<area shape="rect" id="node3" href="$measuring_8c.html#aa97e477e23391d0168acea4bf8b7b571" title="Analyse data to detect sine amplitude." alt="" coords="240,56,384,83"/>
+<area shape="rect" id="node3" href="$measuring_8c.html#aa97e477e23391d0168acea4bf8b7b571" title="Analyse data to detect amplitude strength." alt="" coords="240,56,384,83"/>
 </map>

@@ -75,7 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>See <a class="el" href="measuring_8c.html" title="Measuring voltages with the ADC(s) in different configurations.">measuring.c</a>.  
+<p>See <a class="el" href="measuring_8c.html" title="Measuring voltages with the ADCs and analyse results.">measuring.c</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;stdint.h&quot;</code><br />
 <code>#include &quot;stdbool.h&quot;</code><br />
@@ -95,7 +95,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="analytics_8h__dep__incl.png" border="0" usemap="#a_inc_2analytics_8hdep" alt=""/></div>
 <map name="a_inc_2analytics_8hdep" id="a_inc_2analytics_8hdep">
 <area shape="rect" title="See measuring.c." alt="" coords="67,5,173,32"/>
-<area shape="rect" href="analytics_8c.html" title="Measuring voltages with the ADC(s) in different configurations." alt="" coords="5,80,115,107"/>
+<area shape="rect" href="analytics_8c.html" title="Collect and analyse measurements according to option inputs." alt="" coords="5,80,115,107"/>
 <area shape="rect" href="main_8c.html" title="Sets up the microcontroller, the clock system and the peripherals." alt="" coords="139,80,224,107"/>
 </map>
 </div>
@@ -111,30 +111,38 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a16662d40ecd294957b5e0e9e43d19286"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8h.html#a16662d40ecd294957b5e0e9e43d19286">ANA_inMeasReady</a></td></tr>
+<tr class="memdesc:a16662d40ecd294957b5e0e9e43d19286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input button pushed event.  <a href="analytics_8h.html#a16662d40ecd294957b5e0e9e43d19286">More...</a><br /></td></tr>
 <tr class="separator:a16662d40ecd294957b5e0e9e43d19286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8598dac3509886273dfeb95a0d92a27a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8h.html#a8598dac3509886273dfeb95a0d92a27a">ANA_inBtn</a></td></tr>
+<tr class="memdesc:a8598dac3509886273dfeb95a0d92a27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input measurement ready event.  <a href="analytics_8h.html#a8598dac3509886273dfeb95a0d92a27a">More...</a><br /></td></tr>
 <tr class="separator:a8598dac3509886273dfeb95a0d92a27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7902dc06c2dd6b1812fb52530ff2c75"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8h.html#af7902dc06c2dd6b1812fb52530ff2c75">ANA_inAmpLeft</a></td></tr>
+<tr class="memdesc:af7902dc06c2dd6b1812fb52530ff2c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input raw amplitude left.  <a href="analytics_8h.html#af7902dc06c2dd6b1812fb52530ff2c75">More...</a><br /></td></tr>
 <tr class="separator:af7902dc06c2dd6b1812fb52530ff2c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5859c107260b441112acb6839c11672"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8h.html#ac5859c107260b441112acb6839c11672">ANA_inAmpRight</a></td></tr>
+<tr class="memdesc:ac5859c107260b441112acb6839c11672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input raw amplitude right.  <a href="analytics_8h.html#ac5859c107260b441112acb6839c11672">More...</a><br /></td></tr>
 <tr class="separator:ac5859c107260b441112acb6839c11672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b7cf85db8dbb27d3880e1b2d9792090"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8h.html#a0b7cf85db8dbb27d3880e1b2d9792090">ANA_inOptn</a> [4]</td></tr>
-<tr class="memdesc:a0b7cf85db8dbb27d3880e1b2d9792090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode,DataType,MeasuringType,Accuracy.  <a href="analytics_8h.html#a0b7cf85db8dbb27d3880e1b2d9792090">More...</a><br /></td></tr>
+<tr class="memdesc:a0b7cf85db8dbb27d3880e1b2d9792090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input Mode,DataType,MeasuringType,Accuracy.  <a href="analytics_8h.html#a0b7cf85db8dbb27d3880e1b2d9792090">More...</a><br /></td></tr>
 <tr class="separator:a0b7cf85db8dbb27d3880e1b2d9792090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ed0c3b98eec4b9d226521e364074fc3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8h.html#a2ed0c3b98eec4b9d226521e364074fc3">ANA_outStartHALL</a></td></tr>
+<tr class="memdesc:a2ed0c3b98eec4b9d226521e364074fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output start hall measurement event.  <a href="analytics_8h.html#a2ed0c3b98eec4b9d226521e364074fc3">More...</a><br /></td></tr>
 <tr class="separator:a2ed0c3b98eec4b9d226521e364074fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41891de1ce941afef356caa3d45ab842"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8h.html#a41891de1ce941afef356caa3d45ab842">ANA_outStartWPC</a></td></tr>
+<tr class="memdesc:a41891de1ce941afef356caa3d45ab842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output start wpc measurement event.  <a href="analytics_8h.html#a41891de1ce941afef356caa3d45ab842">More...</a><br /></td></tr>
 <tr class="separator:a41891de1ce941afef356caa3d45ab842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33bf76db306cd89013df61caecfc45ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8h.html#a33bf76db306cd89013df61caecfc45ad">ANA_outDataReady</a></td></tr>
+<tr class="memdesc:a33bf76db306cd89013df61caecfc45ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output data ready event.  <a href="analytics_8h.html#a33bf76db306cd89013df61caecfc45ad">More...</a><br /></td></tr>
 <tr class="separator:a33bf76db306cd89013df61caecfc45ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0aa19081306084305112283bd46aa3e2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">ANA_outResults</a> [4]</td></tr>
-<tr class="memdesc:a0aa19081306084305112283bd46aa3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Angle,Distance,Std.Dev.,Current.  <a href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">More...</a><br /></td></tr>
+<tr class="memdesc:a0aa19081306084305112283bd46aa3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output analysed results.  <a href="analytics_8h.html#a0aa19081306084305112283bd46aa3e2">More...</a><br /></td></tr>
 <tr class="separator:a0aa19081306084305112283bd46aa3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f49b8ee1a2e28be07d6b04c35347e17"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8h.html#a3f49b8ee1a2e28be07d6b04c35347e17">ANA_measBusy</a></td></tr>
+<tr class="memdesc:a3f49b8ee1a2e28be07d6b04c35347e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output measurement state.  <a href="analytics_8h.html#a3f49b8ee1a2e28be07d6b04c35347e17">More...</a><br /></td></tr>
 <tr class="separator:a3f49b8ee1a2e28be07d6b04c35347e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >See <a class="el" href="measuring_8c.html" title="Measuring voltages with the ADC(s) in different configurations.">measuring.c</a>. </p>
+<div class="textblock"><p >See <a class="el" href="measuring_8c.html" title="Measuring voltages with the ADCs and analyse results.">measuring.c</a>. </p>
 <hr  />
 <p >Prefixes ANA, CALC, </p>
 
@@ -158,18 +166,19 @@ Variables</h2></td></tr>
 
 <p>Analytics handler. </p>
 <hr  />
- 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00221">221</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p >Handler for the analytics processes. Start and stop measurements according to option inputs. Collect and analyse measurements. Output analysed data and trigger the required events. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00210">210</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="analytics_8h_abae2b53b167a22cb67db31c36e81750c_cgraph.png" border="0" usemap="#aanalytics_8h_abae2b53b167a22cb67db31c36e81750c_cgraph" alt=""/></div>
 <map name="aanalytics_8h_abae2b53b167a22cb67db31c36e81750c_cgraph" id="aanalytics_8h_abae2b53b167a22cb67db31c36e81750c_cgraph">
 <area shape="rect" title="Analytics handler." alt="" coords="5,56,105,83"/>
-<area shape="rect" href="analytics_8c.html#acdd164761e612bbacc39c548b4f66c84" title="Calculate Angle with three length inputs." alt="" coords="179,5,275,32"/>
+<area shape="rect" href="analytics_8c.html#acdd164761e612bbacc39c548b4f66c84" title="Aproximate Angle with three length inputs." alt="" coords="179,5,275,32"/>
 <area shape="rect" href="analytics_8c.html#a946965402409f57bdeb46500c5e226b4" title="Calculate distance from measurement input and mode setting." alt="" coords="153,56,300,83"/>
-<area shape="rect" href="analytics_8c.html#a50c6a3e6221cd89519553d4521b7855c" title="Calculate electrical current from magnetic field distance[m] amplitude[1] return current[A]." alt="" coords="168,107,285,133"/>
-<area shape="rect" href="analytics_8c.html#af040e1c8b355944897eb657e23e4e572" title="Calculate distance." alt="" coords="348,56,463,83"/>
+<area shape="rect" href="analytics_8c.html#a50c6a3e6221cd89519553d4521b7855c" title="Calculate electrical current from magnetic field." alt="" coords="168,107,285,133"/>
+<area shape="rect" href="analytics_8c.html#af040e1c8b355944897eb657e23e4e572" title="Convert amplitude strength to distance." alt="" coords="348,56,463,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -205,7 +214,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00071">71</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Input raw amplitude left. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00046">46</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -229,7 +240,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00072">72</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Input raw amplitude right. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00047">47</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -253,7 +266,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00069">69</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Input measurement ready event. </p>
+<p >Input measurement ready event. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00044">44</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -277,7 +293,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00070">70</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Input button pushed event. </p>
+<p >Input button pushed event. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00045">45</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -301,9 +320,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Mode,DataType,MeasuringType,Accuracy. </p>
+<p>Input Mode,DataType,MeasuringType,Accuracy. </p>
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00073">73</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00048">48</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -327,7 +346,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00079">79</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Output measurement state. </p>
+<p >Output measurement state. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00057">57</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -351,7 +373,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00077">77</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Output data ready event. </p>
+<p >Output data ready event. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00055">55</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -375,9 +400,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Angle,Distance,Std.Dev.,Current. </p>
+<p>Output analysed results. </p>
+<p >Output analysed results. </p>
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00076">76</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00051">51</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -401,7 +427,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00074">74</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Output start hall measurement event. </p>
+<p >Output start hall measurement event. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00049">49</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -425,7 +454,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00075">75</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Output start wpc measurement event. </p>
+<p >Output start wpc measurement event. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00050">50</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>

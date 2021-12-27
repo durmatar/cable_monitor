@@ -1,6 +1,6 @@
 <map id="GUI_SiteHandler" name="GUI_SiteHandler">
 <area shape="rect" id="node1" title="Manage LCD." alt="" coords="5,191,124,218"/>
-<area shape="rect" id="node2" href="$lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Draw options field to top bar." alt="" coords="396,39,500,66"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Clear centre of the screen." alt="" coords="396,39,500,66"/>
 <area shape="rect" id="node4" href="$lcd__gui_8c.html#a2aad073fe21f04b3de56ec7b2bba1d4e" title="Draw hint." alt="" coords="200,343,303,370"/>
 <area shape="rect" id="node5" href="$lcd__gui_8c.html#a4bee92acc8416a48fde498a3021f33cc" title="Display measurements." alt="" coords="172,90,331,116"/>
 <area shape="rect" id="node6" href="$lcd__gui_8c.html#a9884930bdc0255871dba817e790d4db1" title="Draw Mode Selection." alt="" coords="186,242,317,268"/>

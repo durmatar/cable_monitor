@@ -1,5 +1,5 @@
 <map id="Src/analytics.c" name="Src/analytics.c">
-<area shape="rect" id="node1" title="Measuring voltages with the ADC(s) in different configurations." alt="" coords="213,5,323,32"/>
+<area shape="rect" id="node1" title="Collect and analyse measurements according to option inputs." alt="" coords="213,5,323,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,99,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="123,80,280,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="305,80,367,107"/>

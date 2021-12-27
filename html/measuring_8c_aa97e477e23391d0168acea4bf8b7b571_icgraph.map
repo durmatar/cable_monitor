@@ -1,4 +1,4 @@
 <map id="MEAS_analyse_data" name="MEAS_analyse_data">
-<area shape="rect" id="node1" title="Analyse data to detect sine amplitude." alt="" coords="240,5,384,32"/>
+<area shape="rect" id="node1" title="Analyse data to detect amplitude strength." alt="" coords="240,5,384,32"/>
 <area shape="rect" id="node2" href="$measuring_8c.html#adab6f3e22e90bd5b1ceebb98022abdf2" title="Interrupt handler for DMA2 Stream1." alt="" coords="5,5,192,32"/>
 </map>

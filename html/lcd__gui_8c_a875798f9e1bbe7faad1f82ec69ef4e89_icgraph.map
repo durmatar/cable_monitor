@@ -1,6 +1,6 @@
 <map id="GUI_LCD_FillRect" name="GUI_LCD_FillRect">
 <area shape="rect" id="node1" title="Wrapper to draw filled rectangle." alt="" coords="672,183,799,209"/>
-<area shape="rect" id="node2" href="$lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Draw options field to top bar." alt="" coords="499,95,603,121"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Clear centre of the screen." alt="" coords="499,95,603,121"/>
 <area shape="rect" id="node3" href="$lcd__gui_8c.html#a4bee92acc8416a48fde498a3021f33cc" title="Display measurements." alt="" coords="271,5,429,32"/>
 <area shape="rect" id="node7" href="$lcd__gui_8c.html#a9884930bdc0255871dba817e790d4db1" title="Draw Mode Selection." alt="" coords="485,157,616,184"/>
 <area shape="rect" id="node8" href="$lcd__gui_8c.html#a5d8cdb6f40844180604c20481e833767" title="Draw options site." alt="" coords="287,208,413,235"/>

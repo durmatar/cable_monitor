@@ -19,9 +19,9 @@
 /******************************************************************************
  * Defines
  *****************************************************************************/
-extern bool MEAS_data_ready;
-extern uint32_t MEAS_amplitude_left;
-extern uint32_t MEAS_amplitude_right;
+extern bool MEAS_data_ready;			///< New data is ready
+extern uint32_t MEAS_amplitude_left;	///< Amplitude of the left channel
+extern uint32_t MEAS_amplitude_right;	///< Amplitude of the right channel
 
 
 /******************************************************************************

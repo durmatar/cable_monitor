@@ -1,25 +1,17 @@
 /** ***************************************************************************
  * @file
- * @brief Measuring voltages with the ADC(s) in different configurations
+ * @brief Measuring voltages with the ADCs and analyse results
  *
- *
- * Demonstrates different ADC (Analog to Digital Converter) modes
+ * Contained functionality:
  * ==============================================================
  *
- * - ADC in single conversion mode
  * - ADC triggered by a timer and with interrupt after end of conversion
  * - ADC combined with DMA (Direct Memory Access) to fill a buffer
  * - Dual mode = simultaneous sampling of two inputs by two ADCs
- * - Scan mode = sequential sampling of two inputs by one ADC
- * - Simple DAC output is demonstrated as well
  * - Analog mode configuration for GPIOs
- * - Display recorded data on the graphics display
+ * - Analyse collected samples
  *
  * Peripherals @ref HowTo
- *
- * @image html demo_screenshot_board.jpg
- *
- *
  *
  * @anchor HowTo
  * How to Configure the Peripherals: ADC, TIMER and DMA
@@ -33,12 +25,12 @@
  * @n Reading from a registers gets status and data from the HW peripheral.
  *
  * The information on which bits have to be set to get a specific behavior
- * is documented in the <b>reference manual</b> of the mikrocontroller.
- *
+ * is documented in the <b>reference manual</b> of the microcontroller.
  *
  * ----------------------------------------------------------------------------
- * @author Jonas Bollhalder, Tarik Durmaz hhrt@zhaw.ch
- * @date 17.11.2021
+ * @author  Jonas Bollhalder, bollhjon@students.zhaw.ch
+ * @author  Tarik Durmaz, durmatar@students.zhaw.ch
+ * @date	27.12.2021
  *****************************************************************************/
 
 
@@ -86,10 +78,10 @@ static uint32_t ADC_samples[2*ADC_NUMS];///< ADC values of max. 2 input channels
  * @brief Configure GPIOs in analog mode.
  *
  * @note The input number for the ADCs is not equal to the GPIO pin number!
- * - ADC3_IN4 = GPIO PF6
- * - ADC123_IN13 = GPIO PC3
- * - ADC12_IN5 = GPIO PA5
- * - DAC_OUT2 = GPIO PA5 (= same GPIO as ADC12_IN5)
+ * - ADC3_IN4 = GPIO PF6 (wcp right)
+ * - ADC3_IN6 = GPIO PF8 (hall left)
+ * - ADC123_IN11 = GPIO PC1 (hall right)
+ * - ADC123_IN13 = GPIO PC3 (wpc left)
  *****************************************************************************/
 void MEAS_GPIO_analog_init(void)
 {
@@ -105,7 +97,7 @@ void MEAS_GPIO_analog_init(void)
 /** ***************************************************************************
  * @brief Resets the ADCs and the timer
  *
- * to make sure the different demos do not interfere.
+ * to make sure the different sampling preferences do not interfere.
  *****************************************************************************/
 void ADC_reset(void) {
 	RCC->APB2RSTR |= RCC_APB2RSTR_ADCRST;	// Reset ADCs
@@ -136,8 +128,8 @@ void MEAS_timer_init(void)
 /** ***************************************************************************
  * @brief Initialize ADC, timer and DMA for WPC measurement
  *
- * Uses ADC2 and DMA2_Stream1 channel2
- * @n The ADC2 trigger is set to TIM2 TRGO event
+ * Uses ADC3 and DMA2_Stream1 channel2
+ * @n The ADC3 trigger is set to TIM2 TRGO event
  * @n At each trigger both inputs are converted sequentially
  * and transfered to memory by the DMA.
  * @n As each conversion triggers the DMA, the number of transfers is doubled.
@@ -174,20 +166,20 @@ void ADC3_IN13_IN4_scan_init(void)
 /** ***************************************************************************
  * @brief Initialize ADC, timer and DMA for HALL measurement
  *
- * Uses ADC2 and DMA2_Stream1 channel2
- * @n The ADC2 trigger is set to TIM2 TRGO event
+ * Uses ADC3 and DMA2_Stream1 channel2
+ * @n The ADC3 trigger is set to TIM2 TRGO event
  * @n At each trigger both inputs are converted sequentially
  * and transfered to memory by the DMA.
  * @n As each conversion triggers the DMA, the number of transfers is doubled.
  * @n The DMA triggers the transfer complete interrupt when all data is ready.
- * @n The inputs used are ADC123_IN13 = GPIO PC3 and ADC3_IN4 = GPIO PF6
+ * @n The inputs used are ADC123_IN11 = GPIO PC1 and ADC3_IN3 = GPIO PF8
  *****************************************************************************/
 void ADC3_IN11_IN6_scan_init(void)
 {
 	__HAL_RCC_ADC3_CLK_ENABLE();		// Enable Clock for ADC3
 	ADC3->SQR1 |= ADC_SQR1_L_0;			// Convert 2 inputs
-	ADC3->SQR3 |= (11UL << ADC_SQR3_SQ1_Pos);	// Input 13 = first conversion
-	ADC3->SQR3 |= (6UL << ADC_SQR3_SQ2_Pos);	// Input 4 = second conversion
+	ADC3->SQR3 |= (11UL << ADC_SQR3_SQ1_Pos);	// Input 11 = first conversion
+	ADC3->SQR3 |= (6UL << ADC_SQR3_SQ2_Pos);	// Input 3 = second conversion
 	ADC3->CR1 |= ADC_CR1_SCAN;			// Enable scan mode
 	ADC3->CR2 |= (1UL << ADC_CR2_EXTEN_Pos);	// En. ext. trigger on rising e.
 	ADC3->CR2 |= (6UL << ADC_CR2_EXTSEL_Pos);	// Timer 2 TRGO event
@@ -280,7 +272,10 @@ void DMA2_Stream1_IRQHandler(void)
 }
 
 /** ***************************************************************************
- * @brief Analyse data to detect sine amplitude
+ * @brief Analyse data to detect amplitude strength
+ *
+ * Get 10 highest and lowest measurements, convert lowest values to highest,
+ * calculate a mean and save the results.
  *****************************************************************************/
 void MEAS_analyse_data(void)
 {

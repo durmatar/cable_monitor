@@ -1,5 +1,5 @@
 <map id="GUI_DrawRaw" name="GUI_DrawRaw">
 <area shape="rect" id="node1" title="Display raw measurements." alt="" coords="5,5,111,32"/>
-<area shape="rect" id="node2" href="$lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Draw options field to top bar." alt="" coords="159,5,263,32"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Clear centre of the screen." alt="" coords="159,5,263,32"/>
 <area shape="rect" id="node3" href="$lcd__gui_8c.html#a875798f9e1bbe7faad1f82ec69ef4e89" title="Wrapper to draw filled rectangle." alt="" coords="311,5,437,32"/>
 </map>
