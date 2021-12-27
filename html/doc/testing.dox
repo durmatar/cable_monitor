@@ -1,35 +1,88 @@
 /**
 @page testing Testing Firmware
 
-Testing is a vast field and there are lots of different approaches.
-In the context of the Cable-Monitor, however,
-testing the different modules is straightforward.
-A final combined test shows if the modules work together as expected.
+The distanc measuring works with look up tabels which were recordeded and then stored as arrays in the file analytics.c .
+@n The following tabel works only with the values used for the right wpc sensor.
+@n Never thze less the right sensor was also testet.
 
-Even if only simple and quite obvious tests have been done,
-it is nonetheless important to document them.
 
-@todo Define, run, document and evaluate all the important tests.
-
-<h1>Test</h1>
+<h1>WPC Test</h1>
 <table>
 <tr>
-	<th>Module</th><th>Test Conditions</th><th>Expected</th><th>Observed</th><th>Pass/Fail</th><th>Remarks</th>
+	<th>Cable Type </th><th>Distance [mm]</th><th>LUT Value</th><th>Measured Value (without tooching GND pin)</th><th>Measured Value (with tooching GND pin)</th>
 </tr>
 <tr>
-	<td>Menu system</td><td>Touch menu item "Single"</td><td>Switch to state "Single"</td><td>Switches to "Single"</td><td>Pass</th><td>Sluggish reaction => improve response speed</td>
+	<td>L</td><td>0</td><td>810</td><td>730</td><td>805</th>
 </tr>
 <tr>
-	<td>ADC with DMA</td><td>fs = 300Hz, N = 24<br>f = 50Hz, V = 1Vdc+1Vpp</td><td>Array filled with 24 samples = 3 signal periods<br>Minimum = 620, Maximum = 1,861</td><td>3 signal periods<br>Minimum = 610, Maximum = 1.835</td><td>Pass</th><td>Reference voltage of ADC is 3.35V, not 3.30V</td>
+	<td>L</td><td>10</td><td>690</td><td>575</td><td>690</th>
 </tr>
 <tr>
-	<td>Display data</td><td>Array with random values in the range 0 to 4095</td><td>Line plot</td><td>Plot works, but uC crashes when data > 127</td><td>Fail</th><td>Wrong datatype or typecast?<br>Display limits?</td>
+	<td>L</td><td>30</td><td>565</td><td>480</td><td>562</th>
 </tr>
+<tr>
+	<td>L</td><td>50</td><td>510</td><td>450</td><td>510</th>
+</tr>
+<tr>
+	<td>L</td><td>70</td><td>490</td><td>320</td><td>478</th>
+</tr>
+<tr>
+	<td>L</td><td>100</td><td>450</td><td>290</td><td>435</th>
+
+</tr>
+<tr>
+	<td>LN</td><td>0</td><td>570</td><td>415</td><td>570</th>
+</tr>
+<tr>
+	<td>LN</td><td>10</td><td>510</td><td>415</td><td>500</th>
+</tr>
+<tr>
+	<td>LN</td><td>30</td><td>375</td><td>290</td><td>380</th>
+</tr>
+<tr>
+	<td>LN</td><td>50</td><td>330</td><td>200</td><td>321</th>
+</tr>
+<tr>
+	<td>LN</td><td>70</td><td>290</td><td>153</td><td>280</th>
+</tr>
+<tr>
+	<td>LN</td><td>100</td><td>265</td><td>150</td><td>254</th>
+
+</tr>
+<tr>
+	<td>LNPe</td><td>0</td><td>450</td><td>410</td><td>453</th>
+</tr>
+<tr>
+	<td>LNPe</td><td>10</td><td>363</td><td>254</td><td>357</th>
+</tr>
+<tr>
+	<td>LNPe</td><td>30</td><td>283</td><td>190</td><td>279</th>
+</tr>
+<tr>
+	<td>LNPe</td><td>50</td><td>273</td><td>154</td><td>271</th>
+</tr>
+<tr>
+	<td>LNPe</td><td>70</td><td>267</td><td>153</td><td>265</th>
+</tr>
+<tr>
+	<td>LNPe</td><td>100</td><td>263</td><td>150</td><td>260</th>
+</tr>
+
 </table>
-@n Test date: 07.05.2020
-@n Tester: Hanspeter Hochreutener (hhrt@zhaw.ch)
+
+
+@n The teste have been made reepetadly and uder varius circumstances. 
+@n The best results were used in the upper tabel.
+@n
+@n During testing, we happened to notice that the data is only useful when the subject touches the ground pins at the bottom of the Discovery Board.
+@n The deviation is also shown in the table above
+
+
+
+@n Test date: 24.12.2021
+@n Tester: Tarik Durmaz
 
 ---
-@author	Hanspeter Hochreutener (hhrt@zhaw.ch)
-@date 07.05.2020
+@author	Tarik Durmaz
+@date 24.12.2021
 */

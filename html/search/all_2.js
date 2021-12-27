@@ -18,7 +18,5 @@ var searchData=
   ['calc_5fwpcrightl_15',['CALC_wpcRightL',['../analytics_8c.html#a8ea94bd6bf1910a6979301bca410ae10',1,'analytics.c']]],
   ['calc_5fwpcrightln_16',['CALC_wpcRightLN',['../analytics_8c.html#a7bb2fbc43e1888fdd9ae5903664f53e9',1,'analytics.c']]],
   ['calc_5fwpcrightlnpe_17',['CALC_wpcRightLNPE',['../analytics_8c.html#aa053cb9ab292117ccdd9a53852902c9d',1,'analytics.c']]],
-  ['code_2dcabelmonitor_18',['Code-Cabelmonitor',['../index.html',1,'']]],
-  ['coding_20guidelines_19',['Coding Guidelines',['../coding_guidelines.html',1,'']]],
-  ['coding_5fguidelines_2edox_20',['coding_guidelines.dox',['../coding__guidelines_8dox.html',1,'']]]
+  ['code_2dcabelmonitor_18',['Code-Cabelmonitor',['../index.html',1,'']]]
 ];
