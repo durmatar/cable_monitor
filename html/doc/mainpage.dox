@@ -6,12 +6,14 @@ This demo_code is a template for the <b>Electronics-Project Modules</b>
 @n in the <b>third semester of the electronics engineering curriculum</b>
 at the School of Engineering of the Zurich University of Applied Sciences.
 
+@n For a short overview look at the file @link operating_guide.html @endlink
 @n The file main.c containes the setup of the microcontroller and calls the required functions for the functionality.
 @n The file measuring.c contains the measurements of the input voltages with de ADC's
 @n The file analytics.c contains the analytics handler and all required analytics functions
 @n The file lcd_gui.c contains the graphical user interface (GUI) handler and functions to draw the GUI
+@n The file @link testing.html @endlink containes the conducted test and results
  
-@image html discovery_blu2.jpg
+<img src="main_device.jpg" width="60%"/>
 
 The template code is written for the evaluation board
 <b>32F429IDISCOVERY (Discovery kit with STM32F429ZI MCU)</b>.
@@ -26,7 +28,7 @@ Analysing the surpassed date from the previous desingned sensor board.
 @n Calcuating the distance from the measuret device to the monitor.
 @n Calculatig the angel in wihich the monitor is holed against the cabel.
 @n Additionaly if possible the cabel monitor schould calculate the value of 
-the current which flows throu the cabel.
+the current which flows through the cabel.
 
 
 What has been achieved?

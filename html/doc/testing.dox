@@ -3,7 +3,7 @@
 
 The distanc measuring works with look up tabels which were recordeded and then stored as arrays in the file analytics.c .
 @n The following tabel works only with the values used for the right wpc sensor.
-@n Never thze less the right sensor was also testet.
+@n Never the less the right sensor was also testet.
 
 
 <h1>WPC Test</h1>
@@ -50,22 +50,22 @@ The distanc measuring works with look up tabels which were recordeded and then s
 
 </tr>
 <tr>
-	<td>LNPe</td><td>0</td><td>450</td><td>410</td><td>453</th>
+	<td>LNPE</td><td>0</td><td>450</td><td>410</td><td>453</th>
 </tr>
 <tr>
-	<td>LNPe</td><td>10</td><td>363</td><td>254</td><td>357</th>
+	<td>LNPE</td><td>10</td><td>363</td><td>254</td><td>357</th>
 </tr>
 <tr>
-	<td>LNPe</td><td>30</td><td>283</td><td>190</td><td>279</th>
+	<td>LNPE</td><td>30</td><td>283</td><td>190</td><td>279</th>
 </tr>
 <tr>
-	<td>LNPe</td><td>50</td><td>273</td><td>154</td><td>271</th>
+	<td>LNPE</td><td>50</td><td>273</td><td>154</td><td>271</th>
 </tr>
 <tr>
-	<td>LNPe</td><td>70</td><td>267</td><td>153</td><td>265</th>
+	<td>LNPE</td><td>70</td><td>267</td><td>153</td><td>265</th>
 </tr>
 <tr>
-	<td>LNPe</td><td>100</td><td>263</td><td>150</td><td>260</th>
+	<td>LNPE</td><td>100</td><td>263</td><td>150</td><td>260</th>
 </tr>
 
 </table>

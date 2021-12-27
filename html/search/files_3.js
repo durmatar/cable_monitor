@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['pushbutton_2ec_0',['pushbutton.c',['../pushbutton_8c.html',1,'']]],
-  ['pushbutton_2eh_1',['pushbutton.h',['../pushbutton_8h.html',1,'']]]
+  ['operating_5fguide_2edox_0',['operating_guide.dox',['../operating__guide_8dox.html',1,'']]]
 ];

@@ -1,0 +1,91 @@
+/**
+@page operating_guide Operating Guide
+
+Index
+---
+To get started smothly, this guide is seperated into three sections:
+- @ref HardwareDescription
+- @ref GraphicalUserInterface
+- @ref Options
+
+---
+@anchor HardwareDescription
+Hardware Description
+---
+<b>Required Hardware:</b>
+- 32F429IDISCOVERY (Discovery kit with STM32F429ZI MCU)
+- Sensor board
+- USB cable
+- Powersource(Powerbank, Laptop USB socket, Cell phone charger, etc.)
+
+<img src="guide_parts.jpg" width="60%"/>
+@n
+@n
+
+<b>Assembly</b>
+1. Plug the microcontoller onto the sensor board. Make sure the sensor board is oriented correctly. 
+   @n(Sensors need to face away from USB ST-LINK port and GND, 3V and 5V pins need to line up form the microcontroller to the sensorboard)
+2. Power the device through the USB ST-LINK port on the bottom of the microcontoller.
+3. Turn on the powersource. Now the device should start up.
+
+<img src="guide_assembly.jpg" width="40%"/>
+@note For a stable stand on flat surfaces, fit short screws into the mountig holes of the sensor board.
+
+@n
+@n
+
+<b>User Interface</b>
+@n These user inputs and outputs are implemented to controll the device:
+- Use the black RESET button to reset the device
+- Use the blue USER button to start and stop measurements
+- Use the touch screen to adjust the measurement options
+- The LCD displays the @ref GrpahicalUserInterface
+- The two LEDs, between the LCD and the USER button, show the current state of the microcontroller. 
+  @n The green LED should always be blinking. The red LED lights up if a meassurement is currently conducted. 
+
+@note The USER button can only stop further measurements in continous mode. Not allready ongoing measurements.
+
+@n
+@n
+
+
+@anchor GraphicalUserInterface
+Graphical User Interface (GUI)
+---
+<img src="guide_gui_main.jpg" width="20%"/>
+@n Top bar: At the top left there is the mode display. It shows the current selected mode. 
+@n Depending on the latest analysed meassurement the background gets coloured green 
+if a cable was detected and red if no cable could be detected.
+@n At the top right a button is placed whitch leads to the options and back.
+
+Bottom bar: At the bottom a button row is displayed. With these buttons the selected mode can be changed.
+
+Center: After a completed meassurement the results get drawn to the center of the screen or the @ref Options get displayed.
+
+<img src="guide_gui_ana.jpg" width="20%"/>
+<img src="guide_gui_raw.jpg" width="20%"/>
+@n Depending on the selected options the analysed data (left) or the raw measurements (right) get displayed.
+@n
+@n
+
+@anchor Options
+Options (OPTN)
+---
+When the options view is openend, the view gets displayed and options can be selected.
+@n
+<img src="guide_gui_optn.jpg" width="20%"/>
+@n
+<b>Display Data</b>
+@n Select if the collected data should be analysed or displayed raw.
+
+<b>Meassurement Type</b>
+@n Select if only a single meassurement should be conducted and displayed or if measurements should be taken and displayed continously.
+
+<b>Accuracy</b>
+@n Select how many meassurement cycles should be taken. If it is set higher than one cycle the accuracy gets displayed and the standard deviation gets caluclated.
+
+@author  Jonas Bollhalder, bollhjon@students.zhaw.ch
+@author  Tarik Durmaz, durmatar@students.zhaw.ch
+
+@date 27.12.2021
+*/
