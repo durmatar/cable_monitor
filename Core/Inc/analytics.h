@@ -20,18 +20,18 @@
  * Variables
  *****************************************************************************/
 //inputs
-extern bool ANA_inMeasReady;
-extern bool ANA_inBtn;
-extern uint32_t ANA_inAmpLeft;
-extern uint32_t ANA_inAmpRight;
-extern uint16_t ANA_inOptn[4];
+extern bool ANA_inMeasReady;   ///< Input button pushed event
+extern bool ANA_inBtn;		   ///< Input measurement ready event
+extern uint32_t ANA_inAmpLeft; ///< Input raw amplitude left
+extern uint32_t ANA_inAmpRight;///< Input raw amplitude right
+extern uint16_t ANA_inOptn[4]; ///< Input Mode,DataType,MeasuringType,Accuracy
 
 //outputs
-extern bool ANA_outStartHALL;
-extern bool ANA_outStartWPC;
-extern bool ANA_outDataReady;
-extern float ANA_outResults[4];
-extern bool ANA_measBusy;
+extern bool ANA_outStartHALL;  ///< Output start hall measurement event
+extern bool ANA_outStartWPC;   ///< Output start wpc measurement event
+extern bool ANA_outDataReady;  ///< Output data ready event
+extern float ANA_outResults[4];///< Output analysed results
+extern bool ANA_measBusy;	   ///< Output measurement state
 
 
 /******************************************************************************

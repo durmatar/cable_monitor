@@ -77,7 +77,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>See <a class="el" href="lcd__gui_8c.html" title="The LCD GUI.">lcd_gui.c</a>.  
+<p>See <a class="el" href="lcd__gui_8c.html" title="Manage and display the touch screen and the lcd display.">lcd_gui.c</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;stdint.h&quot;</code><br />
 <code>#include &quot;stdbool.h&quot;</code><br />
@@ -97,7 +97,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="lcd__gui_8h__dep__incl.png" border="0" usemap="#a_inc_2lcd__gui_8hdep" alt=""/></div>
 <map name="a_inc_2lcd__gui_8hdep" id="a_inc_2lcd__gui_8hdep">
 <area shape="rect" title="See lcd_gui.c." alt="" coords="65,5,159,32"/>
-<area shape="rect" href="lcd__gui_8c.html" title="The LCD GUI." alt="" coords="5,80,104,107"/>
+<area shape="rect" href="lcd__gui_8c.html" title="Manage and display the touch screen and the lcd display." alt="" coords="5,80,104,107"/>
 <area shape="rect" href="main_8c.html" title="Sets up the microcontroller, the clock system and the peripherals." alt="" coords="128,80,213,107"/>
 </map>
 </div>
@@ -167,46 +167,53 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:aee9f902c5054d95f664465fa8fe95ae9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#aee9f902c5054d95f664465fa8fe95ae9">GUI_cable_detected</a></td></tr>
-<tr class="memdesc:aee9f902c5054d95f664465fa8fe95ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input true if cable detected with last measurement.  <a href="lcd__gui_8h.html#aee9f902c5054d95f664465fa8fe95ae9">More...</a><br /></td></tr>
+<tr class="memdesc:aee9f902c5054d95f664465fa8fe95ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input true if cable was detected.  <a href="lcd__gui_8h.html#aee9f902c5054d95f664465fa8fe95ae9">More...</a><br /></td></tr>
 <tr class="separator:aee9f902c5054d95f664465fa8fe95ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a301e95b1c648dad0c261ae1f63c46633"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#a301e95b1c648dad0c261ae1f63c46633">GUI_cable_not_detected</a></td></tr>
+<tr class="memdesc:a301e95b1c648dad0c261ae1f63c46633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input true if cable was not detected.  <a href="lcd__gui_8h.html#a301e95b1c648dad0c261ae1f63c46633">More...</a><br /></td></tr>
 <tr class="separator:a301e95b1c648dad0c261ae1f63c46633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f85e209f3cdcbcbffab250530df529d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lcd__gui_8h.html#a464248e9d459168576dc67ffcbdd0c95">GUI_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#a0f85e209f3cdcbcbffab250530df529d">GUI_mode</a></td></tr>
-<tr class="memdesc:a0f85e209f3cdcbcbffab250530df529d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default measurement mode.  <a href="lcd__gui_8h.html#a0f85e209f3cdcbcbffab250530df529d">More...</a><br /></td></tr>
+<tr class="memdesc:a0f85e209f3cdcbcbffab250530df529d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output default measurement mode.  <a href="lcd__gui_8h.html#a0f85e209f3cdcbcbffab250530df529d">More...</a><br /></td></tr>
 <tr class="separator:a0f85e209f3cdcbcbffab250530df529d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef1dc94cd8d4412fdc88038f96c91425"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#aef1dc94cd8d4412fdc88038f96c91425">GUI_measAccuracy</a></td></tr>
-<tr class="separator:aef1dc94cd8d4412fdc88038f96c91425"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9a9b6478e0f05970153a1b509f353ff"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#ae9a9b6478e0f05970153a1b509f353ff">GUI_angle</a></td></tr>
-<tr class="memdesc:ae9a9b6478e0f05970153a1b509f353ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Angle value to display.  <a href="lcd__gui_8h.html#ae9a9b6478e0f05970153a1b509f353ff">More...</a><br /></td></tr>
+<tr class="memdesc:ae9a9b6478e0f05970153a1b509f353ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input angle value to display.  <a href="lcd__gui_8h.html#ae9a9b6478e0f05970153a1b509f353ff">More...</a><br /></td></tr>
 <tr class="separator:ae9a9b6478e0f05970153a1b509f353ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1c1c93fe8ae9c5df1c63abeba04435f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#ac1c1c93fe8ae9c5df1c63abeba04435f">GUI_distance</a></td></tr>
-<tr class="memdesc:ac1c1c93fe8ae9c5df1c63abeba04435f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance value to display.  <a href="lcd__gui_8h.html#ac1c1c93fe8ae9c5df1c63abeba04435f">More...</a><br /></td></tr>
+<tr class="memdesc:ac1c1c93fe8ae9c5df1c63abeba04435f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input distance value to display.  <a href="lcd__gui_8h.html#ac1c1c93fe8ae9c5df1c63abeba04435f">More...</a><br /></td></tr>
 <tr class="separator:ac1c1c93fe8ae9c5df1c63abeba04435f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0112f1d486709773afcc460960aec10"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#ad0112f1d486709773afcc460960aec10">GUI_distanceDeviation</a></td></tr>
-<tr class="memdesc:ad0112f1d486709773afcc460960aec10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard deviation of distance.  <a href="lcd__gui_8h.html#ad0112f1d486709773afcc460960aec10">More...</a><br /></td></tr>
+<tr class="memdesc:ad0112f1d486709773afcc460960aec10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input standard deviation of distance.  <a href="lcd__gui_8h.html#ad0112f1d486709773afcc460960aec10">More...</a><br /></td></tr>
 <tr class="separator:ad0112f1d486709773afcc460960aec10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57cbbe375a0132cce74d88f39a022daf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#a57cbbe375a0132cce74d88f39a022daf">GUI_current</a></td></tr>
-<tr class="memdesc:a57cbbe375a0132cce74d88f39a022daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current to display.  <a href="lcd__gui_8h.html#a57cbbe375a0132cce74d88f39a022daf">More...</a><br /></td></tr>
+<tr class="memdesc:a57cbbe375a0132cce74d88f39a022daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input current to display.  <a href="lcd__gui_8h.html#a57cbbe375a0132cce74d88f39a022daf">More...</a><br /></td></tr>
 <tr class="separator:a57cbbe375a0132cce74d88f39a022daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad76d24e0e7d7351e5f05c0eab06f9c45"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#ad76d24e0e7d7351e5f05c0eab06f9c45">GUI_rawHallLeft</a></td></tr>
+<tr class="memdesc:ad76d24e0e7d7351e5f05c0eab06f9c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for raw value.  <a href="lcd__gui_8h.html#ad76d24e0e7d7351e5f05c0eab06f9c45">More...</a><br /></td></tr>
 <tr class="separator:ad76d24e0e7d7351e5f05c0eab06f9c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa41f815dcdb50b837053b0ce363a0c9b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#aa41f815dcdb50b837053b0ce363a0c9b">GUI_rawHallRight</a></td></tr>
+<tr class="memdesc:aa41f815dcdb50b837053b0ce363a0c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for raw value.  <a href="lcd__gui_8h.html#aa41f815dcdb50b837053b0ce363a0c9b">More...</a><br /></td></tr>
 <tr class="separator:aa41f815dcdb50b837053b0ce363a0c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec056210223f31abd9587e1efe936ca8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#aec056210223f31abd9587e1efe936ca8">GUI_rawWpcLeft</a></td></tr>
+<tr class="memdesc:aec056210223f31abd9587e1efe936ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for raw value.  <a href="lcd__gui_8h.html#aec056210223f31abd9587e1efe936ca8">More...</a><br /></td></tr>
 <tr class="separator:aec056210223f31abd9587e1efe936ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab83db88483db114905e7e4008e4ccbc4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#ab83db88483db114905e7e4008e4ccbc4">GUI_rawWpcRight</a></td></tr>
+<tr class="memdesc:ab83db88483db114905e7e4008e4ccbc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for raw value.  <a href="lcd__gui_8h.html#ab83db88483db114905e7e4008e4ccbc4">More...</a><br /></td></tr>
 <tr class="separator:ab83db88483db114905e7e4008e4ccbc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bde79f5c5ee8251d1717c72cd705439"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_p_t_n__entry__t.html">OPTN_entry_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#a4bde79f5c5ee8251d1717c72cd705439">GUI_options</a> [3]</td></tr>
+<tr class="memdesc:a4bde79f5c5ee8251d1717c72cd705439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output option settings.  <a href="lcd__gui_8h.html#a4bde79f5c5ee8251d1717c72cd705439">More...</a><br /></td></tr>
 <tr class="separator:a4bde79f5c5ee8251d1717c72cd705439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12231cb6aa077b7adb74388ad7bf364d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#a12231cb6aa077b7adb74388ad7bf364d">GUI_inputBtn</a></td></tr>
+<tr class="memdesc:a12231cb6aa077b7adb74388ad7bf364d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input button pushed event.  <a href="lcd__gui_8h.html#a12231cb6aa077b7adb74388ad7bf364d">More...</a><br /></td></tr>
 <tr class="separator:a12231cb6aa077b7adb74388ad7bf364d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a709f031cd6a2d36b6e7fbf76101d6164"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#a709f031cd6a2d36b6e7fbf76101d6164">GUI_inputMeasReady</a></td></tr>
+<tr class="memdesc:a709f031cd6a2d36b6e7fbf76101d6164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input measurement ready event.  <a href="lcd__gui_8h.html#a709f031cd6a2d36b6e7fbf76101d6164">More...</a><br /></td></tr>
 <tr class="separator:a709f031cd6a2d36b6e7fbf76101d6164"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a598aace13670b5a3b452fe433d83ca73"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd__gui_8h.html#a598aace13670b5a3b452fe433d83ca73">GUI_outOptn</a></td></tr>
+<tr class="memdesc:a598aace13670b5a3b452fe433d83ca73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output option change event.  <a href="lcd__gui_8h.html#a598aace13670b5a3b452fe433d83ca73">More...</a><br /></td></tr>
 <tr class="separator:a598aace13670b5a3b452fe433d83ca73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >See <a class="el" href="lcd__gui_8c.html" title="The LCD GUI.">lcd_gui.c</a>. </p>
+<div class="textblock"><p >See <a class="el" href="lcd__gui_8c.html" title="Manage and display the touch screen and the lcd display.">lcd_gui.c</a>. </p>
 <hr  />
 <p >Prefix GUI </p>
 
@@ -302,8 +309,9 @@ Variables</h2></td></tr>
 
 <p>Draw hint. </p>
 <hr  />
- 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00203">203</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p >Draw hint with title, description how to proceed, authors and date </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00230">230</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -335,16 +343,17 @@ Here is the caller graph for this function:</div>
 
 <p>Display measurements. </p>
 <hr  />
-<p >Always angle and distance, if measuring accuracy factor is greater than 1 also display standard deviation and accuracy factor, if distance is smaller than 10mm display current </p>
+<p >Draw measurements to screen. Draw angle if it is between -45° and 45°.</p>
+<p >Only if measurement is plausible display values. Always display angle, distance and type of measurement. If accuracy is set higher than one display standard deviation and current accuracy settings. If distance is closer than 10mm display current. </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00343">343</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00382">382</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd__gui_8h_a4bee92acc8416a48fde498a3021f33cc_cgraph.png" border="0" usemap="#alcd__gui_8h_a4bee92acc8416a48fde498a3021f33cc_cgraph" alt=""/></div>
 <map name="alcd__gui_8h_a4bee92acc8416a48fde498a3021f33cc_cgraph" id="alcd__gui_8h_a4bee92acc8416a48fde498a3021f33cc_cgraph">
 <area shape="rect" title="Display measurements." alt="" coords="5,31,164,57"/>
-<area shape="rect" href="lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Draw options field to top bar." alt="" coords="212,5,316,32"/>
+<area shape="rect" href="lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Clear centre of the screen." alt="" coords="212,5,316,32"/>
 <area shape="rect" href="lcd__gui_8c.html#a875798f9e1bbe7faad1f82ec69ef4e89" title="Wrapper to draw filled rectangle." alt="" coords="364,31,491,57"/>
 </map>
 </div>
@@ -379,8 +388,9 @@ Here is the caller graph for this function:</div>
 
 <p>Draw Mode Selection. </p>
 <hr  />
- 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00223">223</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p >Draw the mode selection bar at the bottom of the screen </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00252">252</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -428,7 +438,7 @@ Here is the caller graph for this function:</div>
 <li>Display values (analysed, raw) </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00435">435</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00477">477</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -472,14 +482,14 @@ Here is the caller graph for this function:</div>
 <hr  />
 <p >Display raw amplitude values of all sensors </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00493">493</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00536">536</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd__gui_8h_a95632210faa571570af20377684f1bfe_cgraph.png" border="0" usemap="#alcd__gui_8h_a95632210faa571570af20377684f1bfe_cgraph" alt=""/></div>
 <map name="alcd__gui_8h_a95632210faa571570af20377684f1bfe_cgraph" id="alcd__gui_8h_a95632210faa571570af20377684f1bfe_cgraph">
 <area shape="rect" title="Display raw measurements." alt="" coords="5,5,111,32"/>
-<area shape="rect" href="lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Draw options field to top bar." alt="" coords="159,5,263,32"/>
+<area shape="rect" href="lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Clear centre of the screen." alt="" coords="159,5,263,32"/>
 <area shape="rect" href="lcd__gui_8c.html#a875798f9e1bbe7faad1f82ec69ef4e89" title="Wrapper to draw filled rectangle." alt="" coords="311,5,437,32"/>
 </map>
 </div>
@@ -514,9 +524,9 @@ Here is the caller graph for this function:</div>
 
 <p>Draw Mode field to Top Bar. </p>
 <hr  />
-<p >Display selected Mode and green background if cable was detected </p>
+<p >Display currently selected mode. Background is coloured green if cable was detected, red if no cable was not detected and white if no measurement was conducted </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00249">249</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00281">281</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -558,9 +568,9 @@ Here is the caller graph for this function:</div>
 
 <p>Draw options field to top bar. </p>
 <hr  />
-<p >Draw options field in top bar </p>
+<p >Draw options field at the top right of the screen </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00299">299</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00334">334</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -604,14 +614,14 @@ Here is the caller graph for this function:</div>
 <hr  />
 <p >Read out GUI_inputs and display sites accordingly This Function needs to be called every cycle </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00531">531</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00574">574</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="lcd__gui_8h_aabf059fd8f36ce87100ad080b424abb5_cgraph.png" border="0" usemap="#alcd__gui_8h_aabf059fd8f36ce87100ad080b424abb5_cgraph" alt=""/></div>
 <map name="alcd__gui_8h_aabf059fd8f36ce87100ad080b424abb5_cgraph" id="alcd__gui_8h_aabf059fd8f36ce87100ad080b424abb5_cgraph">
 <area shape="rect" title="Manage LCD." alt="" coords="5,191,124,218"/>
-<area shape="rect" href="lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Draw options field to top bar." alt="" coords="396,39,500,66"/>
+<area shape="rect" href="lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Clear centre of the screen." alt="" coords="396,39,500,66"/>
 <area shape="rect" href="lcd__gui_8c.html#a2aad073fe21f04b3de56ec7b2bba1d4e" title="Draw hint." alt="" coords="200,343,303,370"/>
 <area shape="rect" href="lcd__gui_8c.html#a4bee92acc8416a48fde498a3021f33cc" title="Display measurements." alt="" coords="172,90,331,116"/>
 <area shape="rect" href="lcd__gui_8c.html#a9884930bdc0255871dba817e790d4db1" title="Draw Mode Selection." alt="" coords="186,242,317,268"/>
@@ -655,9 +665,9 @@ Here is the caller graph for this function:</div>
 
 <p>Handle touch screen inputs. </p>
 <hr  />
-<p >Determine touch input from Touch position and current site </p>
+<p >Determine touch input from Touch position and current site. This Function needs to be called every cycle </p>
 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00638">638</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00682">682</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -701,7 +711,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Angle value to display. </p>
+<p>Input angle value to display. </p>
+<p >Input angle value to display. </p>
 
 <p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00068">68</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
@@ -727,7 +738,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Input true if cable detected with last measurement. </p>
+<p>Input true if cable was detected. </p>
 
 <p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00063">63</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
@@ -753,6 +764,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Input true if cable was not detected. </p>
+
 <p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00064">64</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
 </div>
@@ -777,7 +790,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Current to display. </p>
+<p>Input current to display. </p>
+<p >Input current to display. </p>
 
 <p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00071">71</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
@@ -803,7 +817,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Distance value to display. </p>
+<p>Input distance value to display. </p>
+<p >Input distance value to display. </p>
 
 <p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00069">69</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
@@ -829,7 +844,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Standard deviation of distance. </p>
+<p>Input standard deviation of distance. </p>
+<p >Input standard deviation of distance. </p>
 
 <p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00070">70</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
@@ -855,7 +871,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00088">88</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p>Input button pushed event. </p>
+<p >Input button pushed event. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00092">92</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
 </div>
 </div>
@@ -879,29 +898,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00090">90</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p>Input measurement ready event. </p>
+<p >Input measurement ready event. </p>
 
-</div>
-</div>
-<a id="aef1dc94cd8d4412fdc88038f96c91425" name="aef1dc94cd8d4412fdc88038f96c91425"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef1dc94cd8d4412fdc88038f96c91425">&#9670;&nbsp;</a></span>GUI_measAccuracy</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t GUI_measAccuracy</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00094">94</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
 </div>
 </div>
@@ -925,7 +925,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Default measurement mode. </p>
+<p>Output default measurement mode. </p>
+<p >Output default measurement mode. </p>
 
 <p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00065">65</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
@@ -951,7 +952,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00079">79</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p>Output option settings. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00080">80</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
 </div>
 </div>
@@ -975,7 +978,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00096">96</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
+<p>Output option change event. </p>
+<p >Output option change event. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00085">85</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
 </div>
 </div>
@@ -998,6 +1004,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Input for raw value. </p>
 
 <p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00074">74</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
@@ -1023,6 +1031,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Input for raw value. </p>
+
 <p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00075">75</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
 </div>
@@ -1047,6 +1057,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Input for raw value. </p>
+
 <p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00076">76</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 
 </div>
@@ -1070,6 +1082,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Input for raw value. </p>
 
 <p class="definition">Definition at line <a class="el" href="lcd__gui_8c_source.html#l00077">77</a> of file <a class="el" href="lcd__gui_8c_source.html">lcd_gui.c</a>.</p>
 

@@ -1,5 +1,5 @@
 <map id="Src/lcd_gui.c" name="Src/lcd_gui.c">
-<area shape="rect" id="node1" title="The LCD GUI." alt="" coords="303,5,402,32"/>
+<area shape="rect" id="node1" title="Manage and display the touch screen and the lcd display." alt="" coords="303,5,402,32"/>
 <area shape="rect" id="node2" href="$lcd__gui_8h.html" title="See lcd_gui.c." alt="" coords="47,87,122,114"/>
 <area shape="rect" id="node5" title=" " alt="" coords="146,87,207,114"/>
 <area shape="rect" id="node6" title=" " alt="" coords="231,87,325,114"/>

@@ -3,14 +3,13 @@
 
 This demo_code is a template for the <b>Electronics-Project Modules</b>
 <b>ET.PM3: Cable-Monitor</b>
-@n in the <b>second year of the electronics engineering curriculum</b>
+@n in the <b>third semester of the electronics engineering curriculum</b>
 at the School of Engineering of the Zurich University of Applied Sciences.
 
-
-@n The file measuring.c shows how to configure ADC, Timer and DMA.
-@n The file analytics.c shows drifferent configurations for voltage measuring with ADC's
-@n The file lcd_gui.c shows the implementation of the graphical user Interface
-@n The file menu.c initializes and displays the menu
+@n The file main.c containes the setup of the microcontroller and calls the required functions for the functionality.
+@n The file measuring.c contains the measurements of the input voltages with de ADC's
+@n The file analytics.c contains the analytics handler and all required analytics functions
+@n The file lcd_gui.c contains the graphical user interface (GUI) handler and functions to draw the GUI
  
 @image html discovery_blu2.jpg
 
@@ -34,8 +33,7 @@ What has been achieved?
 ---
 Detecing a cable regardless of the cabble type.
 @n Measuring and proccesissg the distanc to the cabel using the measurments captuered by the cap's.
-@n Measuring the current in an singel conductor cabel in a distance up to 10mm.
-@n A fine and proffessional looking graphical user inmterface. With various setting options.
+@n A fine and proffessional looking graphical user interface. With various setting options.
 
 Content of this documentation
 ---
@@ -47,8 +45,10 @@ achieved results, verdict and remarks where appropriate.
 
 
 ---
-@authors Tarik Durmaz Jonas Bollhalder
-@date 23.12.2021
+@author  Jonas Bollhalder, bollhjon@students.zhaw.ch
+@author  Tarik Durmaz, durmatar@students.zhaw.ch
+
+@date 27.12.2021
 
 
 @bug No known bugs.

@@ -1,5 +1,5 @@
 <map id="Inc/lcd_gui.h" name="Inc/lcd_gui.h">
 <area shape="rect" id="node1" title="See lcd_gui.c." alt="" coords="65,5,159,32"/>
-<area shape="rect" id="node2" href="$lcd__gui_8c.html" title="The LCD GUI." alt="" coords="5,80,104,107"/>
+<area shape="rect" id="node2" href="$lcd__gui_8c.html" title="Manage and display the touch screen and the lcd display." alt="" coords="5,80,104,107"/>
 <area shape="rect" id="node3" href="$main_8c.html" title="Sets up the microcontroller, the clock system and the peripherals." alt="" coords="128,80,213,107"/>
 </map>

@@ -75,7 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>See <a class="el" href="measuring_8c.html" title="Measuring voltages with the ADC(s) in different configurations.">measuring.c</a>.  
+<p>See <a class="el" href="measuring_8c.html" title="Measuring voltages with the ADCs and analyse results.">measuring.c</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -94,7 +94,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <map name="a_inc_2measuring_8hdep" id="a_inc_2measuring_8hdep">
 <area shape="rect" title="See measuring.c." alt="" coords="53,5,168,32"/>
 <area shape="rect" href="main_8c.html" title="Sets up the microcontroller, the clock system and the peripherals." alt="" coords="5,80,91,107"/>
-<area shape="rect" href="measuring_8c.html" title="Measuring voltages with the ADC(s) in different configurations." alt="" coords="115,80,232,107"/>
+<area shape="rect" href="measuring_8c.html" title="Measuring voltages with the ADCs and analyse results." alt="" coords="115,80,232,107"/>
 </map>
 </div>
 </div>
@@ -121,7 +121,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a816ecd0c653237b918a5e862143b081c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start DMA, ADC and timer.  <a href="measuring_8h.html#a816ecd0c653237b918a5e862143b081c">More...</a><br /></td></tr>
 <tr class="separator:a816ecd0c653237b918a5e862143b081c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa97e477e23391d0168acea4bf8b7b571"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measuring_8h.html#aa97e477e23391d0168acea4bf8b7b571">MEAS_analyse_data</a> (void)</td></tr>
-<tr class="memdesc:aa97e477e23391d0168acea4bf8b7b571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse data to detect sine amplitude.  <a href="measuring_8h.html#aa97e477e23391d0168acea4bf8b7b571">More...</a><br /></td></tr>
+<tr class="memdesc:aa97e477e23391d0168acea4bf8b7b571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse data to detect amplitude strength.  <a href="measuring_8h.html#aa97e477e23391d0168acea4bf8b7b571">More...</a><br /></td></tr>
 <tr class="separator:aa97e477e23391d0168acea4bf8b7b571"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -137,7 +137,7 @@ Variables</h2></td></tr>
 <tr class="separator:a5bcb0a009b9e52aedb544df6c278f932"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >See <a class="el" href="measuring_8c.html" title="Measuring voltages with the ADC(s) in different configurations.">measuring.c</a>. </p>
+<div class="textblock"><p >See <a class="el" href="measuring_8c.html" title="Measuring voltages with the ADCs and analyse results.">measuring.c</a>. </p>
 <hr  />
 <p >Prefixes MEAS, ADC, DAC </p>
 
@@ -162,7 +162,7 @@ Variables</h2></td></tr>
 <p>Start DMA, ADC and timer. </p>
 <hr  />
  
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00216">216</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00208">208</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -193,14 +193,14 @@ Here is the caller graph for this function:</div>
 
 <p>Initialize ADC, timer and DMA for HALL measurement. </p>
 <hr  />
-<p >Uses ADC2 and DMA2_Stream1 channel2 <br  />
- The ADC2 trigger is set to TIM2 TRGO event <br  />
+<p >Uses ADC3 and DMA2_Stream1 channel2 <br  />
+ The ADC3 trigger is set to TIM2 TRGO event <br  />
  At each trigger both inputs are converted sequentially and transfered to memory by the DMA. <br  />
  As each conversion triggers the DMA, the number of transfers is doubled. <br  />
  The DMA triggers the transfer complete interrupt when all data is ready. <br  />
- The inputs used are ADC123_IN13 = GPIO PC3 and ADC3_IN4 = GPIO PF6 </p>
+ The inputs used are ADC123_IN11 = GPIO PC1 and ADC3_IN3 = GPIO PF8 </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00185">185</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00177">177</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -231,14 +231,14 @@ Here is the caller graph for this function:</div>
 
 <p>Initialize ADC, timer and DMA for WPC measurement. </p>
 <hr  />
-<p >Uses ADC2 and DMA2_Stream1 channel2 <br  />
- The ADC2 trigger is set to TIM2 TRGO event <br  />
+<p >Uses ADC3 and DMA2_Stream1 channel2 <br  />
+ The ADC3 trigger is set to TIM2 TRGO event <br  />
  At each trigger both inputs are converted sequentially and transfered to memory by the DMA. <br  />
  As each conversion triggers the DMA, the number of transfers is doubled. <br  />
  The DMA triggers the transfer complete interrupt when all data is ready. <br  />
  The inputs used are ADC123_IN13 = GPIO PC3 and ADC3_IN4 = GPIO PF6 </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00147">147</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00139">139</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -269,9 +269,9 @@ Here is the caller graph for this function:</div>
 
 <p>Resets the ADCs and the timer. </p>
 <hr  />
-<p >to make sure the different demos do not interfere. </p>
+<p >to make sure the different sampling preferences do not interfere. </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00110">110</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00102">102</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -301,16 +301,17 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Analyse data to detect sine amplitude. </p>
+<p>Analyse data to detect amplitude strength. </p>
 <hr  />
- 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00285">285</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p >Get 10 highest and lowest measurements, convert lowest values to highest, calculate a mean and save the results. </p>
+
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00280">280</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="measuring_8h_aa97e477e23391d0168acea4bf8b7b571_icgraph.png" border="0" usemap="#ameasuring_8h_aa97e477e23391d0168acea4bf8b7b571_icgraph" alt=""/></div>
 <map name="ameasuring_8h_aa97e477e23391d0168acea4bf8b7b571_icgraph" id="ameasuring_8h_aa97e477e23391d0168acea4bf8b7b571_icgraph">
-<area shape="rect" title="Analyse data to detect sine amplitude." alt="" coords="240,5,384,32"/>
+<area shape="rect" title="Analyse data to detect amplitude strength." alt="" coords="240,5,384,32"/>
 <area shape="rect" href="measuring_8c.html#adab6f3e22e90bd5b1ceebb98022abdf2" title="Interrupt handler for DMA2 Stream1." alt="" coords="5,5,192,32"/>
 </map>
 </div>
@@ -336,14 +337,14 @@ Here is the caller graph for this function:</div>
 <p>Configure GPIOs in analog mode. </p>
 <hr  />
 <dl class="section note"><dt>Note</dt><dd>The input number for the ADCs is not equal to the GPIO pin number!<ul>
-<li>ADC3_IN4 = GPIO PF6</li>
-<li>ADC123_IN13 = GPIO PC3</li>
-<li>ADC12_IN5 = GPIO PA5</li>
-<li>DAC_OUT2 = GPIO PA5 (= same GPIO as ADC12_IN5) </li>
+<li>ADC3_IN4 = GPIO PF6 (wcp right)</li>
+<li>ADC3_IN6 = GPIO PF8 (hall left)</li>
+<li>ADC123_IN11 = GPIO PC1 (hall right)</li>
+<li>ADC123_IN13 = GPIO PC3 (wpc left) </li>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00094">94</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00086">86</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -376,7 +377,7 @@ Here is the caller graph for this function:</div>
 <hr  />
 <dl class="section note"><dt>Note</dt><dd>For debugging purposes the timer interrupt might be useful. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00123">123</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00115">115</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -412,7 +413,7 @@ Here is the caller graph for this function:</div>
 
 <p>Amplitude of the left channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00074">74</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00066">66</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 
 </div>
 </div>
@@ -438,7 +439,7 @@ Here is the caller graph for this function:</div>
 
 <p>Amplitude of the right channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00075">75</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00067">67</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 
 </div>
 </div>
@@ -464,7 +465,7 @@ Here is the caller graph for this function:</div>
 
 <p>New data is ready. </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00073">73</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00065">65</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 
 </div>
 </div>

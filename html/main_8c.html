@@ -69,8 +69,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">main.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -119,19 +118,16 @@ Functions</h2></td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
 <tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main function.  <a href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">More...</a><br /></td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:adecb5a74782120e7189890a144290663"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#adecb5a74782120e7189890a144290663">draw_lcd</a> = false</td></tr>
-<tr class="separator:adecb5a74782120e7189890a144290663"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Sets up the microcontroller, the clock system and the peripherals. </p>
 <hr  />
 <p >Initialization is done for the system, the blue user button, the user LEDs, and the LCD display with the touchscreen. <br  />
- Then the code enters an infinite while-loop, where it checks for user input and starts the requested demonstration.</p>
-<dl class="section author"><dt>Author</dt><dd>Hanspeter Hochreutener, <a href="#" onclick="location.href='mai'+'lto:'+'hhr'+'t@'+'zha'+'w.'+'ch'; return false;">hhrt@<span style="display: none;">.nosp@m.</span>zhaw<span style="display: none;">.nosp@m.</span>.ch</a> </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>17.06.2021 </dd></dl>
+ Then the code enters an infinite while-loop, where the data transferring is managed and the analytics and lcd_gui handler gets called regularly.</p>
+<dl class="section author"><dt>Author</dt><dd>Jonas Bollhalder, <a href="#" onclick="location.href='mai'+'lto:'+'bol'+'lh'+'jon'+'@s'+'tud'+'en'+'ts.'+'zh'+'aw.'+'ch'; return false;">bollh<span style="display: none;">.nosp@m.</span>jon@<span style="display: none;">.nosp@m.</span>stude<span style="display: none;">.nosp@m.</span>nts.<span style="display: none;">.nosp@m.</span>zhaw.<span style="display: none;">.nosp@m.</span>ch</a> </dd>
+<dd>
+Tarik Durmaz, <a href="#" onclick="location.href='mai'+'lto:'+'dur'+'ma'+'tar'+'@s'+'tud'+'en'+'ts.'+'zh'+'aw.'+'ch'; return false;">durma<span style="display: none;">.nosp@m.</span>tar@<span style="display: none;">.nosp@m.</span>stude<span style="display: none;">.nosp@m.</span>nts.<span style="display: none;">.nosp@m.</span>zhaw.<span style="display: none;">.nosp@m.</span>ch</a> </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>27.12.2021 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -168,7 +164,7 @@ Variables</h2></td></tr>
  PF8 is also reconfigured. <br  />
  An other solution would be to remove the GYRO from the microcontroller board by unsoldering it. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00222">222</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00227">227</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -202,7 +198,7 @@ Here is the caller graph for this function:</div>
  <dl class="section return"><dt>Returns</dt><dd>not used because main ends in an infinite loop</dd></dl>
 <p>Initialization and infinite while loop </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00053">53</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00054">54</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -221,11 +217,11 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="pushbutton_8c.html#a6efe94714ab265a5e515c7266d234917" title="Configure the GPIO for the USER pushbutton." alt="" coords="159,537,223,564"/>
 <area shape="rect" href="pushbutton_8c.html#ab920dbc364e7b33bb9186ac45ae1a332" title="Was the pushbutton pressed?" alt="" coords="145,588,238,615"/>
 <area shape="rect" href="main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64" title="System Clock Configuration." alt="" coords="120,639,263,665"/>
-<area shape="rect" href="analytics_8c.html#acdd164761e612bbacc39c548b4f66c84" title="Calculate Angle with three length inputs." alt="" coords="358,5,454,32"/>
+<area shape="rect" href="analytics_8c.html#acdd164761e612bbacc39c548b4f66c84" title="Aproximate Angle with three length inputs." alt="" coords="358,5,454,32"/>
 <area shape="rect" href="analytics_8c.html#a946965402409f57bdeb46500c5e226b4" title="Calculate distance from measurement input and mode setting." alt="" coords="333,56,479,83"/>
-<area shape="rect" href="analytics_8c.html#a50c6a3e6221cd89519553d4521b7855c" title="Calculate electrical current from magnetic field distance[m] amplitude[1] return current[A]." alt="" coords="347,107,465,133"/>
-<area shape="rect" href="analytics_8c.html#af040e1c8b355944897eb657e23e4e572" title="Calculate distance." alt="" coords="545,56,660,83"/>
-<area shape="rect" href="lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Draw options field to top bar." alt="" coords="551,461,655,488"/>
+<area shape="rect" href="analytics_8c.html#a50c6a3e6221cd89519553d4521b7855c" title="Calculate electrical current from magnetic field." alt="" coords="347,107,465,133"/>
+<area shape="rect" href="analytics_8c.html#af040e1c8b355944897eb657e23e4e572" title="Convert amplitude strength to distance." alt="" coords="545,56,660,83"/>
+<area shape="rect" href="lcd__gui_8c.html#a70fe5128359f63aedfcfd2267f5e6e07" title="Clear centre of the screen." alt="" coords="551,461,655,488"/>
 <area shape="rect" href="lcd__gui_8c.html#a2aad073fe21f04b3de56ec7b2bba1d4e" title="Draw hint." alt="" coords="355,512,457,539"/>
 <area shape="rect" href="lcd__gui_8c.html#a4bee92acc8416a48fde498a3021f33cc" title="Display measurements." alt="" coords="327,563,485,589"/>
 <area shape="rect" href="lcd__gui_8c.html#a9884930bdc0255871dba817e790d4db1" title="Draw Mode Selection." alt="" coords="341,309,471,336"/>
@@ -269,7 +265,7 @@ Here is the call graph for this function:</div>
 <p>System Clock Configuration. </p>
 <hr  />
  
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00174">174</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00179">179</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -279,23 +275,6 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,5,56,32"/>
 </map>
 </div>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="adecb5a74782120e7189890a144290663" name="adecb5a74782120e7189890a144290663"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adecb5a74782120e7189890a144290663">&#9670;&nbsp;</a></span>draw_lcd</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool draw_lcd = false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00038">38</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>

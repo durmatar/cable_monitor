@@ -1,46 +1,19 @@
 /** ***************************************************************************
  * @file
- * @brief Measuring voltages with the ADC(s) in different configurations
+ * @brief Collect and analyse measurements according to option inputs
  *
  *
- * Demonstrates different ADC (Analog to Digital Converter) modes
+ * Contained functionality:
  * ==============================================================
  *
- * - ADC in single conversion mode
- * - ADC triggered by a timer and with interrupt after end of conversion
- * - ADC combined with DMA (Direct Memory Access) to fill a buffer
- * - Dual mode = simultaneous sampling of two inputs by two ADCs
- * - Scan mode = sequential sampling of two inputs by one ADC
- * - Simple DAC output is demonstrated as well
- * - Analog mode configuration for GPIOs
- * - Display recorded data on the graphics display
- *
- * Peripherals @ref HowTo
- *
- * @image html demo_screenshot_board.jpg
- *
- *
-
- *
- *
- * @anchor HowTo
- * How to Configure the Peripherals: ADC, TIMER and DMA
- * ====================================================
- *
- * All the peripherals are accessed by writing to or reading from registers.
- * From the programmer’s point of view this is done exactly as
- * writing or reading the value of a variable.
- * @n Writing to a register configures the HW of the associated peripheral
- * to do what is required.
- * @n Reading from a registers gets status and data from the HW peripheral.
- *
- * The information on which bits have to be set to get a specific behavior
- * is documented in the <b>reference manual</b> of the mikrocontroller.
- *
+ * - Collect measuring data when ready
+ * - Start measurements
+ * - Calculate angle, distance, standard deviation and current
  *
  * ----------------------------------------------------------------------------
- * @author Hanspeter Hochreutener, hhrt@zhaw.ch
- * @date 17.06.2021
+ * @author  Jonas Bollhalder, bollhjon@students.zhaw.ch
+ * @author  Tarik Durmaz, durmatar@students.zhaw.ch
+ * @date	27.12.2021
  *****************************************************************************/
 
 
@@ -56,52 +29,53 @@
 /******************************************************************************
  * Defines
  *****************************************************************************/
-#define CALC_ADCVOLTRESOLUTION	(float)(0.0008056640625)
-#define CALC_AMPOPAMP			(float)(95)
-#define CALC_AMPHALLSENS		(float)(90)
-#define CALC_PIDANDPERM			(float)(4998556.330)
+// Current calculation
+#define CALC_ADCVOLTRESOLUTION	(float)(0.0008056640625) ///< Volt per digit
+#define CALC_AMPOPAMP			(float)(95)	///< Amplification of circuit
+#define CALC_AMPHALLSENS		(float)(90) ///< Amplification of hall sensor
+#define CALC_PIDANDPERM			(float)(4998556.330) ///< Pi and permutation
 
-#define CALC_LUTSIZE			11
+// Distance conversion
+#define CALC_LUTSIZE			11 ///< Look up table size
 
 /******************************************************************************
  * Variables
  *****************************************************************************/
-bool ANA_inBtn = false;
-bool ANA_inMeasReady = false;
-uint32_t ANA_inAmpLeft = 0;
-uint32_t ANA_inAmpRight = 0;
-uint16_t ANA_inOptn[4]={0,0,0,1}; ///< Mode,DataType,MeasuringType,Accuracy
-bool ANA_outStartHALL = false;
-bool ANA_outStartWPC = false;
-float ANA_outResults[4];			///<Angle,Distance,Std.Dev.,Current
-bool ANA_outDataReady = false;
+bool ANA_inBtn = false;			///< Input button pushed event
+bool ANA_inMeasReady = false;	///< Input measurement ready event
+uint32_t ANA_inAmpLeft = 0;		///< Input raw amplitude left
+uint32_t ANA_inAmpRight = 0;	///< Input raw amplitude right
+uint16_t ANA_inOptn[4]={0,0,0,1};///< Input Mode,DataType,MeasuringType,Accuracy
+bool ANA_outStartHALL = false;	///< Output hall start event
+bool ANA_outStartWPC = false;	///< Output wpc start event
+float ANA_outResults[4];		///< Output values
+								// angle,distance,std.dev.,current
+								// or
+								// raw hall right, hall left, wpc right, wpc left
+bool ANA_outDataReady = false;	///< Output analysed data ready event
 
-bool ANA_measBusy = false;
-bool ANA_wpcBusy = false;
-bool ANA_hallBusy = false;
-uint16_t ANA_cycle = 0;
+bool ANA_measBusy = false;		///< Status general measurement
+bool ANA_wpcBusy = false;		///< Status wpc measurement
+bool ANA_hallBusy = false;		///< Status hall measurement
+uint16_t ANA_cycle = 0;			///< Current measurement cycle count
 
-float ANA_wpcLeft[10];
-float ANA_wpcRight[10];
-float ANA_hallLeft[10];
-float ANA_hallRight[10];
+float ANA_wpcLeft[10];			///< Measurement buffer wpc left
+float ANA_wpcRight[10];			///< Measurement buffer wpc right
+float ANA_hallLeft[10];			///< Measurement buffer hall left
+float ANA_hallRight[10];		///< Measurement buffer hall right
 
+// Look up tables
 // Distance [cm]
 float CALC_distanceLUT[CALC_LUTSIZE] = { 0, 10, 20, 30, 40, 50, 70, 100, 150, 200, 300};
-
 // Measurments with 1L
 float CALC_wpcRightL[CALC_LUTSIZE] = {810,690,620,565,530,510,490,450,395,380,330};
 float CALC_wpcLeftL[CALC_LUTSIZE] = {795,740,683,570,540,510,490,460,430,420,410};
-
 // Measurment with LN
 float CALC_wpcRightLN[CALC_LUTSIZE] = {570,510,430,375,340,330,290,265,245,195,165};
 float CALC_wpcLeftLN[CALC_LUTSIZE] = {365,350,350,325,320,305,275,265,262,215,210};
-
-
 // Measurment with LNPE
 float CALC_wpcRightLNPE[CALC_LUTSIZE] = {450,363,306,283,273,267,263,237,215,198,170};
 float CALC_wpcLeftLNPE[CALC_LUTSIZE] = {315,292,280,263,260,255,242,235,220,211,204};
-
 // Array to LUTs
 float* CALC_wpcLeft[3] = {CALC_wpcLeftL,CALC_wpcLeftLN,CALC_wpcLeftLNPE};
 float* CALC_wpcRight[3] = {CALC_wpcRightL,CALC_wpcRightLN,CALC_wpcRightLNPE};
@@ -111,35 +85,35 @@ float* CALC_wpcRight[3] = {CALC_wpcRightL,CALC_wpcRightLN,CALC_wpcRightLNPE};
  *****************************************************************************/
 
 /** ***************************************************************************
- * @brief Calculate Angle with three length inputs
+ * @brief Aproximate Angle with three length inputs
+ * @param [in] distance left
+ * @param [in] distance right
+ * @param [in] distance midle
+ * @return Angle between -45° and 45°
  *****************************************************************************/
 float CALC_Angle(float left, float right, float middle){
 	left = left / middle;
 	right = right / middle;
 	middle = 1;
-
 	float x;
-
 	if (left < (middle-0.2)) {
-		x = -45;
+		x = -30;
 		//-45° to 0°
 	} else if (right < (middle-0.2)){
 		//0° - 45°
-		x = 45;
+		x = 30;
 	} else {
 		x = 0;
 	}
-
-
-
 	return x;
 }
 
 
 /** ***************************************************************************
  * @brief Calculate electrical current from magnetic field
- * distance[m] amplitude[1]
- * return current[A]
+ * @param [in] distance[m]
+ * @param [in] hall amplitude
+ * @return calculated current[A]
  *****************************************************************************/
 float CALC_ElCurrent(float amplitude, float distance){
 	float I,B;
@@ -155,7 +129,14 @@ float CALC_ElCurrent(float amplitude, float distance){
 
 
 /** ***************************************************************************
- * @brief Calculate distance
+ * @brief Convert amplitude strength to distance
+ * @param [in] pointer to distance LUT
+ * @param [in] pointer to amplitude strength LUT
+ * @param [in] measurement
+ * @return calculated distance
+ *
+ * Look up distance values corresponding to strength, if value is between two
+ * entries calculate exact distance with a linear function.
  *****************************************************************************/
 float CALC_Distance(float* lutDistance, float* lutStrenght, float measurement){
 	int t,d,s;
@@ -171,6 +152,7 @@ float CALC_Distance(float* lutDistance, float* lutStrenght, float measurement){
 		measurement = lutStrenght[0];
 	}
 
+	// Go through LUT
 	for(int i=0; i < CALC_LUTSIZE ; i++ ){
 		if (measurement == lutStrenght[i]){
 			t = i;
@@ -197,6 +179,10 @@ float CALC_Distance(float* lutDistance, float* lutStrenght, float measurement){
 
 /** ***************************************************************************
  * @brief Calculate distance from measurement input and mode setting
+ * @param [in] measurement value
+ * @param [in] selected mode
+ * @param [in] channel selection, if true right side
+ * @return calculated distance
  *****************************************************************************/
 float CALC_DistanceMode(float measurement, uint16_t mode, bool right){
 	float distance;
@@ -209,7 +195,6 @@ float CALC_DistanceMode(float measurement, uint16_t mode, bool right){
 	}
 	// Calculate distance with correct mode
 	distance = CALC_Distance(CALC_distanceLUT, lut, measurement);
-
 	return distance;
 }
 
@@ -217,6 +202,10 @@ float CALC_DistanceMode(float measurement, uint16_t mode, bool right){
 
 /** ***************************************************************************
  * @brief Analytics handler
+ *
+ * Handler for the analytics processes. Start and stop measurements according
+ * to option inputs. Collect and analyse measurements. Output analysed data and
+ * trigger the required events.
  *****************************************************************************/
 void ANA_Handler(void){
 	//start measurement with button input

@@ -76,7 +76,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Measuring voltages with the ADC(s) in different configurations.  
+<p>Collect and analyse measurements according to option inputs.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;stm32f4xx.h&quot;</code><br />
 <code>#include &quot;stm32f429i_discovery.h&quot;</code><br />
@@ -87,7 +87,7 @@ Include dependency graph for analytics.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="analytics_8c__incl.png" border="0" usemap="#a_src_2analytics_8c" alt=""/></div>
 <map name="a_src_2analytics_8c" id="a_src_2analytics_8c">
-<area shape="rect" title="Measuring voltages with the ADC(s) in different configurations." alt="" coords="213,5,323,32"/>
+<area shape="rect" title="Collect and analyse measurements according to option inputs." alt="" coords="213,5,323,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,99,107"/>
 <area shape="rect" title=" " alt="" coords="123,80,280,107"/>
 <area shape="rect" title=" " alt="" coords="305,80,367,107"/>
@@ -102,26 +102,31 @@ Include dependency graph for analytics.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a8b35275d127256e2b78e322b67dd5e07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a8b35275d127256e2b78e322b67dd5e07">CALC_ADCVOLTRESOLUTION</a>&#160;&#160;&#160;(float)(0.0008056640625)</td></tr>
+<tr class="memdesc:a8b35275d127256e2b78e322b67dd5e07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Volt per digit.  <a href="analytics_8c.html#a8b35275d127256e2b78e322b67dd5e07">More...</a><br /></td></tr>
 <tr class="separator:a8b35275d127256e2b78e322b67dd5e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5689f9bfe603e4e8e6a79b155f8dcd68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a5689f9bfe603e4e8e6a79b155f8dcd68">CALC_AMPOPAMP</a>&#160;&#160;&#160;(float)(95)</td></tr>
+<tr class="memdesc:a5689f9bfe603e4e8e6a79b155f8dcd68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amplification of circuit.  <a href="analytics_8c.html#a5689f9bfe603e4e8e6a79b155f8dcd68">More...</a><br /></td></tr>
 <tr class="separator:a5689f9bfe603e4e8e6a79b155f8dcd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18328e66dfc42e87ece414145c26e5d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a18328e66dfc42e87ece414145c26e5d9">CALC_AMPHALLSENS</a>&#160;&#160;&#160;(float)(90)</td></tr>
+<tr class="memdesc:a18328e66dfc42e87ece414145c26e5d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amplification of hall sensor.  <a href="analytics_8c.html#a18328e66dfc42e87ece414145c26e5d9">More...</a><br /></td></tr>
 <tr class="separator:a18328e66dfc42e87ece414145c26e5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e565497bc3b98c89b9f2d50910c83ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a5e565497bc3b98c89b9f2d50910c83ec">CALC_PIDANDPERM</a>&#160;&#160;&#160;(float)(4998556.330)</td></tr>
+<tr class="memdesc:a5e565497bc3b98c89b9f2d50910c83ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pi and permutation.  <a href="analytics_8c.html#a5e565497bc3b98c89b9f2d50910c83ec">More...</a><br /></td></tr>
 <tr class="separator:a5e565497bc3b98c89b9f2d50910c83ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8737f46b70c8179978cb6c7680437ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#af8737f46b70c8179978cb6c7680437ac">CALC_LUTSIZE</a>&#160;&#160;&#160;11</td></tr>
+<tr class="memdesc:af8737f46b70c8179978cb6c7680437ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up table size.  <a href="analytics_8c.html#af8737f46b70c8179978cb6c7680437ac">More...</a><br /></td></tr>
 <tr class="separator:af8737f46b70c8179978cb6c7680437ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:acdd164761e612bbacc39c548b4f66c84"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#acdd164761e612bbacc39c548b4f66c84">CALC_Angle</a> (float left, float right, float middle)</td></tr>
-<tr class="memdesc:acdd164761e612bbacc39c548b4f66c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Angle with three length inputs.  <a href="analytics_8c.html#acdd164761e612bbacc39c548b4f66c84">More...</a><br /></td></tr>
+<tr class="memdesc:acdd164761e612bbacc39c548b4f66c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aproximate Angle with three length inputs.  <a href="analytics_8c.html#acdd164761e612bbacc39c548b4f66c84">More...</a><br /></td></tr>
 <tr class="separator:acdd164761e612bbacc39c548b4f66c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50c6a3e6221cd89519553d4521b7855c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a50c6a3e6221cd89519553d4521b7855c">CALC_ElCurrent</a> (float amplitude, float distance)</td></tr>
-<tr class="memdesc:a50c6a3e6221cd89519553d4521b7855c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate electrical current from magnetic field distance[m] amplitude[1] return current[A].  <a href="analytics_8c.html#a50c6a3e6221cd89519553d4521b7855c">More...</a><br /></td></tr>
+<tr class="memdesc:a50c6a3e6221cd89519553d4521b7855c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate electrical current from magnetic field.  <a href="analytics_8c.html#a50c6a3e6221cd89519553d4521b7855c">More...</a><br /></td></tr>
 <tr class="separator:a50c6a3e6221cd89519553d4521b7855c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af040e1c8b355944897eb657e23e4e572"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#af040e1c8b355944897eb657e23e4e572">CALC_Distance</a> (float *lutDistance, float *lutStrenght, float measurement)</td></tr>
-<tr class="memdesc:af040e1c8b355944897eb657e23e4e572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate distance.  <a href="analytics_8c.html#af040e1c8b355944897eb657e23e4e572">More...</a><br /></td></tr>
+<tr class="memdesc:af040e1c8b355944897eb657e23e4e572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert amplitude strength to distance.  <a href="analytics_8c.html#af040e1c8b355944897eb657e23e4e572">More...</a><br /></td></tr>
 <tr class="separator:af040e1c8b355944897eb657e23e4e572"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a946965402409f57bdeb46500c5e226b4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a946965402409f57bdeb46500c5e226b4">CALC_DistanceMode</a> (float measurement, uint16_t mode, bool right)</td></tr>
 <tr class="memdesc:a946965402409f57bdeb46500c5e226b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate distance from measurement input and mode setting.  <a href="analytics_8c.html#a946965402409f57bdeb46500c5e226b4">More...</a><br /></td></tr>
@@ -133,40 +138,55 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a8598dac3509886273dfeb95a0d92a27a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a8598dac3509886273dfeb95a0d92a27a">ANA_inBtn</a> = false</td></tr>
+<tr class="memdesc:a8598dac3509886273dfeb95a0d92a27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input button pushed event.  <a href="analytics_8c.html#a8598dac3509886273dfeb95a0d92a27a">More...</a><br /></td></tr>
 <tr class="separator:a8598dac3509886273dfeb95a0d92a27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16662d40ecd294957b5e0e9e43d19286"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a16662d40ecd294957b5e0e9e43d19286">ANA_inMeasReady</a> = false</td></tr>
+<tr class="memdesc:a16662d40ecd294957b5e0e9e43d19286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input measurement ready event.  <a href="analytics_8c.html#a16662d40ecd294957b5e0e9e43d19286">More...</a><br /></td></tr>
 <tr class="separator:a16662d40ecd294957b5e0e9e43d19286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7902dc06c2dd6b1812fb52530ff2c75"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#af7902dc06c2dd6b1812fb52530ff2c75">ANA_inAmpLeft</a> = 0</td></tr>
+<tr class="memdesc:af7902dc06c2dd6b1812fb52530ff2c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input raw amplitude left.  <a href="analytics_8c.html#af7902dc06c2dd6b1812fb52530ff2c75">More...</a><br /></td></tr>
 <tr class="separator:af7902dc06c2dd6b1812fb52530ff2c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5859c107260b441112acb6839c11672"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#ac5859c107260b441112acb6839c11672">ANA_inAmpRight</a> = 0</td></tr>
+<tr class="memdesc:ac5859c107260b441112acb6839c11672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input raw amplitude right.  <a href="analytics_8c.html#ac5859c107260b441112acb6839c11672">More...</a><br /></td></tr>
 <tr class="separator:ac5859c107260b441112acb6839c11672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b7cf85db8dbb27d3880e1b2d9792090"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a0b7cf85db8dbb27d3880e1b2d9792090">ANA_inOptn</a> [4] ={0,0,0,1}</td></tr>
-<tr class="memdesc:a0b7cf85db8dbb27d3880e1b2d9792090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode,DataType,MeasuringType,Accuracy.  <a href="analytics_8c.html#a0b7cf85db8dbb27d3880e1b2d9792090">More...</a><br /></td></tr>
+<tr class="memdesc:a0b7cf85db8dbb27d3880e1b2d9792090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input Mode,DataType,MeasuringType,Accuracy.  <a href="analytics_8c.html#a0b7cf85db8dbb27d3880e1b2d9792090">More...</a><br /></td></tr>
 <tr class="separator:a0b7cf85db8dbb27d3880e1b2d9792090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ed0c3b98eec4b9d226521e364074fc3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a2ed0c3b98eec4b9d226521e364074fc3">ANA_outStartHALL</a> = false</td></tr>
+<tr class="memdesc:a2ed0c3b98eec4b9d226521e364074fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output hall start event.  <a href="analytics_8c.html#a2ed0c3b98eec4b9d226521e364074fc3">More...</a><br /></td></tr>
 <tr class="separator:a2ed0c3b98eec4b9d226521e364074fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41891de1ce941afef356caa3d45ab842"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a41891de1ce941afef356caa3d45ab842">ANA_outStartWPC</a> = false</td></tr>
+<tr class="memdesc:a41891de1ce941afef356caa3d45ab842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output wpc start event.  <a href="analytics_8c.html#a41891de1ce941afef356caa3d45ab842">More...</a><br /></td></tr>
 <tr class="separator:a41891de1ce941afef356caa3d45ab842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0aa19081306084305112283bd46aa3e2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a0aa19081306084305112283bd46aa3e2">ANA_outResults</a> [4]</td></tr>
-<tr class="memdesc:a0aa19081306084305112283bd46aa3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Angle,Distance,Std.Dev.,Current.  <a href="analytics_8c.html#a0aa19081306084305112283bd46aa3e2">More...</a><br /></td></tr>
+<tr class="memdesc:a0aa19081306084305112283bd46aa3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output values.  <a href="analytics_8c.html#a0aa19081306084305112283bd46aa3e2">More...</a><br /></td></tr>
 <tr class="separator:a0aa19081306084305112283bd46aa3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33bf76db306cd89013df61caecfc45ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a33bf76db306cd89013df61caecfc45ad">ANA_outDataReady</a> = false</td></tr>
+<tr class="memdesc:a33bf76db306cd89013df61caecfc45ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output analysed data ready event.  <a href="analytics_8c.html#a33bf76db306cd89013df61caecfc45ad">More...</a><br /></td></tr>
 <tr class="separator:a33bf76db306cd89013df61caecfc45ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f49b8ee1a2e28be07d6b04c35347e17"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a3f49b8ee1a2e28be07d6b04c35347e17">ANA_measBusy</a> = false</td></tr>
+<tr class="memdesc:a3f49b8ee1a2e28be07d6b04c35347e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status general measurement.  <a href="analytics_8c.html#a3f49b8ee1a2e28be07d6b04c35347e17">More...</a><br /></td></tr>
 <tr class="separator:a3f49b8ee1a2e28be07d6b04c35347e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1038556928d99793417ed24f25e725fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a1038556928d99793417ed24f25e725fd">ANA_wpcBusy</a> = false</td></tr>
+<tr class="memdesc:a1038556928d99793417ed24f25e725fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status wpc measurement.  <a href="analytics_8c.html#a1038556928d99793417ed24f25e725fd">More...</a><br /></td></tr>
 <tr class="separator:a1038556928d99793417ed24f25e725fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af394addf492e6195dad36876819eeb38"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#af394addf492e6195dad36876819eeb38">ANA_hallBusy</a> = false</td></tr>
+<tr class="memdesc:af394addf492e6195dad36876819eeb38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status hall measurement.  <a href="analytics_8c.html#af394addf492e6195dad36876819eeb38">More...</a><br /></td></tr>
 <tr class="separator:af394addf492e6195dad36876819eeb38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a049d237c35c0803293922cf360205dcd"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a049d237c35c0803293922cf360205dcd">ANA_cycle</a> = 0</td></tr>
+<tr class="memdesc:a049d237c35c0803293922cf360205dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current measurement cycle count.  <a href="analytics_8c.html#a049d237c35c0803293922cf360205dcd">More...</a><br /></td></tr>
 <tr class="separator:a049d237c35c0803293922cf360205dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af661f4d9fab0437f578ebc64e92a47ec"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#af661f4d9fab0437f578ebc64e92a47ec">ANA_wpcLeft</a> [10]</td></tr>
+<tr class="memdesc:af661f4d9fab0437f578ebc64e92a47ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measurement buffer wpc left.  <a href="analytics_8c.html#af661f4d9fab0437f578ebc64e92a47ec">More...</a><br /></td></tr>
 <tr class="separator:af661f4d9fab0437f578ebc64e92a47ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abca488f96b5dfd57e4ce0218e5e8d2ff"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#abca488f96b5dfd57e4ce0218e5e8d2ff">ANA_wpcRight</a> [10]</td></tr>
+<tr class="memdesc:abca488f96b5dfd57e4ce0218e5e8d2ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measurement buffer wpc right.  <a href="analytics_8c.html#abca488f96b5dfd57e4ce0218e5e8d2ff">More...</a><br /></td></tr>
 <tr class="separator:abca488f96b5dfd57e4ce0218e5e8d2ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54a02bd706b547ca8c6d7f0919c6ad37"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a54a02bd706b547ca8c6d7f0919c6ad37">ANA_hallLeft</a> [10]</td></tr>
+<tr class="memdesc:a54a02bd706b547ca8c6d7f0919c6ad37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measurement buffer hall left.  <a href="analytics_8c.html#a54a02bd706b547ca8c6d7f0919c6ad37">More...</a><br /></td></tr>
 <tr class="separator:a54a02bd706b547ca8c6d7f0919c6ad37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd935ccb88cefc73ece68bc56f25eed2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#abd935ccb88cefc73ece68bc56f25eed2">ANA_hallRight</a> [10]</td></tr>
+<tr class="memdesc:abd935ccb88cefc73ece68bc56f25eed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measurement buffer hall right.  <a href="analytics_8c.html#abd935ccb88cefc73ece68bc56f25eed2">More...</a><br /></td></tr>
 <tr class="separator:abd935ccb88cefc73ece68bc56f25eed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a042a2e565f81a809549c4510d80c9ba2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analytics_8c.html#a042a2e565f81a809549c4510d80c9ba2">CALC_distanceLUT</a> [<a class="el" href="analytics_8c.html#af8737f46b70c8179978cb6c7680437ac">CALC_LUTSIZE</a>] = { 0, 10, 20, 30, 40, 50, 70, 100, 150, 200, 300}</td></tr>
 <tr class="separator:a042a2e565f81a809549c4510d80c9ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,31 +208,19 @@ Variables</h2></td></tr>
 <tr class="separator:a456c8451b33fa0b8ec2dac4447e903fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Measuring voltages with the ADC(s) in different configurations. </p>
+<div class="textblock"><p >Collect and analyse measurements according to option inputs. </p>
 <hr  />
-<h1>Demonstrates different ADC (Analog to Digital Converter) modes </h1>
+<h1>Contained functionality: </h1>
 <ul>
-<li>ADC in single conversion mode</li>
-<li>ADC triggered by a timer and with interrupt after end of conversion</li>
-<li>ADC combined with DMA (Direct Memory Access) to fill a buffer</li>
-<li>Dual mode = simultaneous sampling of two inputs by two ADCs</li>
-<li>Scan mode = sequential sampling of two inputs by one ADC</li>
-<li>Simple DAC output is demonstrated as well</li>
-<li>Analog mode configuration for GPIOs</li>
-<li>Display recorded data on the graphics display</li>
+<li>Collect measuring data when ready</li>
+<li>Start measurements</li>
+<li>Calculate angle, distance, standard deviation and current</li>
 </ul>
-<p >Peripherals <a class="el" href="measuring_8c.html#HowTo">HowTo</a></p>
-<div class="image">
-<img src="demo_screenshot_board.jpg" alt=""/>
-</div>
-<p ><a class="anchor" id="HowTo"></a></p><h1>How to Configure the Peripherals: ADC, TIMER and DMA </h1>
-<p >All the peripherals are accessed by writing to or reading from registers. From the programmer’s point of view this is done exactly as writing or reading the value of a variable. <br  />
- Writing to a register configures the HW of the associated peripheral to do what is required. <br  />
- Reading from a registers gets status and data from the HW peripheral.</p>
-<p >The information on which bits have to be set to get a specific behavior is documented in the <b>reference manual</b> of the mikrocontroller.</p>
 <hr  />
- <dl class="section author"><dt>Author</dt><dd>Hanspeter Hochreutener, <a href="#" onclick="location.href='mai'+'lto:'+'hhr'+'t@'+'zha'+'w.'+'ch'; return false;">hhrt@<span style="display: none;">.nosp@m.</span>zhaw<span style="display: none;">.nosp@m.</span>.ch</a> </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>17.06.2021 </dd></dl>
+ <dl class="section author"><dt>Author</dt><dd>Jonas Bollhalder, <a href="#" onclick="location.href='mai'+'lto:'+'bol'+'lh'+'jon'+'@s'+'tud'+'en'+'ts.'+'zh'+'aw.'+'ch'; return false;">bollh<span style="display: none;">.nosp@m.</span>jon@<span style="display: none;">.nosp@m.</span>stude<span style="display: none;">.nosp@m.</span>nts.<span style="display: none;">.nosp@m.</span>zhaw.<span style="display: none;">.nosp@m.</span>ch</a> </dd>
+<dd>
+Tarik Durmaz, <a href="#" onclick="location.href='mai'+'lto:'+'dur'+'ma'+'tar'+'@s'+'tud'+'en'+'ts.'+'zh'+'aw.'+'ch'; return false;">durma<span style="display: none;">.nosp@m.</span>tar@<span style="display: none;">.nosp@m.</span>stude<span style="display: none;">.nosp@m.</span>nts.<span style="display: none;">.nosp@m.</span>zhaw.<span style="display: none;">.nosp@m.</span>ch</a> </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>27.12.2021 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -228,7 +236,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00059">59</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Volt per digit. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00033">33</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -244,7 +254,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00061">61</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Amplification of hall sensor. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00035">35</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -260,7 +272,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00060">60</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Amplification of circuit. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00034">34</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -276,7 +290,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00064">64</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Look up table size. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00039">39</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -292,7 +308,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00062">62</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Pi and permutation. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00036">36</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -315,18 +333,19 @@ Variables</h2></td></tr>
 
 <p>Analytics handler. </p>
 <hr  />
- 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00221">221</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p >Handler for the analytics processes. Start and stop measurements according to option inputs. Collect and analyse measurements. Output analysed data and trigger the required events. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00210">210</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="analytics_8c_abae2b53b167a22cb67db31c36e81750c_cgraph.png" border="0" usemap="#aanalytics_8c_abae2b53b167a22cb67db31c36e81750c_cgraph" alt=""/></div>
 <map name="aanalytics_8c_abae2b53b167a22cb67db31c36e81750c_cgraph" id="aanalytics_8c_abae2b53b167a22cb67db31c36e81750c_cgraph">
 <area shape="rect" title="Analytics handler." alt="" coords="5,56,105,83"/>
-<area shape="rect" href="analytics_8c.html#acdd164761e612bbacc39c548b4f66c84" title="Calculate Angle with three length inputs." alt="" coords="179,5,275,32"/>
+<area shape="rect" href="analytics_8c.html#acdd164761e612bbacc39c548b4f66c84" title="Aproximate Angle with three length inputs." alt="" coords="179,5,275,32"/>
 <area shape="rect" href="analytics_8c.html#a946965402409f57bdeb46500c5e226b4" title="Calculate distance from measurement input and mode setting." alt="" coords="153,56,300,83"/>
-<area shape="rect" href="analytics_8c.html#a50c6a3e6221cd89519553d4521b7855c" title="Calculate electrical current from magnetic field distance[m] amplitude[1] return current[A]." alt="" coords="168,107,285,133"/>
-<area shape="rect" href="analytics_8c.html#af040e1c8b355944897eb657e23e4e572" title="Calculate distance." alt="" coords="348,56,463,83"/>
+<area shape="rect" href="analytics_8c.html#a50c6a3e6221cd89519553d4521b7855c" title="Calculate electrical current from magnetic field." alt="" coords="168,107,285,133"/>
+<area shape="rect" href="analytics_8c.html#af040e1c8b355944897eb657e23e4e572" title="Convert amplitude strength to distance." alt="" coords="348,56,463,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -373,16 +392,25 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate Angle with three length inputs. </p>
+<p>Aproximate Angle with three length inputs. </p>
 <hr  />
- 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00116">116</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">distance</td><td>left </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">distance</td><td>right </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">distance</td><td>midle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Angle between -45° and 45° </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00094">94</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="analytics_8c_acdd164761e612bbacc39c548b4f66c84_icgraph.png" border="0" usemap="#aanalytics_8c_acdd164761e612bbacc39c548b4f66c84_icgraph" alt=""/></div>
 <map name="aanalytics_8c_acdd164761e612bbacc39c548b4f66c84_icgraph" id="aanalytics_8c_acdd164761e612bbacc39c548b4f66c84_icgraph">
-<area shape="rect" title="Calculate Angle with three length inputs." alt="" coords="252,5,348,32"/>
+<area shape="rect" title="Aproximate Angle with three length inputs." alt="" coords="252,5,348,32"/>
 <area shape="rect" href="analytics_8c.html#abae2b53b167a22cb67db31c36e81750c" title="Analytics handler." alt="" coords="104,5,204,32"/>
 <area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,5,56,32"/>
 </map>
@@ -422,16 +450,26 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate distance. </p>
+<p>Convert amplitude strength to distance. </p>
 <hr  />
- 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00160">160</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pointer</td><td>to distance LUT </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pointer</td><td>to amplitude strength LUT </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">measurement</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>calculated distance</dd></dl>
+<p>Look up distance values corresponding to strength, if value is between two entries calculate exact distance with a linear function. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00141">141</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="analytics_8c_af040e1c8b355944897eb657e23e4e572_icgraph.png" border="0" usemap="#aanalytics_8c_af040e1c8b355944897eb657e23e4e572_icgraph" alt=""/></div>
 <map name="aanalytics_8c_af040e1c8b355944897eb657e23e4e572_icgraph" id="aanalytics_8c_af040e1c8b355944897eb657e23e4e572_icgraph">
-<area shape="rect" title="Calculate distance." alt="" coords="447,5,561,32"/>
+<area shape="rect" title="Convert amplitude strength to distance." alt="" coords="447,5,561,32"/>
 <area shape="rect" href="analytics_8c.html#a946965402409f57bdeb46500c5e226b4" title="Calculate distance from measurement input and mode setting." alt="" coords="252,5,399,32"/>
 <area shape="rect" href="analytics_8c.html#abae2b53b167a22cb67db31c36e81750c" title="Analytics handler." alt="" coords="104,5,204,32"/>
 <area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,5,56,32"/>
@@ -474,15 +512,24 @@ Here is the caller graph for this function:</div>
 
 <p>Calculate distance from measurement input and mode setting. </p>
 <hr  />
- 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00201">201</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">measurement</td><td>value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selected</td><td>mode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>selection, if true right side </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>calculated distance </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00187">187</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="analytics_8c_a946965402409f57bdeb46500c5e226b4_cgraph.png" border="0" usemap="#aanalytics_8c_a946965402409f57bdeb46500c5e226b4_cgraph" alt=""/></div>
 <map name="aanalytics_8c_a946965402409f57bdeb46500c5e226b4_cgraph" id="aanalytics_8c_a946965402409f57bdeb46500c5e226b4_cgraph">
 <area shape="rect" title="Calculate distance from measurement input and mode setting." alt="" coords="5,5,152,32"/>
-<area shape="rect" href="analytics_8c.html#af040e1c8b355944897eb657e23e4e572" title="Calculate distance." alt="" coords="200,5,315,32"/>
+<area shape="rect" href="analytics_8c.html#af040e1c8b355944897eb657e23e4e572" title="Convert amplitude strength to distance." alt="" coords="200,5,315,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -524,16 +571,24 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate electrical current from magnetic field distance[m] amplitude[1] return current[A]. </p>
+<p>Calculate electrical current from magnetic field. </p>
 <hr  />
- 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00144">144</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">distance[m]</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hall</td><td>amplitude </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>calculated current[A] </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00118">118</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="analytics_8c_a50c6a3e6221cd89519553d4521b7855c_icgraph.png" border="0" usemap="#aanalytics_8c_a50c6a3e6221cd89519553d4521b7855c_icgraph" alt=""/></div>
 <map name="aanalytics_8c_a50c6a3e6221cd89519553d4521b7855c_icgraph" id="aanalytics_8c_a50c6a3e6221cd89519553d4521b7855c_icgraph">
-<area shape="rect" title="Calculate electrical current from magnetic field distance[m] amplitude[1] return current[A]." alt="" coords="252,5,369,32"/>
+<area shape="rect" title="Calculate electrical current from magnetic field." alt="" coords="252,5,369,32"/>
 <area shape="rect" href="analytics_8c.html#abae2b53b167a22cb67db31c36e81750c" title="Analytics handler." alt="" coords="104,5,204,32"/>
 <area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,5,56,32"/>
 </map>
@@ -554,7 +609,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00082">82</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Current measurement cycle count. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00060">60</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -570,7 +627,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00081">81</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Status hall measurement. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00059">59</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -586,7 +645,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00086">86</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Measurement buffer hall left. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00064">64</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -602,7 +663,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00087">87</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Measurement buffer hall right. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00065">65</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -618,7 +681,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00071">71</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Input raw amplitude left. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00046">46</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -634,7 +699,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00072">72</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Input raw amplitude right. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00047">47</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -650,7 +717,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00069">69</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Input button pushed event. </p>
+<p >Input measurement ready event. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00044">44</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -666,7 +736,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00070">70</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Input measurement ready event. </p>
+<p >Input button pushed event. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00045">45</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -682,9 +755,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Mode,DataType,MeasuringType,Accuracy. </p>
+<p>Input Mode,DataType,MeasuringType,Accuracy. </p>
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00073">73</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00048">48</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -700,7 +773,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00079">79</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Status general measurement. </p>
+<p >Output measurement state. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00057">57</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -716,7 +792,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00077">77</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Output analysed data ready event. </p>
+<p >Output data ready event. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00055">55</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -732,9 +811,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Angle,Distance,Std.Dev.,Current. </p>
+<p>Output values. </p>
+<p >Output analysed results. </p>
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00076">76</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00051">51</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -750,7 +830,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00074">74</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Output hall start event. </p>
+<p >Output start hall measurement event. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00049">49</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -766,7 +849,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00075">75</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Output wpc start event. </p>
+<p >Output start wpc measurement event. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00050">50</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -782,7 +868,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00080">80</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Status wpc measurement. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00058">58</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -798,7 +886,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00084">84</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Measurement buffer wpc left. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00062">62</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -814,7 +904,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00085">85</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p>Measurement buffer wpc right. </p>
+
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00063">63</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -830,7 +922,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00090">90</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00069">69</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -846,7 +938,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00106">106</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00080">80</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -862,7 +954,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00094">94</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00072">72</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -878,7 +970,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00098">98</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00075">75</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -894,7 +986,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00103">103</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00078">78</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -910,7 +1002,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00107">107</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00081">81</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -926,7 +1018,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00093">93</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00071">71</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -942,7 +1034,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00097">97</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00074">74</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>
@@ -958,7 +1050,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00102">102</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analytics_8c_source.html#l00077">77</a> of file <a class="el" href="analytics_8c_source.html">analytics.c</a>.</p>
 
 </div>
 </div>

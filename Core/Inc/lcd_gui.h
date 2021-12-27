@@ -21,8 +21,8 @@
 /** Struct with fields of mode entry */
 typedef struct {
 	char line[16];						///< Text
-	uint32_t back_color;				///< Background color
-	uint32_t frame_color;				///< Frame color
+	uint32_t back_color;				///< Background colour
+	uint32_t frame_color;				///< Frame colour
 } MODE_entry_t;
 
 /** Enumeration of possible modes */
@@ -54,29 +54,30 @@ typedef enum {
 /******************************************************************************
  * Defines
  *****************************************************************************/
-//Mode and Cable deteced
-extern bool GUI_cable_detected;
-extern bool GUI_cable_not_detected;
-extern GUI_mode_t GUI_mode;
+//Mode and Cable detected
+extern bool GUI_cable_detected;		///< Input true if cable was detected
+extern bool GUI_cable_not_detected; ///< Input true if cable was not detected
+extern GUI_mode_t GUI_mode;			///< Output default measurement mode
 
 //General measurements
-extern uint32_t GUI_measAccuracy;
-extern float GUI_angle;
-extern float GUI_distance;
-extern float GUI_distanceDeviation;
-extern float GUI_current;
+extern float GUI_angle;				///< Input angle value to display
+extern float GUI_distance;			///< Input distance value to display
+extern float GUI_distanceDeviation; ///< Input standard deviation of distance
+extern float GUI_current;			///< Input current to display
 
 //Raw measurements
-extern float GUI_rawHallLeft;
-extern float GUI_rawHallRight;
-extern float GUI_rawWpcLeft;
-extern float GUI_rawWpcRight;
+extern float GUI_rawHallLeft;		///< Input for raw value
+extern float GUI_rawHallRight;		///< Input for raw value
+extern float GUI_rawWpcLeft;		///< Input for raw value
+extern float GUI_rawWpcRight;		///< Input for raw value
 
-extern OPTN_entry_t GUI_options[3];
+//Current options
+extern OPTN_entry_t GUI_options[3]; ///< Output option settings
 
-extern bool GUI_inputBtn;
-extern bool GUI_inputMeasReady;
-extern bool GUI_outOptn;
+//GUI triggers
+extern bool GUI_inputBtn;			///< Input button pushed event
+extern bool GUI_inputMeasReady;		///< Input measurement ready event
+extern bool GUI_outOptn;			///< Output option change event
 
 /******************************************************************************
  * Functions

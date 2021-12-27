@@ -4,11 +4,12 @@
  *
  * Initialization is done for the system, the blue user button, the user LEDs,
  * and the LCD display with the touchscreen.
- * @n Then the code enters an infinite while-loop, where it checks for
- * user input and starts the requested demonstration.
+ * @n Then the code enters an infinite while-loop, where the data transferring
+ * is managed and the analytics and lcd_gui handler gets called regularly.
  *
- * @author  Hanspeter Hochreutener, hhrt@zhaw.ch
- * @date	17.06.2021
+ * @author  Jonas Bollhalder, bollhjon@students.zhaw.ch
+ * @author  Tarik Durmaz, durmatar@students.zhaw.ch
+ * @date	27.12.2021
  *****************************************************************************/
 
 
@@ -35,7 +36,7 @@
 /******************************************************************************
  * Variables
  *****************************************************************************/
-bool draw_lcd = false;
+
 
 /******************************************************************************
  * Functions
@@ -51,11 +52,11 @@ static void gyro_disable(void);			///< Disable the onboard gyroscope
  * Initialization and infinite while loop
  *****************************************************************************/
 int main(void) {
-	HAL_Init();							// Initialize the system
+	HAL_Init();						// Initialize the system
 
-	SystemClock_Config();				// Configure system clocks
+	SystemClock_Config();			// Configure system clocks
 
-	BSP_LCD_Init();						// Initialize the LCD display
+	BSP_LCD_Init();					// Initialize the LCD display
 	BSP_LCD_LayerDefaultInit(LCD_FOREGROUND_LAYER, LCD_FRAME_BUFFER);
 	BSP_LCD_SelectLayer(LCD_FOREGROUND_LAYER);
 	BSP_LCD_DisplayOn();
@@ -63,56 +64,59 @@ int main(void) {
 
 	BSP_TS_Init(BSP_LCD_GetXSize(), BSP_LCD_GetYSize());	// Touchscreen
 
-	PB_init();							// Initialize the user pushbutton
-	PB_enableIRQ();						// Enable interrupt on user pushbutton
+	PB_init();						// Initialize the user pushbutton
+	PB_enableIRQ();					// Enable interrupt on user pushbutton
 
-	BSP_LED_Init(LED3);					// Toggles in while loop
-	BSP_LED_Init(LED4);					// Is toggled by user button
+	BSP_LED_Init(LED3);				// Toggles in while loop
+	BSP_LED_Init(LED4);				// Is toggled by user button
 
-	gyro_disable();						// Disable gyro, use those analog inputs
+	gyro_disable();					// Disable gyro, use those analog inputs
 
-	MEAS_GPIO_analog_init();			// Configure GPIOs in analog mode
-	MEAS_timer_init();					// Configure the timer
+	MEAS_GPIO_analog_init();		// Configure GPIOs in analog mode
+	MEAS_timer_init();				// Configure the timer
 
 	/* Infinite while loop */
-	while (1) {							// Infinitely loop in main function
-		BSP_LED_Toggle(LED3);			// Visual feedback when running
+	while (1) {						// Infinitely loop in main function
+		BSP_LED_Toggle(LED3);		// Visual feedback when running
 
-		if (PB_pressed()) {				// Check if user pushbutton was pressed
-			ANA_inBtn = true;			// Send to analytics handler
-			GUI_inputBtn = true;		// Send to site handler
+		if (PB_pressed()) {			// Check if user pushbutton was pressed
+			ANA_inBtn = true;		// Send to analytics handler
+			GUI_inputBtn = true;	// Send to site handler
 		}
 
-		if (MEAS_data_ready) {			// Show data if new data available
+		if (MEAS_data_ready) {		// Analyse data if new data available
+			// Transfer data to analytics handler
 			ANA_inAmpLeft = MEAS_amplitude_left;
 			ANA_inAmpRight = MEAS_amplitude_right;
 			ANA_inMeasReady = true;		// Send to analytics handler
 			MEAS_data_ready = false;	// Reset meas data ready bit
 		}
 
-		if (ANA_outStartHALL) {
+		if (ANA_outStartHALL) {		// Start hall measurement
 			ADC3_IN11_IN6_scan_init();
 			ADC3_dual_scan_start();
-			ANA_outStartHALL = false;
+			ANA_outStartHALL = false; // Reset hall start event
 		}
 
-		if (ANA_outStartWPC) {
+		if (ANA_outStartWPC) {		// Start wpc measurement
 			ADC3_IN13_IN4_scan_init();
 			ADC3_dual_scan_start();
-			ANA_outStartWPC = false;
+			ANA_outStartWPC = false; // Reset wpc start event
 		}
 
-		if (ANA_outDataReady) {
-			//Transfer Data
+		if (ANA_outDataReady) {		// Analytics data ready
+			// Transfer Data
 			if (ANA_inOptn[1]==0) {
-				//Analysed
+				// Analysed
 				if (ANA_outResults[1]<300) {
+					// Data usable
 					GUI_angle = ANA_outResults[0];
 					GUI_distance = ANA_outResults[1];
 					GUI_distanceDeviation = ANA_outResults[2];
 					GUI_current = ANA_outResults[3];
 					GUI_cable_detected = true;
 				} else {
+					// Data unusable
 					GUI_angle = 100;
 					GUI_distance = -1;
 					GUI_distanceDeviation = -1;
@@ -122,7 +126,7 @@ int main(void) {
 
 
 			} else {
-				//Raw
+				// Raw
 				GUI_rawHallRight = ANA_outResults[0];
 				GUI_rawHallLeft = ANA_outResults[1];
 				GUI_rawWpcRight = ANA_outResults[2];
@@ -132,6 +136,7 @@ int main(void) {
 			ANA_outDataReady = false;
 		}
 
+		// Show measurement state on led
 		if (ANA_measBusy) {
 			BSP_LED_On(LED4);
 		} else {

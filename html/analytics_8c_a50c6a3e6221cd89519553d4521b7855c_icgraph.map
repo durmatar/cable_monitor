@@ -1,5 +1,5 @@
 <map id="CALC_ElCurrent" name="CALC_ElCurrent">
-<area shape="rect" id="node1" title="Calculate electrical current from magnetic field distance[m] amplitude[1] return current[A]." alt="" coords="252,5,369,32"/>
+<area shape="rect" id="node1" title="Calculate electrical current from magnetic field." alt="" coords="252,5,369,32"/>
 <area shape="rect" id="node2" href="$analytics_8c.html#abae2b53b167a22cb67db31c36e81750c" title="Analytics handler." alt="" coords="104,5,204,32"/>
 <area shape="rect" id="node3" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main function." alt="" coords="5,5,56,32"/>
 </map>
