@@ -38,9 +38,9 @@ Detecing a cable regardless of the cabble type.
 Content of this documentation
 ---
 Maine page overview
-@n Measurement declarations
+@n Souerce code and coments
 @n Testing sheet with
-test scenarios, conditions, expected results, pass/fail criteria,
+test scenarios, conditions, expected results, 
 achieved results, verdict and remarks where appropriate.
 
 
